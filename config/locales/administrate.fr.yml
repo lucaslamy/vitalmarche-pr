@@ -1,0 +1,91 @@
+---
+fr:
+  helpers:
+    submit:
+      user:
+        create: "Créer un nouvel utilisateur"
+        update: "Modifier cet utilisateur"
+      event:
+        create: "Créer un nouvel événement"
+        update: "Modifier cet événement"
+      article:
+        create: "Créer un nouvel article"
+        update: "Modifier cet article"
+      album:
+        create: "Créer un nouvel album"
+        update: "Modifier cet album"
+    label:
+      article:
+        title: Titre
+        id: Id
+        content: Contenu
+        date: Date
+        picture: Image
+      event:
+        title: Titre
+        content: Contenu
+        pop_up: Pop Up ?
+        date: Date
+        event_position: Lieu
+        picture: Image
+      album:
+        title: Titre
+        description: Description
+        picture: Image
+      user:
+        first_name: Prénom
+        last_name: Nom
+        email: Email
+        password: Mot de passe
+
+  administrate:
+    actions:
+      confirm: Êtes-vous sûr ?
+      destroy: Supprimer
+      edit: Modifier
+      edit_resource: Modifier %{name}
+      show_resource: Détails de %{name}
+      new_resource: Création d'un nouvel %{name}
+      back: Précédent
+    controller:
+      create:
+        success: "%{resource} a été correctement créé(e)."
+      destroy:
+        success: "%{resource} a été correctement supprimé(e)."
+      update:
+        success: "%{resource} a été correctement modifié(e)."
+    fields:
+      has_many:
+        more: "%{count} sur %{total_count}"
+        none: Aucun
+    form:
+      error: erreur
+      errors: "%{pluralized_errors} ont empêchés %{resource_name} d'être sauvergardé :"
+    search:
+      clear: Effacer la recherche
+      label: Chercher un %{resource}
+    resource:
+      user: Utilisateur
+      users: Utilisateurs
+      event: Événement
+      events: Événements
+      article: Article
+      articles: Articles
+      album: Album
+      albums: Albums
+    helpers:
+      label:
+        album_remove_picture: Supprimer une image
+        title: Titre
+        id: Id
+        content: Contenu
+        date: Date
+        picture: Image
+        pop_up: Pop Up ?
+        event_position: Lieu
+        first_name: Prénom
+        last_name: Nom
+        email: Email
+        password: Mot de passe
+        description: Description
+
