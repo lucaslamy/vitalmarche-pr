@@ -27,3 +27,4 @@ Rails.application.config.assets.precompile += %w( vendor/bootstrap.min.js )
 Rails.application.config.assets.precompile += %w( vendor/modernizr-2.8.3-respond-1.4.2.min.js )
 #Rails.application.config.assets.precompile += %w( jquery.collapse.js )
 Rails.application.config.assets.precompile += %w[ckeditor/config.js]
+Rails.application.config.assets.precompile += %w( devise.css )

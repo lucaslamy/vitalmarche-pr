@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # User management and authentification
 gem 'devise'
 # Administrate data
-gem "administrate"
+gem 'administrate'
 gem 'administrate-field-active_storage',  '~> 0.1.8'
 
 # Use ActiveStorage variant
@@ -39,12 +39,16 @@ gem 'administrate-field-active_storage',  '~> 0.1.8'
 # gem 'capistrano-rails', group: :development
 
 # input data gems
-gem "auto_strip_attributes"
-gem "auto_format_attributes"
+gem 'auto_strip_attributes'
+gem 'auto_format_attributes'
 
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+
+gem 'bootstrap', '~> 4.1.1'
+
 
 gem "jquery-slick-rails"
 
@@ -75,6 +79,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Translation
 gem 'rails-i18n'
+gem 'devise-i18n'
 
 # VitalMarche Application name
 gem 'rename'
@@ -88,3 +93,10 @@ gem "administrate-field-ckeditor", "~> 0.0.9"
 gem 'carrierwave', '~> 2.0'
 
 gem 'administrate-field-carrierwave'##, '~> 0.5.0'
+
+
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
+    branch: "master"
+
+gem 'devise-bootstrap-views', '~> 1.0'
