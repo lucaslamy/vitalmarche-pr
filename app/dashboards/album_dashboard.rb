@@ -14,7 +14,7 @@ class AlbumDashboard < Administrate::BaseDashboard
     picture: Field::Carrierwave.with_options(
         image: :standard,
         multiple: true,
-        remove: false,
+        remove: true,
         remote_url: false
     )
   }.freeze
@@ -69,6 +69,6 @@ class AlbumDashboard < Administrate::BaseDashboard
   # end
   #
   def permitted_attributes
-    super + [:attribute_for_hidden_field]
+    super - [:picture] + [{ picture: [] }]
   end
 end

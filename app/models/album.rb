@@ -1,5 +1,5 @@
 class Album < ApplicationRecord
-  mount_uploader :picture, PictureUploader
+  mount_uploaders :picture, PictureUploader
   serialize :picture, JSON
   validates :title,
             presence: true

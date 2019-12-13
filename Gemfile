@@ -94,9 +94,15 @@ gem 'carrierwave', '~> 2.0'
 
 gem 'administrate-field-carrierwave'##, '~> 0.5.0'
 
+# Picture gallery
+gem 'blueimp-gallery-rails', '~> 2.7'
+
 
 gem "bootstrap_form",
     git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
     branch: "master"
 
 gem 'devise-bootstrap-views', '~> 1.0'
+
+#Paginate
+gem 'kaminari'
