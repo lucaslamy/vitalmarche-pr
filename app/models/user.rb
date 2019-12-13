@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
             length: {minimum: 2}
 
 
-  # contraintes de l'application
+  # TODO: contraintes de l'application de changement du mot de passe
  # private
  # def check_password_changed
  #   self.pass_changed = Time.now if changed.include? 'encrypted_password'

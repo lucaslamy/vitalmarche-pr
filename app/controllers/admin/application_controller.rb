@@ -9,13 +9,13 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      if current_user
+        if current_user.email != 'admin@admin.fr'
+          redirect_to root_url, alert: "Vous devez être un administrateur."
+        end
+      else
+        redirect_to root_url
+      end
     end
-
-    # Override this value to specify the number of elements to display at a time
-    # on index pages. Defaults to 20.
-    # def records_per_page
-    #   params[:per_page] || 20
-    # end
   end
 end

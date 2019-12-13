@@ -1,12 +1,8 @@
-class MainController < ApplicationController
+class AdminController < ApplicationController
   before_action :authenticate_user!, except: [:root]
   before_action :set_current_user
 
-  def home
-  end
-
-  def user_space
-
+  def main
   end
 
   def picture
