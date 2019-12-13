@@ -1,0 +1,38 @@
+.user_space_buttons {
+    margin: auto;
+    width: 50%;
+    height: 100%;
+}
+
+.user_space_button{
+    margin: auto;
+    width: 50%;
+
+}
+
+.user_space_text{
+    color: #f0f0f0;
+    text-align: center;
+}
+
+.user_space-slide {
+    height: 100vh;
+    background-size: cover;
+    background-image: url('background/header.jpg');
+}
+
+.user_space-background-cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(39, 39, 39, 0.45);
+}
+
+user_space-background {
+    height: 100vh;
+    @extend .user_space-background-cover;
+    background-image: image-url('background/header.jpg');
+    backgound-color: rgba(159, 159, 159, 0.29);
+
+}
+

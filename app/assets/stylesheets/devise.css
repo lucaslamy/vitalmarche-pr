@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-.slide {
+.devise-slide {
     height: 100vh;
     @extend . background-cover;
     background-image: url('background/header.jpg');

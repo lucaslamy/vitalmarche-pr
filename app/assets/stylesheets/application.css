@@ -20,7 +20,6 @@
 @import "application.css";
 @import "bootsnav.css";
 @import "bootstrap.css";
-@import "font-awesome.min.css";
 @import "fonticons.css";
 @import "magnific-popup.css";
 @import "plugins.css";
@@ -28,4 +27,4 @@
 @import "slick.css";
 @import "slick-theme.css";
 @import "style.scss";
-@import 'slick';
+@import "user_space.css";
