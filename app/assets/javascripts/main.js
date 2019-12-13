@@ -7,13 +7,13 @@ jQuery(document).ready(function ($) {
 
 //for Preloader
 
-    $(window).load(function () {
+/*    $(window).load(function () {
         $("#loading").fadeOut(500);
     });
 
     $(window).load(function () {
         document.getElementById("loading").style.display = "none";
-    });
+    });*/
 
     /*---------------------------------------------*
      * Mobile menu
