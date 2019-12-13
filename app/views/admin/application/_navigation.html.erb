@@ -6,7 +6,9 @@ By default, the navigation contains navigation links
 for all resources in the admin dashboard,
 as defined by the routes in the `admin/` namespace
 %>
+<script src="https://kit.fontawesome.com/8671f6e6df.js" crossorigin="anonymous"></script>
 
+<%= link_to raw('<i class="fas fa-chevron-left"></i>'), user_space_path%>
 
 <nav class="navigation" role="navigation">
   <% Administrate::Namespace.new(namespace).resources.each do |resource| %>
