@@ -1,5 +1,5 @@
 <body data-spy="scroll" data-target=".navbar-collapse">
-<!-- Preloader -->
+<!-- Preloader
 <div id="loading">
   <div id="loading-center">
     <div id="loading-center-absolute">
@@ -9,7 +9,7 @@
       <div class="object" id="object_four"></div>
     </div>
   </div>
-</div><!--End off Preloader -->
+</div>End off Preloader -->
 
 
 <div class="culmn">
@@ -53,8 +53,13 @@
           <li><a href="#service">ACTUALITES</a></li>
           <li><a href="#portfolio">REJOIGNEZ-NOUS</a></li>
           <li><a href="#pricing">NOUS CONTACTER</a></li>
-          <li><a href="#blog">GALERIE PHOTOS</a></li>
+          <li><a href="#blog">GALERIE</a></li>
           <li> <%= link_to "ESPACE ADHERENTS",user_space_path %>
+            <% if user_signed_in? %>
+            <li class="nav-item hvr-grow">
+              <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
+            </li>
+          <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div>

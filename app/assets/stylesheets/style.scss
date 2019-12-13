@@ -879,7 +879,7 @@ textarea::-ms-input-placeholder {
 /*Preloader css*/
 
 #loading {
-  background-color: #d14149;
+  background-color: $green;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -920,6 +920,7 @@ textarea::-ms-input-placeholder {
   -moz-border-radius: 50% 50% 50% 50%;
   -webkit-border-radius: 50% 50% 50% 50%;
   border-radius: 50% 50% 50% 50%;
+
 }
 
 .object:nth-child(2n+0) {

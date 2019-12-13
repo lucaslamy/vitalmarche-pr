@@ -14,9 +14,9 @@
     text-align: center;
 }
 
-.devise-slide {
+.slide {
     height: 100vh;
-    @extend . background-cover;
+    @extend .background-cover;
     background-image: url('background/header.jpg');
 }
 
@@ -24,3 +24,4 @@
     padding-left: 0;
     padding-bottom: 1em;
 }
+

@@ -1,6 +1,16 @@
 <body data-spy="scroll" data-target=".navbar-collapse">
 
-
+<!-- Preloader
+<div id="loading">
+  <div id="loading-center">
+    <div id="loading-center-absolute">
+      <div class="object" id="object_one"></div>
+      <div class="object" id="object_two"></div>
+      <div class="object" id="object_three"></div>
+      <div class="object" id="object_four"></div>
+    </div>
+  </div>
+</div> End off Preloader -->
 <div class="culmn">
   <!--Home page style-->
 
@@ -27,6 +37,11 @@
       <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right blue" data-in="fadeInDown" data-out="fadeOutUp">
           <li> <%= link_to "RETOUR ACCUEIL", root_path %>
+            <% if user_signed_in? %>
+            <li class="nav-item hvr-grow">
+              <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
+            </li>
+          <% end %>
           </li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -42,7 +57,7 @@
     <div class="container ">
       <div class="row bck_layer">
         <div class="user_space_buttons">
-          <div class="main_home col-md-12">
+          <div class="main_home user_space_text_div col-md-12">
             <div>
               <h1 class="user_space_text">Espace administrateur</h1>
             </div>

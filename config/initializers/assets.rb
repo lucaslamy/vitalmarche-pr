@@ -13,7 +13,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-Rails.application.config.assets.precompile += %w( jquery.magnific-popup.js )
+
 Rails.application.config.assets.precompile += %w( jquery.easing.1.3.js )
 Rails.application.config.assets.precompile += %w( slick.min.js )
 Rails.application.config.assets.precompile += %w( jquery.collapse.js )
@@ -28,3 +28,4 @@ Rails.application.config.assets.precompile += %w( vendor/modernizr-2.8.3-respond
 #Rails.application.config.assets.precompile += %w( jquery.collapse.js )
 Rails.application.config.assets.precompile += %w[ckeditor/config.js]
 Rails.application.config.assets.precompile += %w( devise.css )
+Rails.application.config.assets.precompile += %w( jquery.magnific-popup.js )
