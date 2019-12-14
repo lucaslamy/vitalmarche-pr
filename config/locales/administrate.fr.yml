@@ -33,13 +33,13 @@ fr:
         description: Description
         picture: Image
       user:
-        first_name: Prénom
-        last_name: Nom
+        name: Nom/Prénom
         email: Email
         password: Mot de passe
 
   administrate:
     actions:
+      invitate: Inviter un nouvel utilisateur
       confirm: Êtes-vous sûr ?
       destroy: Supprimer
       edit: Modifier
@@ -83,8 +83,7 @@ fr:
         picture: Image
         pop_up: Pop Up ?
         event_position: Lieu
-        first_name: Prénom
-        last_name: Nom
+        name: Nom/Prénom
         email: Email
         password: Mot de passe
         description: Description

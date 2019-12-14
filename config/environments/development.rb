@@ -9,7 +9,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
 
 
   # Show full error reports.
@@ -60,5 +60,14 @@ Rails.application.configure do
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
+  #
+  # Smtp
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => 'maildev',
+      :port => 25,
+      :openssl_verify_mode => 'none'
+  }
+  config.action_mailer.asset_host = 'http://localhost:3001'
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end

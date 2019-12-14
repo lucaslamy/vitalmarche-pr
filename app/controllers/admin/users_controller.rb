@@ -17,6 +17,13 @@ module Admin
     #   Foo.find_by!(slug: param)
     # end
 
+    def send_invitation
+      email = params[:email]
+      name = params[:name]
+      #User.invite!(email,name)
+      User.invite!(:email => email,:name => name)
+      redirect_to admin_users_path
+    end
     # Override this if you have certain roles that require a subset
     # this will be used to set the records shown on the `index` action.
     #

@@ -1,0 +1,44 @@
+<% content_for(:title) do %>
+  <%= t(
+          "administrate.actions.invitate",
+          name: display_resource_name(page.resource_name).titleize
+      ) %>
+<% end %>
+
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title">
+    <%= content_for(:title) %>
+  </h1>
+
+  <div>
+    <%= link_to t("administrate.actions.back"), :back, class: "button" %>
+  </div>
+</header>
+
+<section class="main-content__body">
+
+
+  <%= form_tag('/admin/users/send_invitation') do %>
+    <div class="field-unit field-unit--string>">
+      <div class="field-unit__label">
+        <%= label_tag :email, "Email :" %>
+      </div>
+      <div class="field-unit__field">
+        <%= text_field_tag :email %>
+      </div>
+    </div>
+    <div class="field-unit field-unit--string>">
+      <div class="field-unit__label">
+        <%= label_tag :name, "Nom :" %>
+      </div>
+      <div class="field-unit__field">
+        <%= text_field_tag :name %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= submit_tag "Inviter l'utilisateur" %>
+    </div>
+  <% end %>
+
+</section>
+

@@ -9,8 +9,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
       id: Field::Number,
-      first_name: Field::String,
-      last_name: Field::String,
+      name: Field::String,
       email: Field::String,
       encrypted_password: Field::String,
       reset_password_token: Field::String,
@@ -26,8 +25,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
   id
-  first_name
-  last_name
+  name
   email
   ].freeze
 
@@ -35,8 +33,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
   id
-  first_name
-  last_name
+  name
   email
   ].freeze
 
@@ -44,8 +41,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  first_name
-  last_name
+  name
   email
   password
   ].freeze
@@ -69,6 +65,6 @@ class UserDashboard < Administrate::BaseDashboard
   #   "User ##{user.id}"
   # end
   def display_resource(user)
-    user.first_name.to_s + ' ' + user.last_name.to_s
+    user.name.to_s
   end
 end
