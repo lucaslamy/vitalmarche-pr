@@ -4,6 +4,7 @@ class MainController < ApplicationController
 
   def home
     @albums = Album.all
+    @pop_up = Event.where(pop_up: true).order(:date).first
   end
 
   def set_current_user

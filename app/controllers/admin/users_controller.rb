@@ -20,7 +20,6 @@ module Admin
     def send_invitation
       email = params[:email]
       name = params[:name]
-      #User.invite!(email,name)
       User.invite!(:email => email,:name => name)
       redirect_to admin_users_path
     end

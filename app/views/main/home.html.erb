@@ -10,7 +10,9 @@
     </div>
   </div>
 </div>End off Preloader -->
-
+<% if @pop_up == nil %>
+  <a class="pop-up">Open popup</a>
+<% end %>
 <div class="culmn">
 
   <nav class="navbar navbar-default navbar-fixed green no-background bootsnav">
@@ -996,6 +998,15 @@
 
 
 <script>
+    <% if @pop_up == nil %>
+    $(document).ready(function () {
+        $('.pop-up').magnificPopup({
+            type: 'inline',
+            modal: true
+        });
+    });
+    <% end %>
+
     document.querySelector('#gallery').appendChild(JGallery.create([
         <% @albums.each do |album| %>
         {

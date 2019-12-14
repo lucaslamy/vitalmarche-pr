@@ -7,7 +7,7 @@ class Event < ApplicationRecord
             presence: true
 
   validates :pop_up,
-            presence: true
+            presence: false
 
   validates :date,
             presence: true
