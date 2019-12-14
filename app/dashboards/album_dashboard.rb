@@ -10,11 +10,10 @@ class AlbumDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    description: Field::Ckeditor,
     picture: Field::Carrierwave.with_options(
         image: :standard,
         multiple: true,
-        remove: true,
+        remove: false,
         remote_url: false
     )
   }.freeze
@@ -27,7 +26,6 @@ class AlbumDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   id
   title
-  description
   picture
   ].freeze
 
@@ -36,7 +34,6 @@ class AlbumDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   id
   title
-  description
   picture
   ].freeze
 
@@ -45,7 +42,6 @@ class AlbumDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   title
-  description
   picture
   ].freeze
 

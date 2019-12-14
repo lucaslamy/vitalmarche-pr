@@ -4,9 +4,6 @@ class Album < ApplicationRecord
   validates :title,
             presence: true
 
-  validates :description,
-            presence: false
-
   validates :picture,
             presence: false
 

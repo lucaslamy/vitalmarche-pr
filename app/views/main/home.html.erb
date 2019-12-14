@@ -11,49 +11,29 @@
   </div>
 </div>End off Preloader -->
 
-
 <div class="culmn">
-  <!--Home page style-->
-
 
   <nav class="navbar navbar-default navbar-fixed green no-background bootsnav">
-    <!-- Start Top Search -->
-    <div class="top-search">
-      <div class="container">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-search"></i></span>
-          <input type="text" class="form-control" placeholder="Search">
-          <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-        </div>
-      </div>
-    </div>
-    <!-- End Top Search -->
-
     <div class="container">
 
-      <!-- Start Header Navigation -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
           <i class="fa fa-bars"></i>
         </button>
         <a class="navbar-brand" href="#brand">
-
           <img class="logo logo-display m-top-10" <%= image_tag "logo.png" %>
           <img class="logo logo-scrolled"  <%= image_tag "logo.png" %>
-
         </a>
       </div>
-      <!-- End Header Navigation -->
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right blue" data-in="fadeInDown" data-out="fadeOutUp">
           <li><a href="#hello">ACCUEIL</a></li>
           <li><a href="#about">QUI SOMMES NOUS</a></li>
-          <li><a href="#service">ACTUALITES</a></li>
-          <li><a href="#portfolio">REJOIGNEZ-NOUS</a></li>
-          <li><a href="#pricing">NOUS CONTACTER</a></li>
-          <li><a href="#blog">GALERIE</a></li>
+          <li><a href="#news">ACTUALITES</a></li>
+          <li><a href="#join">REJOIGNEZ-NOUS</a></li>
+          <li><a href="#contact">NOUS CONTACTER</a></li>
+          <li><a href="#photo-gallery">GALERIE</a></li>
           <li> <%= link_to "ESPACE ADHERENTS", user_space_path %>
             <% if user_signed_in? %>
             <li class="nav-item hvr-grow">
@@ -61,15 +41,11 @@
             </li>
           <% end %>
         </ul>
-      </div><!-- /.navbar-collapse -->
+      </div>
     </div>
-
-
   </nav>
 
-
-  <!--Home Sections (id hello home bg-mega) -->
-  <section class="background-cover slick">
+  <section class="hello background-cover slick">
     <!--    <div class="overlay"></div>-->
     <div class="container slide slide--1">
       <div class="row bck_layer">
@@ -111,12 +87,6 @@
         </div>
       </div><!--End off row-->
     </div><!--End off container -->
-    <% @albums.each do |album| %>
-      <%= album.title %>
-      <% album.picture.each do |picture| %>
-        <%= picture %>
-      <% end %>
-    <% end %>
     <!--
         <div class="container slide slide--3">
           <div class="row bck_layer">
@@ -156,9 +126,12 @@
       </div><!--End off row-->
     </div><!--End off container -->
 
-  </section> <!--End off Home Sections-->
+  </section>
 
-
+  <section id="photo-gallery" class="photo-gallery">
+    <div id="gallery" class="gallery">
+    </div>
+  </section>
   <!--
     <section id="about" class="about roomy-100">
       <div class="container">
@@ -903,20 +876,40 @@
 
   -->
 
-  <!--Maps Section-->
-  <div class="main_maps text-center fix">
-    <div class="overlay"></div>
-    <div class="maps_text">
-      <h3 class="text-white" onclick="showmap()">Nous trouver <i class="fa fa-angle-down"></i></h3>
-      <div id="map_canvas" class="mapheight"></div>
+  <section id="maps">
+    <div class="main_maps text-center fix">
+      <div class="overlay"></div>
+      <div class="maps_text">
+        <h3 class="text-white" onclick="showmap()">Nous trouver <i class="fa fa-angle-down"></i></h3>
+        <div id="map_canvas" class="mapheight"></div>
+      </div>
     </div>
-  </div><!-- End off Maps Section-->
+  </section>
 
-
-  <!--Contact Us Section-->
   <section id="contact" class="contact bg-mega fix">
     <div class="container">
-
+      <div class="row sponso-row">
+        <div class="col-md-4 sponso-div ">
+          <img class="sponso" <%= image_tag "sponso/image.png" %>
+        </div>
+        <div class="col-md-4 sponso-div">
+          <img class="sponso" <%= image_tag "sponso/image5.png" %>
+        </div>
+        <div class="col-md-4 sponso-div">
+          <img class="sponso" <%= image_tag "sponso/image3.png" %>
+        </div>
+      </div>
+      <div class="row sponso-row">
+        <div class="col-md-4 sponso-div">
+          <img class="sponso" <%= image_tag "sponso/image4.png" %>
+        </div>
+        <div class="col-md-4 sponso-div">
+          <img class="sponso" <%= image_tag "sponso/image2.png" %>
+        </div>
+        <div class="col-md-4 sponso-div">
+          <img class="sponso" <%= image_tag "sponso/image6.png" %>
+        </div>
+      </div>
       <!--
             <div class="row">
               <div class="main_contact roomy-100 text-white">
@@ -973,32 +966,8 @@
                 </div>
               </div>
             </div>-->
-      <div class="row sponso-row">
-        <div class="col-md-4 sponso-div ">
-          <img class="sponso" <%= image_tag "sponso/image.png" %>
-        </div>
-        <div class="col-md-4 sponso-div">
-          <img class="sponso" <%= image_tag "sponso/image5.png" %>
-        </div>
-        <div class="col-md-4 sponso-div">
-          <img class="sponso" <%= image_tag "sponso/image3.png" %>
-        </div>
-      </div>
-      <div class="row sponso-row">
-        <div class="col-md-4 sponso-div">
-          <img class="sponso" <%= image_tag "sponso/image4.png" %>
-        </div>
-        <div class="col-md-4 sponso-div">
-          <img class="sponso" <%= image_tag "sponso/image2.png" %>
-        </div>
-        <div class="col-md-4 sponso-div">
-          <img class="sponso" <%= image_tag "sponso/image6.png" %>
-        </div>
-      </div>
-
-    </div><!--End off container -->
-  </section><!--End off Contact Section-->
-
+    </div>
+  </section>
 
   <!-- scroll up-->
   <div class="scrollup">
@@ -1027,6 +996,19 @@
 
 
 <script>
+    document.querySelector('#gallery').appendChild(JGallery.create([
+        <% @albums.each do |album| %>
+        {
+            title: '<%= album.title %>',
+            items: [
+                <% album.picture.each do |picture| %>
+                {
+                    url: '<%=picture.to_s %>',
+                    thumbUrl: '<%=picture.to_s %>'
+                }<% if picture != album.picture.last %>, <%end%><%end%>
+            ]
+        }<% if album != @albums.last %>, <%end%><%end%>]).getElement());
+
     $('.slick').slick({
         autoplay: true,
         autoplaySpeed: 2000,

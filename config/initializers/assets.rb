@@ -29,3 +29,4 @@ Rails.application.config.assets.precompile += %w( vendor/modernizr-2.8.3-respond
 Rails.application.config.assets.precompile += %w[ckeditor/config.js]
 Rails.application.config.assets.precompile += %w( devise.css )
 Rails.application.config.assets.precompile += %w( jquery.magnific-popup.js )
+Rails.application.config.assets.precompile += %w( jgallery.js )

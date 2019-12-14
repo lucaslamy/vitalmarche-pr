@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # User management and authentification
 gem 'devise'
+gem 'devise_invitable', '~> 2.0.0'
 # Administrate data
 gem 'administrate'
 gem 'administrate-field-active_storage',  '~> 0.1.8'
@@ -93,10 +94,6 @@ gem "administrate-field-ckeditor", "~> 0.0.9"
 gem 'carrierwave', '~> 2.0'
 
 gem 'administrate-field-carrierwave'##, '~> 0.5.0'
-
-# Picture gallery
-gem 'blueimp-gallery-rails', '~> 2.7'
-
 
 gem "bootstrap_form",
     git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
