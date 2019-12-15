@@ -12,6 +12,7 @@ module VitalMarche
     config.load_defaults 5.2
     config.i18n.default_locale = :fr
     config.time_zone = 'Europe/Paris'
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     # Settings in config/environments/* take precedence over those specified here.
     # VitalMarchelication configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

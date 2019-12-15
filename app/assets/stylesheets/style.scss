@@ -44,6 +44,7 @@ body {
 
 $green: #98C169 !default;
 $blue: #94B5BD !default;
+$light-blue: #c2eaf6 !default;
 
 /*------------------------------------------------------------------*/
 /*   IE10 in Windows 8 and Windows Phone 8 Bug fix
@@ -124,7 +125,7 @@ section { overflow: hidden; }*/
 }
 
 .text-primary {
-  color: #ff6863 !important;;
+  color: $blue !important;;
 }
 
 .text-finence {
@@ -132,7 +133,7 @@ section { overflow: hidden; }*/
 }
 
 .text-mega {
-  color: #ff6863 !important;;
+  color: $blue !important;;
 }
 
 .text-white {
@@ -325,7 +326,7 @@ h3 span,
 h4 span,
 h5 span,
 p span {
-  color: #ff6863;
+  color: $blue;
 }
 
 p {
@@ -425,26 +426,26 @@ Separator
   width: 85px;
   height: 2px;
   margin: 20px 0px;
-  background: #ff6863;
+  background: $blue;
 }
 
 .separator_auto {
   width: 85px;
   height: 2px;
   margin: 20px auto;
-  background: #ff6863;
+  background: $blue;
 }
 
 .separator_small {
   width: 30px;
   height: 2px;
   margin: 20px 0px;
-  background: #ff6863;
+  background: $blue;
 }
 
 /*
 Button
-*/
+
 .btn {
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
@@ -470,22 +471,22 @@ Button
 }
 
 .btn-default:hover {
-  border-color: #ff6863;
-  background-color: #ff6863;
+  border-color: $blue;
+  background-color: $blue;
 }
 
 .btn-primary {
   color: #fff;
-  background-color: #ff6863;
+  background-color: $blue;
   border: 1px solid;
-  border-color: #ff6863;
+  border-color: $blue;
   padding: 1rem 2rem;
 }
 
 .btn-primary:hover {
   background-color: #eee;
   border-color: #eee;
-  color: #ff6863;
+  color: $blue;
 }
 
 .btn-success {
@@ -503,7 +504,7 @@ Button
 .btn-link {
 }
 
-
+*/
 /*
 socail icon
 --------------------------------*/
@@ -1148,7 +1149,7 @@ Nav Menu style
 }
 
 .btn-cart {
-  background-color: #ff6863;
+  background-color: $blue;
   padding: 2px 10px;
   color: #fff !important;
   border: 0px solid;
@@ -1216,12 +1217,12 @@ About section style
   height: 60px;
   line-height: 60px;
   font-size: 1.5rem;
-  background-color: #ff6863;
+  background-color: $blue;
   color: #fff;
   display: inline-block;
   text-align: center;
   border-radius: 50%;
-  box-shadow: 0px 0px 0px 6px rgba(255, 104, 99, 0.4);
+  box-shadow: 0px 0px 0px 6px $light-blue;
 
 }
 
@@ -1535,7 +1536,7 @@ Skill Section style
 .teamskillbar-bar {
   height: 10px;
   width: 0px;
-  background: #ff6863;
+  background: $blue;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1678,7 +1679,7 @@ Pricing Section style
 .pricing_top_border {
   height: 4px;
   width: 100%;
-  background-color: #ff6863;
+  background-color: $blue;
 }
 
 .pricing_item {
@@ -1692,7 +1693,7 @@ Pricing Section style
 }
 
 .pricing_price_border {
-  background-color: #ff6863;
+  background-color: $blue;
   padding: 10px;
   border-radius: 50%;
   margin: 0 auto;
@@ -1705,7 +1706,7 @@ Pricing Section style
 }
 
 .pricing_price_border .pricing_price {
-  background-color: #ff6863;
+  background-color: $blue;
   border: 2px solid;
   border-color: #fff;
   width: 130px;
@@ -1863,7 +1864,7 @@ Maps Section style
   height: 20px;
   line-height: 20px;
   border-radius: 50%;
-  background-color: #ff6863;
+  background-color: $blue;
   font-size: 1rem;
   display: inline-block;
   top: -5px;
@@ -1919,7 +1920,7 @@ Contact Section style
 }
 
 .widget_socail ul li a:hover i {
-  background-color: #ff6863;
+  background-color: $blue;
 }
 
 .contact {
@@ -1959,12 +1960,12 @@ Footer Section style
 
 .main_maps i {
   font-size: 2.5rem;
-  color: #f38181;
+  color: $light-blue;
 
 }
 
 .main_maps h2 {
-  color: #f38181;
+  color: $light-blue;
 }
 
 .mapheight {
@@ -1993,7 +1994,7 @@ Footer Section style
 }
 
 .scrollup:hover {
-  background: #ff6863;
+  background: $blue;
   opacity: 1;
 }
 
