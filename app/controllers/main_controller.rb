@@ -14,4 +14,12 @@ class MainController < ApplicationController
     end
   end
 
+  def contact_us
+    email = params[:email]
+    name = params[:name]
+    message = params[:message]
+    ApplicationMailer.contact_email(email,name,message).deliver
+    redirect_to root_path
+  end
+
 end

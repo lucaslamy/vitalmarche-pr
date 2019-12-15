@@ -1880,7 +1880,15 @@ Maps Section style
 /*
 Contact Section style
 =====================*/
+.center-div {
+  margin: auto;
+  width: 50rem;
+  height: 43rem;
+}
 
+.form-contact {
+  height: 10rem !important;
+}
 .main_contact {
   overflow: hidden;
 }
