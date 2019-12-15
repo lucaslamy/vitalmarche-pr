@@ -10,9 +10,28 @@
     </div>
   </div>
 </div>End off Preloader -->
-<% if @pop_up == nil %>
-  <a class="pop-up">Open popup</a>
+<% if @pop_up != nil && session[:pop_up] != 0 %>
+  <% session[:pop_up] = 1 %>
+  <div class="modal" tabindex="-1" id="myModal" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Évenement à venir !</h5>
+        </div>
+        <div class="modal-body">
+          <p>Le <%=@pop_up.date.day%>-<%=@pop_up.date.mon%>-<%=@pop_up.date.year%> à <%=@pop_up.date.hour%>:<%=@pop_up.date.min%>, à <%=@pop_up.position%>, aura lieu <%=@pop_up.title%>.</p>
+          <hr>
+          <%=raw(@pop_up.content)%>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-modal-primary">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
+
+
 <div class="culmn">
 
   <nav class="navbar navbar-default navbar-fixed green no-background bootsnav">
@@ -998,12 +1017,9 @@
 
 
 <script>
-    <% if @pop_up == nil %>
-    $(document).ready(function () {
-        $('.pop-up').magnificPopup({
-            type: 'inline',
-            modal: true
-        });
+    <% if @pop_up != nil %>
+    $(window).on('load', function () {
+        $('#myModal').modal('show');
     });
     <% end %>
 

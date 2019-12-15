@@ -4,7 +4,7 @@ class MainController < ApplicationController
 
   def home
     @albums = Album.all
-    @pop_up = Event.where(pop_up: true).order(:date).first
+    @pop_up = Event.where(pop_up: true).where("date > ?", DateTime.now).order(:date).first
   end
 
   def set_current_user
