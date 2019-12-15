@@ -215,34 +215,84 @@
       <div class="row">
         <div class="main_new roomy-100">
           <div class="head_title text-center">
+            <br>
+            <br>
             <h2 class="text-white">ACTUALITÉS</h2>
           </div>
           <div class="new_slid text-center">
             <% @articles.each do |article| %>
-            <div class="new_item">
-              <div class="col-sm-10 col-sm-offset-1 row">
-                <div class="test_authour article_text">
-                  <h2 class="text-white m-bottom-20"><%=article.title%></h2>
-                </div>
-                <div class="col-sm-4">
-                  <img class="articles" <%= image_tag article.picture.to_s%>
-                </div>
-                <div class="col-sm-8 text-white">
-                <%=raw(article.content) %>
+              <div class="new_item">
+                <div class="col-sm-10 col-sm-offset-1 row">
+                  <div class="test_authour article_text">
+                    <h2 class="text-white m-bottom-20"><%= article.title %></h2>
+                  </div>
+                  <div class="col-sm-4">
+                    <img class="articles" <%= image_tag article.picture.to_s %>
+                  </div>
+                  <div class="col-sm-8 text-white">
+                    <%= raw(article.content) %>
 
-                <div class="test_authour m-top-30">
-                  <h6 class="text-white m-bottom-20"><%=article.date.day%>-<%=article.date.mon%>-<%=article.date.year%> <%=article.date.hour%>:<%=article.date.min%></h6>
+                    <div class="test_authour m-top-30">
+                      <h6 class="text-white m-bottom-20"><%= article.date.day %>-<%= article.date.mon %>
+                        -<%= article.date.year %> <%= article.date.hour %>:<%= article.date.min %></h6>
+                    </div>
+                  </div>
                 </div>
               </div>
-              </div>
-            </div>
-              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <section id="join" class="about roomy-100">
+    <div class="container">
+      <div class="main_about">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="about_content">
+              <br>
+              <br>
+              <h2>REJOIGNEZ-NOUS</h2>
+              <div class="separator_left"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              Vous avez décidé de vous mettre (ou vous remettre) au sport et vous cherchez une activité complète,
+              accessible, économique, tonique, dynamique, de plein air et conviviale.
+              <br>
+              Vous voulez essayer, 2 séances d’essais vous sont proposées avec prêt de bâtons.
+              <br>
+              Pour votre équipement, ne pas avoir trop chaud ni trop froid, c’est utiliser la méthode des
+              multicouches.
+              <br>
+              Pour bien marcher il faut prendre soins de ses pieds
+              <br>
+              <br>
+              <br>
+              A prévoir :
+            <li>De bonne chaussures adaptée à la marche nordique</li>
+            <li>Un sac à dos avec boissons et encas</li>
+            <li>Une paire de bâtons</li>
+            <li>Une lampe frontale pour les entraînements nocturne</li>
+            </p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+          <div class="col-md-6">
+            <img class="join" <%= image_tag "image.jpg" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="photo-gallery" class="photo-gallery">
     <div id="gallery" class="gallery">
@@ -251,625 +301,594 @@
 
 
   <!--
-<div class="container">
-<div class="row">
-<div class="main_featured m-top-100">
-  <div class="col-sm-12">
-    <div class="head_title text-center">
-      <h2>FEATURED WORK</h2>
-      <div class="separator_auto"></div>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-        sed diam nonummy nibh euismod nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-
-<div class="featured_slider">
-<div>
-<div class="featured_img">
-  <img src="assets/images/fprojects/1.jpg" alt="" />
-  <a href="assets/images/fprojects/1.jpg" class="popup-img"></a>
-</div>
-</div>
-<div>
-<div class="featured_img">
-  <img src="assets/images/fprojects/2.jpg" alt="" />
-  <a href="assets/images/fprojects/2.jpg" class="popup-img"></a>
-</div>
-</div>
-<div>
-<div class="featured_img">
-  <img src="assets/images/fprojects/3.jpg" alt="" />
-  <a href="assets/images/fprojects/3.jpg" class="popup-img"></a>
-</div>
-</div>
-<div>
-<div class="featured_img">
-  <img src="assets/images/fprojects/4.jpg" alt="" />
-  <a href="assets/images/fprojects/4.jpg" class="popup-img"></a>
-</div>
-</div>
-<div>
-<div class="featured_img">
-  <img src="assets/images/fprojects/5.jpg" alt="" />
-  <a href="assets/images/fprojects/5.jpg" class="popup-img"></a>
-</div>
-</div>
-</div>
-
-<section id="service" class="service">
-<div class="container">
-<div class="row">
-  <div class="main_service roomy-100">
-    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+  <div class="container">
+  <div class="row">
+  <div class="main_featured m-top-100">
+    <div class="col-sm-12">
       <div class="head_title text-center">
-        <h2>OUR SERVICES</h2>
+        <h2>FEATURED WORK</h2>
         <div class="separator_auto"></div>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
           sed diam nonummy nibh euismod nostrud exerci tation ullamcorper
           suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
       </div>
     </div>
-
-    <div class="col-md-4">
-      <div class="service_item">
-        <i class="icofont icofont-light-bulb"></i>
-        <h6 class="m-top-30">BRANDING</h6>
-        <div class="separator_small"></div>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-          magna aliquam erat volutpat. </p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="service_item">
-        <i class="icofont icofont-imac"></i>
-        <h6 class="m-top-30">BRANDING</h6>
-        <div class="separator_small"></div>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-          magna aliquam erat volutpat. </p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="service_item">
-        <i class="icofont icofont-video"></i>
-        <h6 class="m-top-30">BRANDING</h6>
-        <div class="separator_small"></div>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-          magna aliquam erat volutpat. </p>
-      </div>
-    </div>
   </div>
-</div>
-</div>
-</section>
-
-<section id="impress" class="impress roomy-100">
-<div class="overlay"></div>
-<div class="container">
-<div class="row">
-  <div class="main_impress text-center">
-    <div class="col-sm-8 col-sm-offset-2">
-      <h2 class="text-white text-uppercase">Impressed?  Let’s work together</h2>
-      <p class="m-top-40 text-white">At vero eos et accusamus et iusto odio dignissimos ducimus qui ditqs praesentium
-        voluptatum deleniti atque corrupti quos dolores et quas molestias</p>
-
-      <div class="impress_btns m-top-30">
-        <a href="" class="btn btn-primary m-top-20">HIRE US</a>
-        <a href="" class="btn btn-default m-top-20">HIRE US</a>
-      </div>
-    </div>
   </div>
-</div>
-</div>
-</section>
+  </div>
 
-<section id="portfolio" class="portfolio lightbg">
-<div class="container">
-<div class="row">
-  <div class="main_portfolio roomy-100">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="head_title text-center">
-        <h2>OUR PORTOFLIO</h2>
-        <div class="separator_auto"></div>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod nostrud exerci tation ullamcorper
-          suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
+  <div class="featured_slider">
+  <div>
+  <div class="featured_img">
+    <img src="assets/images/fprojects/1.jpg" alt="" />
+    <a href="assets/images/fprojects/1.jpg" class="popup-img"></a>
+  </div>
+  </div>
+  <div>
+  <div class="featured_img">
+    <img src="assets/images/fprojects/2.jpg" alt="" />
+    <a href="assets/images/fprojects/2.jpg" class="popup-img"></a>
+  </div>
+  </div>
+  <div>
+  <div class="featured_img">
+    <img src="assets/images/fprojects/3.jpg" alt="" />
+    <a href="assets/images/fprojects/3.jpg" class="popup-img"></a>
+  </div>
+  </div>
+  <div>
+  <div class="featured_img">
+    <img src="assets/images/fprojects/4.jpg" alt="" />
+    <a href="assets/images/fprojects/4.jpg" class="popup-img"></a>
+  </div>
+  </div>
+  <div>
+  <div class="featured_img">
+    <img src="assets/images/fprojects/5.jpg" alt="" />
+    <a href="assets/images/fprojects/5.jpg" class="popup-img"></a>
+  </div>
+  </div>
+  </div>
 
-    <div class="portfolio_content">
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="portfolio_item">
-              <img src="assets/images/Portfolio/2.jpg" alt="" />
-              <div class="portfolio_hover text-center">
-                <h6 class="text-uppercase text-white">Title</h6>
-                <p class=" text-white">Lorem ipsum dolor sit amet</p>
-                <div class="portfolio_hover_icon">
-                  <a href="assets/images/Portfolio/2.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-                  <a href=""><i class="fa fa-search"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 m-top-30">
-            <div class="portfolio_item portfolio_item2">
-              <img src="assets/images/Portfolio/3.jpg" alt="" />
-              <div class="portfolio_hover text-center">
-                <h6 class="text-uppercase text-white">Title</h6>
-                <p class=" text-white">Lorem ipsum dolor sit amet</p>
-                <div class="portfolio_hover_icon">
-                  <a href="assets/images/Portfolio/3.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-                  <a href=""><i class="fa fa-search"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 m-top-30">
-            <div class="portfolio_item portfolio_item2">
-              <img src="assets/images/Portfolio/5.jpg" alt="" />
-              <div class="portfolio_hover text-center">
-                <h6 class="text-uppercase text-white">Title</h6>
-                <p class=" text-white">Lorem ipsum dolor sit amet</p>
-                <div class="portfolio_hover_icon">
-                  <a href="assets/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-                  <a href=""><i class="fa fa-search"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+  <section id="service" class="service">
+  <div class="container">
+  <div class="row">
+    <div class="main_service roomy-100">
+      <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <div class="head_title text-center">
+          <h2>OUR SERVICES</h2>
+          <div class="separator_auto"></div>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod nostrud exerci tation ullamcorper
+            suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
         </div>
       </div>
 
       <div class="col-md-4">
-        <div class="portfolio_item portfolio_item3 sm-m-top-30">
-          <img src="assets/images/Portfolio/1.jpg" alt="" />
-          <div class="portfolio_hover text-center">
-            <h6 class="text-uppercase text-white">Title</h6>
-            <p class=" text-white">Lorem ipsum dolor sit amet</p>
-            <div class="portfolio_hover_icon">
-              <a href="assets/images/Portfolio/1.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-              <a href=""><i class="fa fa-search"></i></a>
-            </div>
-          </div>
+        <div class="service_item">
+          <i class="icofont icofont-light-bulb"></i>
+          <h6 class="m-top-30">BRANDING</h6>
+          <div class="separator_small"></div>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            magna aliquam erat volutpat. </p>
         </div>
       </div>
-      <div class="col-md-4 m-top-30">
-        <div class="portfolio_item portfolio_item2">
-          <img src="assets/images/Portfolio/6.jpg" alt="" />
-          <div class="portfolio_hover text-center">
-            <h6 class="text-uppercase text-white">Title</h6>
-            <p class=" text-white">Lorem ipsum dolor sit amet</p>
-            <div class="portfolio_hover_icon">
-              <a href="assets/images/Portfolio/6.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-              <a href=""><i class="fa fa-search"></i></a>
-            </div>
-          </div>
+      <div class="col-md-4">
+        <div class="service_item">
+          <i class="icofont icofont-imac"></i>
+          <h6 class="m-top-30">BRANDING</h6>
+          <div class="separator_small"></div>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            magna aliquam erat volutpat. </p>
         </div>
       </div>
-      <div class="col-md-8 m-top-30">
-        <div class="portfolio_item">
-          <img src="assets/images/Portfolio/4.jpg" alt="" />
-          <div class="portfolio_hover text-center">
-            <h6 class="text-uppercase text-white">Title</h6>
-            <p class=" text-white">Lorem ipsum dolor sit amet</p>
-            <div class="portfolio_hover_icon">
-              <a href="assets/images/Portfolio/4.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
-              <a href=""><i class="fa fa-search"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-</div>
-</section>
-
-<section id="skill" class="skill roomy-100">
-<div class="container">
-<div class="row">
-  <div class="main_skill">
-    <div class="col-md-6">
-      <div class="skill_content wow fadeIn">
-        <h2>Our skill</h2>
-        <div class="separator_left"></div>
-
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-          magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-          quis nostrud exerci tation ullamcorper suscipit lobortis
-          nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor
-          sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-          euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-          Ut wisi enim ad minim veniam, quis nostrud exerci tation
-          ullamcorper suscipit lobortis nisl ut aliquip
-          ex ea commodo consequat. </p>
-
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="skill_bar sm-m-top-50">
-        <div class="teamskillbar clearfix m-top-20" data-percent="80%">
-          <h6>GRAPHIC DESIGN</h6>
-          <div class="teamskillbar-bar"></div>
-        </div>
-
-        <div class="teamskillbar clearfix m-top-50" data-percent="75%">
-          <h6>TYPOGRAPHY</h6>
-          <div class="teamskillbar-bar"></div>
-        </div>
-
-        <div class="teamskillbar clearfix m-top-50" data-percent="90%">
-          <h6>HTML / CSS</h6>
-          <div class="teamskillbar-bar"></div>
+      <div class="col-md-4">
+        <div class="service_item">
+          <i class="icofont icofont-video"></i>
+          <h6 class="m-top-30">BRANDING</h6>
+          <div class="separator_small"></div>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            magna aliquam erat volutpat. </p>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-<br />
-<br />
-<br />
-<hr />
-<br />
-<br />
-<br />
-<div class="container">
-<div class="row">
-  <div class="skill_bottom_content text-center">
-    <div class="col-md-3">
-      <div class="skill_bottom_item">
-        <h2 class="statistic-counter">3468</h2>
-        <div class="separator_small"></div>
-        <h5><em>Projects Finished</em></h5>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="skill_bottom_item">
-        <h2 class="statistic-counter">4638</h2>
-        <div class="separator_small"></div>
-        <h5><em>Happy Clients</em></h5>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="skill_bottom_item">
-        <h2 class="statistic-counter">3468</h2>
-        <div class="separator_small"></div>
-        <h5><em>Hours of work</em></h5>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="skill_bottom_item">
-        <h2 class="statistic-counter">3468</h2>
-        <div class="separator_small"></div>
-        <h5><em>Cup of coffee</em></h5>
-      </div>
-    </div>
   </div>
-</div>
-</div>
-</section>
-
-<section id="new" class="new fix">
-<div class="overlay"></div>
-<div class="container">
-<div class="row">
-  <div class="main_new roomy-100">
-    <div class="head_title text-center">
-      <h2 class="text-white">OUR newS</h2>
-    </div>
-    <div class="new_slid text-center">
-      <div class="new_item">
-        <div class="col-sm-10 col-sm-offset-1">
-          <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-            suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-
-          <div class="test_authour m-top-30">
-            <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-        </div>
-      </div>
-      <div class="new_item">
-        <div class="col-sm-10 col-sm-offset-1">
-          <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-            suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-
-          <div class="test_authour m-top-30">
-            <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-        </div>
-      </div>
-      <div class="new_item">
-        <div class="col-sm-10 col-sm-offset-1">
-          <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-            suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-
-          <div class="test_authour m-top-30">
-            <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-        </div>
-      </div>
-      <div class="new_item">
-        <div class="col-sm-10 col-sm-offset-1">
-          <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-            suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-
-          <div class="test_authour m-top-30">
-            <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-
-<section id="pricing" class="pricing lightbg">
-<div class="container">
-<div class="row">
-  <div class="main_pricing roomy-100">
-    <div class="col-md-8 col-md-offset-2 col-sm-12">
-      <div class="head_title text-center">
-        <h2>OUR PRICING</h2>
-        <div class="separator_auto"></div>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod tincidunt tation ullamcorper
-          suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-sm-12">
-      <div class="pricing_item">
-        <div class="pricing_head p-top-30 p-bottom-100 text-center">
-          <h3 class="text-uppercase">STARTER</h3>
-        </div>
-        <div class="pricing_price_border text-center">
-          <div class="pricing_price">
-            <h3 class="text-white">$19</h3>
-            <p class="text-white">per month</p>
-          </div>
-        </div>
-
-        <div class="pricing_body bg-white p-top-110 p-bottom-60">
-          <ul>
-            <li><i class="fa fa-check-circle text-primary"></i> <span>10</span> user</li>
-            <li class="disabled"><i class="fa fa-times-circle"></i> Unlimited Bandwidth</li>
-            <li class="disabled"><i class="fa fa-times-circle"></i> Full Statistics</li>
-
-          </ul>
-          <div class="pricing_btn text-center m-top-40">
-            <a href="" class="btn btn-primary">CHOOSE PLAN</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-sm-12">
-      <div class="pricing_item sm-m-top-30">
-        <div class="pricing_top_border"></div>
-        <div class="pricing_head p-top-30 p-bottom-100 text-center">
-          <h3 class="text-uppercase">PREMIUM</h3>
-        </div>
-        <div class="pricing_price_border text-center">
-          <div class="pricing_price">
-            <h3 class="text-white">$39</h3>
-            <p class="text-white">per month</p>
-          </div>
-        </div>
-
-        <div class="pricing_body bg-white p-top-110 p-bottom-60">
-          <ul>
-            <li><i class="fa fa-check-circle text-primary"></i> <span>50</span> user</li>
-            <li><i class="fa fa-check-circle text-primary"></i> Unlimited Bandwidth</li>
-            <li class="disabled"><i class="fa fa-times-circle"></i> Full Statistics</li>
-          </ul>
-          <div class="pricing_btn text-center m-top-40">
-            <a href="" class="btn btn-primary">CHOOSE PLAN</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-sm-12">
-      <div class="pricing_item sm-m-top-30">
-        <div class="pricing_head p-top-30 p-bottom-100 text-center">
-          <h3 class="text-uppercase">bUSINESS</h3>
-        </div>
-        <div class="pricing_price_border text-center">
-          <div class="pricing_price">
-            <h3 class="text-white">$99</h3>
-            <p class="text-white">per month</p>
-          </div>
-        </div>
-
-        <div class="pricing_body bg-white p-top-110 p-bottom-60">
-          <ul>
-            <li><i class="fa fa-check-circle text-primary"></i> Unlimited Users</li>
-            <li><i class="fa fa-check-circle text-primary"></i> Unlimited Bandwidth</li>
-            <li><i class="fa fa-check-circle text-primary"></i> Full Statistics</li>
-          </ul>
-          <div class="pricing_btn text-center m-top-40">
-            <a href="" class="btn btn-primary">CHOOSE PLAN</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-</div>
-</section>
-
-
-
-<section id="cbrand" class="cbrand">
-<div class="container">
-<div class="row">
-  <div class="main_cbrand text-center roomy-100">
-    <div class="col-md-2 col-sm-4 col-xs-6">
-      <div class="cbrand_item m-bottom-10">
-        <a href=""><img src="assets/images/clients/1.jpg" alt="" /></a>
-      </div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6">
-      <div class="cbrand_item m-bottom-10">
-        <a href=""><img src="assets/images/clients/2.jpg" alt="" /></a>
-      </div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6">
-      <div class="cbrand_item m-bottom-10">
-        <a href=""><img class="" src="assets/images/clients/5.jpg" alt="" /></a>
-      </div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6">
-      <div class="cbrand_item m-bottom-10">
-        <a href=""><img src="assets/images/clients/4.jpg" alt="" /></a>
-      </div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6">
-      <div class="cbrand_item m-bottom-10">
-        <a href=""><img src="assets/images/clients/3.jpg" alt="" /></a>
-      </div>
-    </div>
-    <div class="col-md-2 col-sm-4 col-xs-6">
-      <div class="cbrand_item m-bottom-10">
-        <a href=""><img src="assets/images/clients/1.jpg" alt="" /></a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-
-<section id="subscribe" class="subscribe roomy-100 fix">
-<div class="overlay"></div>
-<div class="container">
-<div class="row">
-  <div class="main_subscribe text-center">
-    <div class="col-sm-8 col-sm-offset-2">
-      <h2 class="text-white">SUBSCRIBE US</h2>
-      <p class="m-top-30 text-white">At vero eos et accusamus et iusto odio dignissimos
-        ducimus qui blanditiis praesentium</p>
-    </div>
-    <div class="col-sm-10 col-sm-offset-1">
-      <div class="subscribe_btns m-top-40">
-
-        <form class="form-inline">
-          <div class="form-group">
-            <input type="email" class="form-control" id="inputEmail2" placeholder="Email Address">
-          </div>
-          <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
-        </form>
-      </div>
-    </div>
-
-  </div>
-</div>
-</div>
-</section>
-
-
-<section id="blog" class="blog">
-<div class="container">
-<div class="row">
-  <div class="main_blog text-center roomy-100">
-    <div class="col-sm-8 col-sm-offset-2">
-      <div class="head_title text-center">
-        <h2>RECENT BLOGS</h2>
-        <div class="separator_auto"></div>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-          sed diam nonummy nibh euismod tincidunt tation ullamcorper
-          suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="blog_item m-top-20">
-        <div class="blog_item_img">
-          <img src="assets/images/Blog/1.jpg" alt="" />
-        </div>
-        <div class="blog_text roomy-40">
-          <h6>PLEASUARE WITHOUT CONSCIENCE</h6>
-          <p><em><a href="">May 15, 2016</a> /<a href="">admin</a>/<a href=""> Co-working</a></em></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="blog_item m-top-20">
-        <div class="blog_item_img">
-          <img src="assets/images/Blog/2.jpg" alt="" />
-        </div>
-        <div class="blog_text roomy-40">
-          <h6>PLEASUARE WITHOUT CONSCIENCE</h6>
-          <p><em><a href="">May 15, 2016</a> /<a href="">admin</a>/<a href=""> Co-working</a></em></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="blog_item m-top-20">
-        <div class="blog_item_img">
-          <img src="assets/images/Blog/3.jpg" alt="" />
-        </div>
-        <div class="blog_text roomy-40">
-          <h6>PLEASUARE WITHOUT CONSCIENCE</h6>
-          <p><em><a href="">May 15, 2016</a> /<a href="">admin</a>/<a href=""> Co-working</a></em></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-
--->
-
-  <section id="maps">
-    <div class="main_maps text-center fix">
-      <div class="overlay"></div>
-      <div class="maps_text">
-        <h3 class="text-white" onclick="showmap()">Nous trouver <i class="fa fa-angle-down"></i></h3>
-        <div id="map_canvas" class="mapheight"></div>
-      </div>
-    </div>
   </section>
+
+  <section id="portfolio" class="portfolio lightbg">
+  <div class="container">
+  <div class="row">
+    <div class="main_portfolio roomy-100">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="head_title text-center">
+          <h2>OUR PORTOFLIO</h2>
+          <div class="separator_auto"></div>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod nostrud exerci tation ullamcorper
+            suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+
+      <div class="portfolio_content">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="portfolio_item">
+                <img src="assets/images/Portfolio/2.jpg" alt="" />
+                <div class="portfolio_hover text-center">
+                  <h6 class="text-uppercase text-white">Title</h6>
+                  <p class=" text-white">Lorem ipsum dolor sit amet</p>
+                  <div class="portfolio_hover_icon">
+                    <a href="assets/images/Portfolio/2.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                    <a href=""><i class="fa fa-search"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 m-top-30">
+              <div class="portfolio_item portfolio_item2">
+                <img src="assets/images/Portfolio/3.jpg" alt="" />
+                <div class="portfolio_hover text-center">
+                  <h6 class="text-uppercase text-white">Title</h6>
+                  <p class=" text-white">Lorem ipsum dolor sit amet</p>
+                  <div class="portfolio_hover_icon">
+                    <a href="assets/images/Portfolio/3.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                    <a href=""><i class="fa fa-search"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 m-top-30">
+              <div class="portfolio_item portfolio_item2">
+                <img src="assets/images/Portfolio/5.jpg" alt="" />
+                <div class="portfolio_hover text-center">
+                  <h6 class="text-uppercase text-white">Title</h6>
+                  <p class=" text-white">Lorem ipsum dolor sit amet</p>
+                  <div class="portfolio_hover_icon">
+                    <a href="assets/images/Portfolio/5.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                    <a href=""><i class="fa fa-search"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="portfolio_item portfolio_item3 sm-m-top-30">
+            <img src="assets/images/Portfolio/1.jpg" alt="" />
+            <div class="portfolio_hover text-center">
+              <h6 class="text-uppercase text-white">Title</h6>
+              <p class=" text-white">Lorem ipsum dolor sit amet</p>
+              <div class="portfolio_hover_icon">
+                <a href="assets/images/Portfolio/1.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                <a href=""><i class="fa fa-search"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 m-top-30">
+          <div class="portfolio_item portfolio_item2">
+            <img src="assets/images/Portfolio/6.jpg" alt="" />
+            <div class="portfolio_hover text-center">
+              <h6 class="text-uppercase text-white">Title</h6>
+              <p class=" text-white">Lorem ipsum dolor sit amet</p>
+              <div class="portfolio_hover_icon">
+                <a href="assets/images/Portfolio/6.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                <a href=""><i class="fa fa-search"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 m-top-30">
+          <div class="portfolio_item">
+            <img src="assets/images/Portfolio/4.jpg" alt="" />
+            <div class="portfolio_hover text-center">
+              <h6 class="text-uppercase text-white">Title</h6>
+              <p class=" text-white">Lorem ipsum dolor sit amet</p>
+              <div class="portfolio_hover_icon">
+                <a href="assets/images/Portfolio/4.jpg" class="popup-img"><i class="fa fa-expand"></i></a>
+                <a href=""><i class="fa fa-search"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <section id="skill" class="skill roomy-100">
+  <div class="container">
+  <div class="row">
+    <div class="main_skill">
+      <div class="col-md-6">
+        <div class="skill_content wow fadeIn">
+          <h2>Our skill</h2>
+          <div class="separator_left"></div>
+
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+            magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+            quis nostrud exerci tation ullamcorper suscipit lobortis
+            nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor
+            sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation
+            ullamcorper suscipit lobortis nisl ut aliquip
+            ex ea commodo consequat. </p>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="skill_bar sm-m-top-50">
+          <div class="teamskillbar clearfix m-top-20" data-percent="80%">
+            <h6>GRAPHIC DESIGN</h6>
+            <div class="teamskillbar-bar"></div>
+          </div>
+
+          <div class="teamskillbar clearfix m-top-50" data-percent="75%">
+            <h6>TYPOGRAPHY</h6>
+            <div class="teamskillbar-bar"></div>
+          </div>
+
+          <div class="teamskillbar clearfix m-top-50" data-percent="90%">
+            <h6>HTML / CSS</h6>
+            <div class="teamskillbar-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <hr />
+  <br />
+  <br />
+  <br />
+  <div class="container">
+  <div class="row">
+    <div class="skill_bottom_content text-center">
+      <div class="col-md-3">
+        <div class="skill_bottom_item">
+          <h2 class="statistic-counter">3468</h2>
+          <div class="separator_small"></div>
+          <h5><em>Projects Finished</em></h5>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="skill_bottom_item">
+          <h2 class="statistic-counter">4638</h2>
+          <div class="separator_small"></div>
+          <h5><em>Happy Clients</em></h5>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="skill_bottom_item">
+          <h2 class="statistic-counter">3468</h2>
+          <div class="separator_small"></div>
+          <h5><em>Hours of work</em></h5>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="skill_bottom_item">
+          <h2 class="statistic-counter">3468</h2>
+          <div class="separator_small"></div>
+          <h5><em>Cup of coffee</em></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <section id="new" class="new fix">
+  <div class="overlay"></div>
+  <div class="container">
+  <div class="row">
+    <div class="main_new roomy-100">
+      <div class="head_title text-center">
+        <h2 class="text-white">OUR newS</h2>
+      </div>
+      <div class="new_slid text-center">
+        <div class="new_item">
+          <div class="col-sm-10 col-sm-offset-1">
+            <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+              nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+
+            <div class="test_authour m-top-30">
+              <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="new_item">
+          <div class="col-sm-10 col-sm-offset-1">
+            <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+              nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+
+            <div class="test_authour m-top-30">
+              <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="new_item">
+          <div class="col-sm-10 col-sm-offset-1">
+            <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+              nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+
+            <div class="test_authour m-top-30">
+              <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="new_item">
+          <div class="col-sm-10 col-sm-offset-1">
+            <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+              nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+              suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+
+            <div class="test_authour m-top-30">
+              <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <section id="pricing" class="pricing lightbg">
+  <div class="container">
+  <div class="row">
+    <div class="main_pricing roomy-100">
+      <div class="col-md-8 col-md-offset-2 col-sm-12">
+        <div class="head_title text-center">
+          <h2>OUR PRICING</h2>
+          <div class="separator_auto"></div>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt tation ullamcorper
+            suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-12">
+        <div class="pricing_item">
+          <div class="pricing_head p-top-30 p-bottom-100 text-center">
+            <h3 class="text-uppercase">STARTER</h3>
+          </div>
+          <div class="pricing_price_border text-center">
+            <div class="pricing_price">
+              <h3 class="text-white">$19</h3>
+              <p class="text-white">per month</p>
+            </div>
+          </div>
+
+          <div class="pricing_body bg-white p-top-110 p-bottom-60">
+            <ul>
+              <li><i class="fa fa-check-circle text-primary"></i> <span>10</span> user</li>
+              <li class="disabled"><i class="fa fa-times-circle"></i> Unlimited Bandwidth</li>
+              <li class="disabled"><i class="fa fa-times-circle"></i> Full Statistics</li>
+
+            </ul>
+            <div class="pricing_btn text-center m-top-40">
+              <a href="" class="btn btn-primary">CHOOSE PLAN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-12">
+        <div class="pricing_item sm-m-top-30">
+          <div class="pricing_top_border"></div>
+          <div class="pricing_head p-top-30 p-bottom-100 text-center">
+            <h3 class="text-uppercase">PREMIUM</h3>
+          </div>
+          <div class="pricing_price_border text-center">
+            <div class="pricing_price">
+              <h3 class="text-white">$39</h3>
+              <p class="text-white">per month</p>
+            </div>
+          </div>
+
+          <div class="pricing_body bg-white p-top-110 p-bottom-60">
+            <ul>
+              <li><i class="fa fa-check-circle text-primary"></i> <span>50</span> user</li>
+              <li><i class="fa fa-check-circle text-primary"></i> Unlimited Bandwidth</li>
+              <li class="disabled"><i class="fa fa-times-circle"></i> Full Statistics</li>
+            </ul>
+            <div class="pricing_btn text-center m-top-40">
+              <a href="" class="btn btn-primary">CHOOSE PLAN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-12">
+        <div class="pricing_item sm-m-top-30">
+          <div class="pricing_head p-top-30 p-bottom-100 text-center">
+            <h3 class="text-uppercase">bUSINESS</h3>
+          </div>
+          <div class="pricing_price_border text-center">
+            <div class="pricing_price">
+              <h3 class="text-white">$99</h3>
+              <p class="text-white">per month</p>
+            </div>
+          </div>
+
+          <div class="pricing_body bg-white p-top-110 p-bottom-60">
+            <ul>
+              <li><i class="fa fa-check-circle text-primary"></i> Unlimited Users</li>
+              <li><i class="fa fa-check-circle text-primary"></i> Unlimited Bandwidth</li>
+              <li><i class="fa fa-check-circle text-primary"></i> Full Statistics</li>
+            </ul>
+            <div class="pricing_btn text-center m-top-40">
+              <a href="" class="btn btn-primary">CHOOSE PLAN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </section>
+
+
+
+  <section id="cbrand" class="cbrand">
+  <div class="container">
+  <div class="row">
+    <div class="main_cbrand text-center roomy-100">
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="cbrand_item m-bottom-10">
+          <a href=""><img src="assets/images/clients/1.jpg" alt="" /></a>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="cbrand_item m-bottom-10">
+          <a href=""><img src="assets/images/clients/2.jpg" alt="" /></a>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="cbrand_item m-bottom-10">
+          <a href=""><img class="" src="assets/images/clients/5.jpg" alt="" /></a>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="cbrand_item m-bottom-10">
+          <a href=""><img src="assets/images/clients/4.jpg" alt="" /></a>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="cbrand_item m-bottom-10">
+          <a href=""><img src="assets/images/clients/3.jpg" alt="" /></a>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="cbrand_item m-bottom-10">
+          <a href=""><img src="assets/images/clients/1.jpg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <section id="subscribe" class="subscribe roomy-100 fix">
+  <div class="overlay"></div>
+  <div class="container">
+  <div class="row">
+    <div class="main_subscribe text-center">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2 class="text-white">SUBSCRIBE US</h2>
+        <p class="m-top-30 text-white">At vero eos et accusamus et iusto odio dignissimos
+          ducimus qui blanditiis praesentium</p>
+      </div>
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="subscribe_btns m-top-40">
+
+          <form class="form-inline">
+            <div class="form-group">
+              <input type="email" class="form-control" id="inputEmail2" placeholder="Email Address">
+            </div>
+            <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </section>
+
+
+  <section id="blog" class="blog">
+  <div class="container">
+  <div class="row">
+    <div class="main_blog text-center roomy-100">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="head_title text-center">
+          <h2>RECENT BLOGS</h2>
+          <div class="separator_auto"></div>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt tation ullamcorper
+            suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="blog_item m-top-20">
+          <div class="blog_item_img">
+            <img src="assets/images/Blog/1.jpg" alt="" />
+          </div>
+          <div class="blog_text roomy-40">
+            <h6>PLEASUARE WITHOUT CONSCIENCE</h6>
+            <p><em><a href="">May 15, 2016</a> /<a href="">admin</a>/<a href=""> Co-working</a></em></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="blog_item m-top-20">
+          <div class="blog_item_img">
+            <img src="assets/images/Blog/2.jpg" alt="" />
+          </div>
+          <div class="blog_text roomy-40">
+            <h6>PLEASUARE WITHOUT CONSCIENCE</h6>
+            <p><em><a href="">May 15, 2016</a> /<a href="">admin</a>/<a href=""> Co-working</a></em></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="blog_item m-top-20">
+          <div class="blog_item_img">
+            <img src="assets/images/Blog/3.jpg" alt="" />
+          </div>
+          <div class="blog_text roomy-40">
+            <h6>PLEASUARE WITHOUT CONSCIENCE</h6>
+            <p><em><a href="">May 15, 2016</a> /<a href="">admin</a>/<a href=""> Co-working</a></em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+  -->
 
   <section id="contact" class="contact bg-mega fix">
     <div class="container">
@@ -896,61 +915,72 @@
         </div>
       </div>
 
-            <div class="row">
-              <div class="main_contact roomy-100 text-white">
-                <div class="col-md-4">
-                  <div class="rage_widget">
-                    <div class="widget_head">
-                      <h3 class="text-white">RAGE</h3>
-                      <div class="separator_small"></div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                      sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                      magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                      quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                      ut aliquip ex ea commodo consequat. </p>
+      <div class="row">
+        <div class="main_contact roomy-100 text-white">
+          <div class="col-md-4">
+            <div class="rage_widget">
+              <div class="widget_head">
+                <h3 class="text-white">RAGE</h3>
+                <div class="separator_small"></div>
+              </div>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+                quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                ut aliquip ex ea commodo consequat. </p>
 
-                    <div class="widget_socail m-top-30">
-                      <ul class="list-inline">
-                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href=""><i class="fa fa-vimeo"></i></a></li>
-                        <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                      </ul>
-                    </div>
+              <div class="widget_socail m-top-30">
+                <ul class="list-inline">
+                  <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                  <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                  <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href=""><i class="fa fa-vimeo"></i></a></li>
+                  <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 sm-m-top-30">
+            <form class="" action="subcribe.php">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input id="first_name" name="first_name" type="text" placeholder="Name" class="form-control" required="">
                   </div>
                 </div>
-                <div class="col-md-8 sm-m-top-30">
-                  <form class="" action="subcribe.php">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <input id="first_name" name="first_name" type="text" placeholder="Name" class="form-control" required="">
-                        </div>
-                      </div>
 
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-                        </div>
-                      </div>
-
-                      <div class="col-sm-12">
-                        <div class="form-group">
-                          <textarea class="form-control" rows="6" placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group text-center">
-                          <a href="" class="btn btn-primary">SEND MESSAGE</a>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </form>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                  </div>
                 </div>
+
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <textarea class="form-control" rows="6" placeholder="Message"></textarea>
+                  </div>
+                  <div class="form-group text-center">
+                    <a href="" class="btn btn-primary">SEND MESSAGE</a>
+                  </div>
+                </div>
+
               </div>
-            </div>-->
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="maps">
+    <div class="main_maps text-center fix">
+      <div class="overlay"></div>
+      <div class="maps_text">
+        <h3 class="text-white" onclick="showmap()">Nous trouver <i class="fa fa-angle-down"></i></h3>
+        <div id="map_canvas" class="mapheight"></div>
+      </div>
     </div>
   </section>
 
