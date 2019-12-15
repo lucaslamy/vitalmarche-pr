@@ -1614,31 +1614,35 @@ Skill Section style
 
 
 /*
-Testimonial Section style
+new Section style
 =======================*/
-.testimonial {
-  background-image: image-url('background/testimonial.jpg') no-repeat center center;
+
+.article_text {
+  padding-bottom: 5rem;
+}
+.new {
+  background-color: $light-blue;
   background-size: cover;
   position: relative;
 }
 
-.main_testimonial {
+.main_new {
   position: relative;
   z-index: 1;
 }
 
-.main_testimonial .testimonial_slid {
+.main_new .new_slid {
   width: 90%;
   display: block;
   margin: 0 auto;
 }
 
-.main_testimonial .testimonial_item {
+.main_new .new_item {
   width: 90%;
   margin: 0 auto;
 }
 
-.main_testimonial .testimonial_slid .slick-arrow {
+.main_new .new_slid .slick-arrow {
   border: 1px solid #fff;
   width: 45px;
   height: 45px;
@@ -1650,19 +1654,19 @@ Testimonial Section style
   position: relative;
 }
 
-.main_testimonial .testimonial_slid .slick-arrow.nextprevleft {
+.main_new .new_slid .slick-arrow.nextprevleft {
   float: left;
   top: 20px;
   left: -6%;
 }
 
-.testimonial_slid .slick-arrow.nextprevright {
+.main_new .new_slid .slick-arrow.nextprevright {
   float: right;
-  top: -130px;
+  top: -324px;
   right: -6%;
 }
 
-.main_testimonial .testimonial_item .test_authour i {
+.main_new .new_item .test_authour i {
   color: #ffbf00;
 }
 

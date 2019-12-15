@@ -49,6 +49,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   title
   content
   picture
+  date
   ].freeze
 
   # COLLECTION_FILTERS

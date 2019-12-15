@@ -84,8 +84,8 @@ jQuery(document).ready(function ($) {
 
 
 // slick slider active Home Page Tow
-    $(".testimonial_slid").slick({
-        dots: false,
+    $(".new_slid").slick({
+        dots: true,
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -93,7 +93,7 @@ jQuery(document).ready(function ($) {
         prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
         nextArrow: "<i class='fa fa-angle-right nextprevright'></i>",
         autoplay: true,
-        autoplaySpeed: 2000
+        autoplaySpeed: 20000
     });
 
 
