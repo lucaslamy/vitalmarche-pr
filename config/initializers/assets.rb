@@ -30,3 +30,4 @@ Rails.application.config.assets.precompile += %w[ckeditor/config.js]
 Rails.application.config.assets.precompile += %w( devise.css )
 Rails.application.config.assets.precompile += %w( jquery.magnific-popup.js )
 Rails.application.config.assets.precompile += %w( jgallery.js )
+Rails.application.config.assets.precompile += %w( user_space.css )

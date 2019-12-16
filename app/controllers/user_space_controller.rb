@@ -5,7 +5,10 @@ class UserSpaceController < ApplicationController
   def main
   end
 
-  def album_space
+  def admin_space
+  end
+
+  def simple_user_space
   end
 
   def set_current_user
