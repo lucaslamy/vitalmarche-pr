@@ -17,3 +17,4 @@
 //= require jquery.slick
 //= require jquery_ujs
 //= require jquery2
+

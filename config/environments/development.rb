@@ -9,7 +9,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 
   # Show full error reports.
@@ -68,6 +68,6 @@ Rails.application.configure do
       :port => 25,
       :openssl_verify_mode => 'none'
   }
-  config.action_mailer.asset_host = 'http://localhost:3001'
+  config.action_mailer.asset_host = 'http://localhost:3000'
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
