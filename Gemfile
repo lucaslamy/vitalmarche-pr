@@ -103,3 +103,10 @@ gem 'devise-bootstrap-views', '~> 1.0'
 
 #Paginate
 gem 'kaminari'
+
+#Planning
+gem "simple_calendar", "~> 2.0"
+
+gem 'jquery-rails'
+gem 'momentjs-rails'
+gem 'fullcalendar'

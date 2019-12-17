@@ -17,5 +17,7 @@ class Event < ApplicationRecord
 
   validates :picture,
             presence: false
-
+  def start_time
+    self.date
+  end
 end

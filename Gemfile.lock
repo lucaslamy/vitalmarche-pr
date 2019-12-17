@@ -149,8 +149,8 @@ GEM
     ffi (1.11.1-java)
     ffi (1.11.1-x64-mingw32)
     ffi (1.11.1-x86-mingw32)
-    font-awesome-rails (4.7.0.5)
-      railties (>= 3.2, < 6.1)
+    fullcalendar (3.9.0)
+      momentjs-rails (~> 2.20.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.6.0)
@@ -289,6 +289,8 @@ GEM
     selenium-webdriver (3.142.4)
       childprocess (>= 0.5, < 3.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    simple_calendar (2.3.0)
+      rails (>= 3.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -358,17 +360,20 @@ DEPENDENCIES
   devise-bootstrap-views (~> 1.0)
   devise-i18n
   devise_invitable (~> 2.0.0)
-  font-awesome-rails
+  fullcalendar
   jbuilder (~> 2.5)
+  jquery-rails
   jquery-slick-rails
   kaminari
   listen (>= 3.0.5, < 3.2)
+  momentjs-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
   rails-i18n
   rename
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_calendar (~> 2.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

@@ -4,55 +4,203 @@
 </head>
 <nav class="navbar navbar-default navbar-fixed green no-background bootsnav">
   <div class="container">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-      <i class="fa fa-bars"></i>
-    </button>
-    <a class="navbar-brand" href="#brand">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand" href="#brand">
 
-      <img class="logo logo-display m-top-10" <%= image_tag "logo.png" %>
-      <img class="logo logo-scrolled"  <%= image_tag "logo.png" %>
+        <img class="logo logo-display m-top-10" <%= image_tag "logo.png" %>
+        <img class="logo logo-scrolled"  <%= image_tag "logo.png" %>
 
-    </a>
-  </div>
-  <!-- End Header Navigation -->
+      </a>
+    </div>
+    <!-- End Header Navigation -->
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="navbar-menu">
-    <ul class="nav navbar-nav navbar-right blue" data-in="fadeInDown" data-out="fadeOutUp">
-      <li> <%= link_to "RETOUR ACCUEIL", root_path %>
-        <% if user_signed_in? %>
-        <li class="nav-item hvr-grow">
-          <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="nav navbar-nav navbar-right blue" data-in="fadeInDown" data-out="fadeOutUp">
+        <li><a href="#planning">PLANNING</a></li>
+        <li><a href="#pdf">GAZETTES</a></li>
+        <li><a href="#form">QUESTIONNAIRE</a></li>
+        <li> <%= link_to "RETOUR ACCUEIL", root_path %>
+          <% if user_signed_in? %>
+          <li class="nav-item hvr-grow">
+            <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
+          </li>
+        <% end %>
         </li>
-      <% end %>
-      </li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
+      </ul>
+    </div>
   </div>
 </nav>
 
-
+<div class="scrollup">
+  <a href="#"><i class="fa fa-chevron-up"></i></a>
+</div>
 
 <section class="user_space-slide">
-  <!--    <div class="overlay"></div>-->
   <div class="container ">
     <div class="row bck_layer">
       <div class="user_space_buttons">
         <div class="main_home user_space_text_div col-md-12">
           <div>
-            <h1 class="user_space_text">Espace administrateur</h1>
-          </div>
-        </div>
-        <div class="main_home col-md-12">
-          <div class="user_space_button col-md-6">
-            <%= link_to "Tableau de bord", admin_users_path, class: "btn btn-outline-secondary col-md-12" %>
-          </div>
-          <div class="user_space_button col-md-6">
-            <%= link_to "Gérer les albums", admin_albums_path, class: "btn btn-outline-secondary col-md-12" %>
+            <h1 class="user_space_text">Bienvenue sur votre espace adherents</h1>
           </div>
         </div>
       </div>
-    </div><!--End off row-->
-  </div><!--End off container -->
-</section> <!--End off Home Sections-->
+    </div>
+  </div>
+</section>
+
+<section id="planning" class="">
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="about_content">
+          <h2>PLANNING</h2>
+          <div class="separator_left"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row calendar-container">
+      <div class="new_slid_calendar col-md-12">
+        <div class="new_item">
+          <div class="col-sm-10 col-sm-offset-1 row">
+            <%= month_calendar start_date: Date.today, events: @events do |date, meetings| %>
+              <%= date.day %>
+              <% meetings.each do |meeting| %>
+                <div>
+                  <br>
+                  <%= meeting.title %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="new_item">
+          <div class="col-sm-10 col-sm-offset-1 row">
+            <%= month_calendar start_date: @next_month, events: @events do |date, meetings| %>
+              <%= date.day %>
+              <% meetings.each do |meeting| %>
+                <div>
+                  <br>
+                  <%= meeting.title %>
+                </div>
+              <% end %>
+            <% end %>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+        </div>
+        <div class="new_item">
+          <div class="col-sm-10 col-sm-offset-1 row">
+            <%= month_calendar start_date: @next_next_month.to_date, events: @events do |date, meetings| %>
+              <%= date.day %>
+              <% meetings.each do |meeting| %>
+                <div>
+                  <br>
+                  <%= meeting.title %>
+                </div>
+              <% end %>
+            <% end %>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+
+
+<section id="pdf" class="new fix">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="main_new roomy-100">
+        <div class="head_title text-center">
+          <br>
+          <br>
+          <h2 class="text-white">GAZETTE</h2>
+        </div>
+        <div class="new_slid text-center">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="form" class="about roomy-100">
+  <div class="container">
+    <div class="main_about">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="about_content">
+            <br>
+            <br>
+            <h2>QUESTIONNAIRE</h2>
+            <div class="separator_left"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            Vous avez décidé de vous mettre (ou vous remettre) au sport et vous cherchez une activité complète,
+            accessible, économique, tonique, dynamique, de plein air et conviviale.
+            <br>
+            Vous voulez essayer, 2 séances d’essais vous sont proposées avec prêt de bâtons.
+            <br>
+            Pour votre équipement, ne pas avoir trop chaud ni trop froid, c’est utiliser la méthode des
+            multicouches.
+            <br>
+            Pour bien marcher il faut prendre soins de ses pieds
+            <br>
+            <br>
+            <br>
+            A prévoir :
+          <li>De bonne chaussures adaptée à la marche nordique</li>
+          <li>Un sac à dos avec boissons et encas</li>
+          <li>Une paire de bâtons</li>
+          <li>Une lampe frontale pour les entraînements nocturne</li>
+          </p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+        <div class="col-md-6">
+          <img class="join" <%= image_tag "image.jpg" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+    $(".new_slid_calendar").slick({
+        dots: true,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: $('.calendar_prev'),
+        nextArrow: $('.calendar_next'),
+        autoplay: false,
+    });
+</script>
+
+

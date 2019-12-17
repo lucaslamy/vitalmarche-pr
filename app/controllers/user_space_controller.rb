@@ -3,6 +3,9 @@ class UserSpaceController < ApplicationController
   before_action :set_current_user
 
   def main
+    @events = Event.all
+    @next_month = Date.today + 1.month
+    @next_next_month = Date.today + 2.month
   end
 
   def admin_space

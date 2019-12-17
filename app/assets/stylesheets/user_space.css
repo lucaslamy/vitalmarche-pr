@@ -45,3 +45,26 @@ user_space-background {
     color: #94B5BD !important;
     border-color: #94B5BD !important;
 }
+
+.calendar_prev{
+    display: block;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+    top: 50%;
+    transform: translateY(90%);
+}
+
+.calendar-relative {
+    position: relative;
+}
+
+.calendar_next{
+    display: block;
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(90%);
+}
+

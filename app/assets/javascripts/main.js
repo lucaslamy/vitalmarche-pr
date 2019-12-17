@@ -96,6 +96,17 @@ jQuery(document).ready(function ($) {
         autoplaySpeed: 20000
     });
 
+//
+    $(".new_slid_calendar").slick({
+        dots: true,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
+        nextArrow: "<i class='fa fa-angle-right nextprevright'></i>",
+        autoplay: false,
+    });
 
 //    featured slider
     $('.featured_slider').slick({
