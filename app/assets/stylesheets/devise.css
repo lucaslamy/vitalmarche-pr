@@ -10,8 +10,12 @@
 }
 
 .form_title {
-    color: #f9f9f9;
+    font-size: 38px;
+    text-transform: uppercase;
     text-align: center;
+    margin-bottom: 40px;
+    color: #D0F5A9;
+    font-weight: bold;
 }
 
 .slide {
@@ -26,12 +30,75 @@
 }
 
 .devise_bck_layer {
-    background-color: rgba(0, 0, 0, 0.42);
     position: absolute;
     margin: 0;
-    left: 0;
-    top: 0;
     bottom: 0;
+
+
+    width: 600px;
+    height:  550px;
+    padding: 50px 120px;
+    position: absolute;
+    left: 50%;
+    top:38%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.33);
+    font-family: 30px "Comic Sans MS", cursive, sans-serif ;
+}
+.new_user form-group {
+    display: table;
+    margin: 10px 0;
+}
+.form-group label {
+    display:table-row;
+    color: #D0F5A9;
+    margin: 10px 0;
+}
+.form-group input {
+    display: table-row;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.46);
+    font-size:18px;
     width: 100%;
-    height: 100%;
+    padding: 0 20px;
+    height: 50px;
+    border: 1px solid ;
+    border-radius: 25px ;
+}
+.form-check{
+    padding-top: 20px;
+    text-align: left;
+
+
+}
+input[type="checkbox"]{
+    margin-left: 60px;
+}
+
+.form-check  .form-check-label{
+    font-size: 15px;
+    text-align: center;
+    display:block;
+    color: #D0F5A9;
+    font-style: italic;
+}
+
+
+input[type="submit"]{
+    display: block;
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    background: linear-gradient(120deg,#B29494,#573B3B,#F0EAEA);
+    background-size: 200%;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+a{
+    color: #D0F5A9 !important;
+
 }
