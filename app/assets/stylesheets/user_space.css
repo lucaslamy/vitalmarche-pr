@@ -68,3 +68,13 @@ user_space-background {
     transform: translateY(90%);
 }
 
+.eventModal{
+    position: absolute !important;
+    bottom: auto;
+    top : 25%;
+}
+
+/*Override opacity*/
+.modal-backdrop.in {
+    opacity : 0;
+}

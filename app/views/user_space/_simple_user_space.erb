@@ -75,7 +75,35 @@
               <% meetings.each do |meeting| %>
                 <div>
                   <br>
-                  <%= meeting.title %>
+                  <a href="#eventModal<%= meeting.id %>" data-toggle="modal" data-target="#eventModal<%= meeting.id %>"><%= meeting.title %></a>
+                </div>
+
+                <div class="modal eventModal fade" id="eventModal<%= meeting.id %>" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="eventModalLabel"><%= meeting.title %> - <%= meeting.position %>
+                          - <%= meeting.date.day %>/<%= meeting.date.mon %>/<%= meeting.date.year %></h5>
+                      </div>
+                      <div class="modal-body row">
+                        <% if meeting.picture.to_s.length > 1 %>
+                          <div class="col-md-4">
+                            <img class="event-picture" <%= image_tag meeting.picture.to_s %>
+                          </div>
+                          <div class="col-md-8">
+                            <%= raw(meeting.content) %>
+                          </div>
+                        <% else %>
+                          <div class="col-md-12">
+                            <%= raw(meeting.content) %>
+                          </div>
+                        <% end %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               <% end %>
             <% end %>
