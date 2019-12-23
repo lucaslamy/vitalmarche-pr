@@ -14,6 +14,9 @@ fr:
       album:
         create: "Créer un nouvel album"
         update: "Modifier cet album"
+      pdf:
+        create: "Ajouter une nouvelle gazette"
+        update: "Modifier cette gazette"
     label:
       article:
         title: Titre
@@ -36,6 +39,9 @@ fr:
         name: Nom/Prénom
         email: Email
         password: Mot de passe
+      pdf:
+        title: Titre
+        path: Fichier
 
   administrate:
     actions:
@@ -73,6 +79,8 @@ fr:
       articles: Articles
       album: Album
       albums: Albums
+      pdf: Gazette
+      pdfs: Gazettes
     helpers:
       label:
         album_remove_picture: Supprimer une image
@@ -87,4 +95,5 @@ fr:
         email: Email
         password: Mot de passe
         description: Description
+        path: fichier
 

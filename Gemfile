@@ -94,6 +94,8 @@ gem "administrate-field-ckeditor", "~> 0.0.9"
 gem 'carrierwave', '~> 2.0'
 
 gem 'administrate-field-carrierwave'##, '~> 0.5.0'
+gem 'rmagick'
+
 
 gem "bootstrap_form",
     git: "https://github.com/bootstrap-ruby/bootstrap_form.git",

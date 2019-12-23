@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :events
       resources :articles
       resources :albums
+      resources :pdfs
 
       root to: "users#index"
       post '/users/send_invitation(/:name)(/:email)', to: "users#send_invitation", as: :invitation
