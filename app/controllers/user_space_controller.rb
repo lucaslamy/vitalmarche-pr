@@ -1,5 +1,4 @@
 class UserSpaceController < ApplicationController
-  before_action :authenticate_user!, except: [:root]
   before_action :set_current_user
 
   def main
