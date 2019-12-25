@@ -56,7 +56,6 @@
 <section id="planning" class="">
   <br>
   <br>
-  <br>
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -157,15 +156,42 @@
 <section id="pdf" class="new fix">
   <div class="overlay"></div>
   <div class="container">
+    <br>
+    <br>
+    <br>
     <div class="row">
-      <div class="main_new roomy-100">
-        <div class="head_title text-center">
-          <br>
-          <br>
-          <h2 class="text-white">GAZETTE</h2>
+      <div class="main_new">
+        <div class="head_title text-center row">
+          <div class="col-md-5">
+            <i class='fas fa-chevron-left slid_prev'></i>
+          </div>
+          <h2 class="col-md-2 text-white">GAZETTE</h2>
+          <div class="col-md-5">
+            <i class='fa fas fa-chevron-right slid_next'></i>
+          </div>
+
         </div>
-        <div class="new_slid text-center">
+        <div class="row">
+          <div class="pdf_slid text-center">
+            <% @pdfs.each do |pdf| %>
+              <div class="pdf_item pdf-container row ">
+                <div class="pdf-content">
+                  <img class="pdf-img" <%= image_tag pdf.file.to_s %>
+                </div>
+                <br>
+                <div class="test_authour article_text">
+                  <h4 class="text-white"><%= pdf.title %></h4>
+                </div>
+                <div class="m-bottom-20">
+                  <%= link_to "Consulter", pdfjs.full_path(file: pdf.file), class: "btn btn-primary", target: :_blank %>
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
+        <br>
+        <br>
+        <br>
       </div>
     </div>
   </div>
@@ -187,27 +213,12 @@
       <div class="row">
         <div class="col-md-6">
           <p>
-            Vous avez décidé de vous mettre (ou vous remettre) au sport et vous cherchez une activité complète,
-            accessible, économique, tonique, dynamique, de plein air et conviviale.
-            <br>
-            Vous voulez essayer, 2 séances d’essais vous sont proposées avec prêt de bâtons.
-            <br>
-            Pour votre équipement, ne pas avoir trop chaud ni trop froid, c’est utiliser la méthode des
-            multicouches.
-            <br>
-            Pour bien marcher il faut prendre soins de ses pieds
-            <br>
-            <br>
-            <br>
-            A prévoir :
-          <li>De bonne chaussures adaptée à la marche nordique</li>
-          <li>Un sac à dos avec boissons et encas</li>
-          <li>Une paire de bâtons</li>
-          <li>Une lampe frontale pour les entraînements nocturne</li>
+            Veuillez remplir le questionnaire suivant s'il vous plaît.
           </p>
           <br>
           <br>
           <br>
+          <%= link_to "Google Form", @form.url, class: "btn btn-primary", target: :_blank %>
           <br>
           <br>
         </div>

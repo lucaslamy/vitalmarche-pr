@@ -1,11 +1,14 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
+  mount PdfjsViewer::Rails::Engine => "/pdfjs", as: 'pdfjs'
   mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do
       resources :users
       resources :events
       resources :articles
       resources :albums
+      resources :pdfs
+      resources :links
       root to: "users#index"
       post '/users/send_invitation(/:name)(/:email)', to: "users#send_invitation", as: :invitation
   end

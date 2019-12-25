@@ -5,6 +5,8 @@ class UserSpaceController < ApplicationController
     @events = Event.all
     @next_month = Date.today + 1.month
     @next_next_month = Date.today + 2.month
+    @pdfs = Pdf.all
+    @form = Link.find_by(title: "Questionnaire")
   end
 
   def admin_space
