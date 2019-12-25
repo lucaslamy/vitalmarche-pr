@@ -173,19 +173,21 @@
         </div>
         <div class="row">
           <div class="pdf_slid text-center">
-            <% @pdfs.each do |pdf| %>
-              <div class="pdf_item pdf-container row ">
-                <div class="pdf-content">
-                  <img class="pdf-img" <%= image_tag pdf.file.to_s %>
+            <% if (@pdfs.empty? != true) && (@pdfs.nil? != true) %>
+              <% @pdfs.each do |pdf| %>
+                <div class="pdf_item pdf-container row ">
+                  <div class="pdf-content">
+                    <img class="pdf-img" <%= image_tag pdf.file.to_s %>
+                  </div>
+                  <br>
+                  <div class="test_authour article_text">
+                    <h4 class="text-white"><%= pdf.title %></h4>
+                  </div>
+                  <div class="m-bottom-20">
+                    <%= link_to "Consulter", pdfjs.full_path(file: pdf.file), class: "btn btn-primary", target: :_blank %>
+                  </div>
                 </div>
-                <br>
-                <div class="test_authour article_text">
-                  <h4 class="text-white"><%= pdf.title %></h4>
-                </div>
-                <div class="m-bottom-20">
-                  <%= link_to "Consulter", pdfjs.full_path(file: pdf.file), class: "btn btn-primary", target: :_blank %>
-                </div>
-              </div>
+              <% end %>
             <% end %>
           </div>
         </div>
