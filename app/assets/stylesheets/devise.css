@@ -33,17 +33,19 @@
     position: absolute;
     margin: 0;
     bottom: 0;
-
-
     width: 600px;
-    height:  550px;
+    height:  600px;
     padding: 50px 120px;
     position: absolute;
     left: 50%;
     top:38%;
     transform: translate(-50%,-50%);
-    background-color: rgba(0, 0, 0, 0.33);
+    background-color: rgba(0, 0, 0, 0.5);
     font-family: 30px "Comic Sans MS", cursive, sans-serif ;
+}
+
+.mail_bck {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .new_user form-group {
     display: table;
@@ -90,7 +92,7 @@ input[type="submit"]{
     width: 100%;
     height: 50px;
     border-radius: 20px;
-    background: linear-gradient(120deg,#B29494,#573B3B,#F0EAEA);
+    background: #94B5BD;
     background-size: 200%;
     color: #fff;
     outline: none;

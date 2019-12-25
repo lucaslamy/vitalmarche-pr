@@ -4,6 +4,7 @@
 <section class="background-cover">
   <div class="session-panel container slide col-md-12">
     <div class="session-form devise_bck_layer">
+      <img class="logo logo-display m-top-10 m-bottom-20" <%= image_tag "logo.png" %>
       <h2 class="form_title"><%= t('.sign_in') %></h2>
 
       <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
