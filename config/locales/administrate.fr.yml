@@ -17,6 +17,9 @@ fr:
       pdf:
         create: "Ajouter une nouvelle gazette"
         update: "Modifier cette gazette"
+      link:
+        create: "Ajouter un nouveau lien"
+        update: "Modifier ce lien"
     label:
       article:
         title: Titre
@@ -42,6 +45,9 @@ fr:
       pdf:
         title: Titre
         path: Fichier
+      link:
+        title: Titre
+        url: Url
 
   administrate:
     actions:
@@ -81,6 +87,8 @@ fr:
       albums: Albums
       pdf: Gazette
       pdfs: Gazettes
+      link: Lien
+      links: Liens
     helpers:
       label:
         album_remove_picture: Supprimer une image
@@ -95,5 +103,6 @@ fr:
         email: Email
         password: Mot de passe
         description: Description
-        path: fichier
+        path: Fichier
+        url: Url
 

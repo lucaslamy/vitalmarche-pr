@@ -83,7 +83,19 @@ jQuery(document).ready(function ($) {
     });
 
 
-// slick slider active Home Page Tow
+    // slick slider active Home Page Tow
+    $(".pdf_slid").slick({
+        dots: true,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        prevArrow: ".slid_prev",
+        nextArrow: ".slid_next",
+        autoplay: false
+    });
+
+
     $(".new_slid").slick({
         dots: true,
         infinite: false,

@@ -92,10 +92,11 @@ gem "administrate-field-ckeditor", "~> 0.0.9"
 
 # Picture upload
 gem 'carrierwave', '~> 2.0'
-
 gem 'administrate-field-carrierwave'##, '~> 0.5.0'
 gem 'rmagick'
 
+# Pdf
+gem 'pdfjs_viewer-rails'
 
 gem "bootstrap_form",
     git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
@@ -108,7 +109,6 @@ gem 'kaminari'
 
 #Planning
 gem "simple_calendar", "~> 2.0"
-
 gem 'jquery-rails'
 gem 'momentjs-rails'
 gem 'fullcalendar'

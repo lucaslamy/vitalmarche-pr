@@ -1360,7 +1360,7 @@ Featured section style
 }
 
 .slick-slide {
-  opacity: .6;
+  opacity: 1;
 }
 
 .slick-center {
@@ -1669,7 +1669,41 @@ new Section style
   color: #ffbf00;
 }
 
+.main_new .pdf_slid .slick-arrow {
+  border: 1px solid #fff;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
 
+.main_new .pdf_slid .slick-arrow.nextprevleft {
+  float: left;
+  top: 20px;
+  left: -6%;
+}
+
+.main_new .pdf_slid .slick-arrow.nextprevright {
+  float: right;
+  top: -324px;
+  right: -6%;
+}
+
+.main_new .pdf_slid {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+.pdfs {
+  width: 40%;
+  margin: auto;
+  align-content: center;
+}
 /*
 Pricing Section style
 =======================*/
@@ -2084,4 +2118,11 @@ Slideshow
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
+}
+
+/* Pdf */
+.pdf-img {
+  width: 20%;
+  text-align: center;
+  margin: auto !important;
 }
