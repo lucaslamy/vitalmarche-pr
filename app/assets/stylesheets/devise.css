@@ -46,6 +46,7 @@
 
 .mail_bck {
     background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 .new_user form-group {
     display: table;

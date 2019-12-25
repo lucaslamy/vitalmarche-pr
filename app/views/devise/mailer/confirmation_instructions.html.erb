@@ -1,5 +1,9 @@
-<p><%= t('.greeting', recipient: @email) %></p>
+<%= stylesheet_link_tag "devise", media: "all" %>
+<div class="col-md-12 mail_bck text-center m-top-10">
+  <img class="logo logo-display text-center m-top-10 m-bottom-20" <%= image_tag "logo.png" %>
+  <p><%= t('.greeting', recipient: @email) %></p>
 
-<p><%= t('.instruction') %></p>
+  <p><%= t('.instruction') %></p>
 
-<p><%= link_to t('.action'), confirmation_url(@resource, confirmation_token: @token) %></p>
+  <p><%= link_to t('.action'), confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>
