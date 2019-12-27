@@ -22,13 +22,6 @@
     background-image: url('background/header.jpg');
 }
 
-.user_space-background-cover {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgba(39, 39, 39, 0.45);
-}
-
 user_space-background {
     height: 100vh;
 @extend . user_space-background-cover;

@@ -471,4 +471,4 @@ eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = 
 
 /***/ })
 
-/******/ });if (typeof window !== "undefined") window.JGallery = JGallery.default; if (typeof module !== "undefined") module.exports = JGallery; })()
+/******/ });if (typeof window !== "undefined") window.JGallery = JGallery.default; if (typeof module !== "undefined") module.exports = JGallery; })();

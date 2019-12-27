@@ -48,7 +48,7 @@
   Collapse.prototype = {
     handleClick: function(e, state) {
       e.preventDefault();
-      var state = state || "toggle"
+      var state = state || "toggle";
       var sections = this.sections,
         l = sections.length;
       while(l--) {
@@ -138,7 +138,7 @@
         _this.$details[_this.isOpen ? "show" : "hide"]();
       }
 
-      _this.$summary.toggleClass("open", state != "close")
+      _this.$summary.toggleClass("open", state != "close");
       _this.$details.attr("aria-hidden", state == "close");
       _this.$summary.attr("aria-expanded", state == "open");
       _this.$summary.trigger(state == "open" ? "opened" : "closed", _this);

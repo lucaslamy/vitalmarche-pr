@@ -29,19 +29,9 @@ Author URI: http://www.xpeedstudio.com
     .sm-pull-none{
         float: none !important;
     }
-    .sm-m-top-10{
-        margin-top:10px;
-    }
-    .sm-m-top-20{
-        margin-top:20px;
-    }
-    .sm-m-top-30{
-        margin-top:30px;
-    }
-    .sm-m-top-50{
-        margin-top:50px;
-    }
 
+    /*noinspection ALL*/
+    /*noinspection CssUnusedSymbol*/
 
 
 }
@@ -63,15 +53,8 @@ Author URI: http://www.xpeedstudio.com
     .xs-text-center{
         text-align: center !important;
     }
-    .xs-m-top-10{
-        margin-top:10px;
-    }
-    .xs-m-bottom-10{
-        margin-bottom:10px;
-    }
-    .xs-m-bottom-20{
-        margin-bottom:20px;
-    }
+
+    /*noinspection ALL*/
     .main_testimonial .testimonial_slid .slick-arrow.nextprevright {
         top: -150px;
     }
@@ -105,9 +88,6 @@ Author URI: http://www.xpeedstudio.com
 @media (max-width: 320px) {
     html {
         font-size: 60.5%;
-    }
-    .btn.btnxs{
-        padding:2.01rem 1.5rem;
     }
 
 }

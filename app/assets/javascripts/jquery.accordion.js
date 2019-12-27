@@ -113,8 +113,6 @@
 
         return obj;
     }
-    ;
-
     //load opts from object
     function loadOpts($this) {
         return $this.data('accordion-opts');
