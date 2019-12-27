@@ -1,8 +1,5 @@
 "use strict";
 
-//Rage Template
-//Designerd by: http://bootstrapthemes.co
-
 jQuery(document).ready(function ($) {
 
 //for Preloader
@@ -51,74 +48,6 @@ jQuery(document).ready(function ($) {
         gallery: {
             enabled: true
         }
-    });
-
-
-    // slick slider active Home Page Tow
-    $(".pdf_slid").slick({
-        dots: true,
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        prevArrow: ".slid_prev",
-        nextArrow: ".slid_next",
-        autoplay: false
-    });
-
-
-    $(".new_slid").not('.slick-initialized').slick({
-        dots: true,
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
-        nextArrow: "<i class='fa fa-angle-right nextprevright'></i>",
-        autoplay: true,
-        autoplaySpeed: 20000
-    });
-
-//
-    $(".new_slid_calendar").slick({
-        dots: true,
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
-        nextArrow: "<i class='fa fa-angle-right nextprevright'></i>",
-        autoplay: false,
-    });
-
-//    featured slider
-    $('.featured_slider').slick({
-        centerMode: true,
-        dote: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        speed: 1500,
-        index: 2,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            }
-        ]
     });
 
 

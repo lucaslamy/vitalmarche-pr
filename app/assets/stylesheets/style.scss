@@ -1,29 +1,3 @@
-/*
-//Rage Template
-//Designerd by: http://bootstrapthemes.co
-*/
-
-/*==========================================
- 01.  PREDIFINEED (FROM 1 TO 780 )
- 02.  PRELOADER - LINE NO 786
- 03.  NAVIGATION - LINE NO 930
- 04.  HOME - LINE NO 1150
- 05.  THU FEATURE - LINE NO 1280
- 06.  THU FLIDE - LINE NO 1355
- 07.  THU SERVICE - LINE NO 1385
- 08.  PORTFOLIO - LINE NO 1444
- 09.  THU SOLUTION - LINE NO 1620
- 10.  THU TEAM - LINE NO 1658
- 11.  THU CLIENTS FEEDBACK - LINE NO 1730
- 12. THU BLOG - LINE NO 1848
- 13. THU SUBCRIBS - LINE NO 1935
- 14. FOOTER - LINE NO 2020
-==========================================*/
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
 html,
 body {
   background-color: #fff;
@@ -45,6 +19,13 @@ $green: #98C169 !default;
 $blue: #94B5BD !default;
 $light-blue: #c2eaf6 !default;
 
+.text-blue {
+  color: $blue !important;
+}
+
+.text-green {
+  color: $green !important;
+}
 /*------------------------------------------------------------------*/
 /*   IE10 in Windows 8 and Windows Phone 8 Bug fix
 /*-----------------------------------------------------------------*/
@@ -68,20 +49,6 @@ $light-blue: #c2eaf6 !default;
 @viewport {
   width: device-width;
 }
-
-/*
-    Page Content
-------------------------------------------*/
-/*
-.page-content, 
-section { overflow: hidden; }*/
-
-/*
-    On Scroll Animations 
-------------------------------------------*/
-
-/*.animated { visibility: hidden; }
-.visible { visibility: visible; }*/
 
 /*
     Spacing & Alignment 
@@ -441,78 +408,6 @@ Separator
   margin: 20px 0px;
   background: $blue;
 }
-
-/*
-Button
-
-.btn {
-  -webkit-transition: all 0.6s;
-  transition: all 0.6s;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 0;
-  border: 1px solid;
-}
-
-.btn:hover {
-  color: #fff;
-  border: 1px solid;
-}
-
-.btn-default {
-  border: 1px solid;
-  border-color: #f5f5f5;
-  background-color: transparent;
-  color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 0;
-}
-
-.btn-default:hover {
-  border-color: $blue;
-  background-color: $blue;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: $blue;
-  border: 1px solid;
-  border-color: $blue;
-  padding: 1rem 2rem;
-}
-
-.btn-primary:hover {
-  background-color: #eee;
-  border-color: #eee;
-  color: $blue;
-}
-
-.btn-success {
-}
-
-.btn-info {
-}
-
-.btn-warning {
-}
-
-.btn-danger {
-}
-
-.btn-link {
-}
-
-*/
-/*
-socail icon
---------------------------------*/
-/*a i.share{
-    color:#1E8BC3;
-    -webkit-transition: all .6s;
-    transition: all .6s;
-}*/
-
 
 /*
 Extra height css
@@ -1925,9 +1820,6 @@ Contact Section style
   height: 43rem;
 }
 
-.form-contact {
-  height: 10rem !important;
-}
 .main_contact {
   overflow: hidden;
 }
@@ -2125,4 +2017,29 @@ Slideshow
   width: 20%;
   text-align: center;
   margin: auto !important;
+}
+
+/* Contact form */
+.contact-group{
+  margin-bottom: 1rem;
+}
+
+.contact-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $blue;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-contact {
+  height: 10rem !important;
 }

@@ -100,8 +100,3 @@ input[type="submit"]{
     cursor: pointer;
     transition: .5s;
 }
-
-a{
-    color: #D0F5A9 !important;
-
-}

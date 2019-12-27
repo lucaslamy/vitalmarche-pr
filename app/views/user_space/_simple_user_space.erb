@@ -115,7 +115,7 @@
               <% meetings.each do |meeting| %>
                 <div>
                   <br>
-                  <%= meeting.title %>
+                  <p class="text-blue"><%= meeting.title %></p>
                 </div>
               <% end %>
             <% end %>
@@ -220,7 +220,7 @@
           <br>
           <br>
           <br>
-          <%= link_to "Google Form", @form.url, class: "btn btn-primary", target: :_blank %>
+          <%= link_to "Google Form", @form.url, class: "btn btn-primary text-white", target: :_blank %>
           <br>
           <br>
         </div>
@@ -231,17 +231,8 @@
     </div>
   </div>
 </section>
-<script>
-    $(".new_slid_calendar").slick({
-        dots: true,
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        prevArrow: $('.calendar_prev'),
-        nextArrow: $('.calendar_next'),
-        autoplay: false,
-    });
-</script>
+<%= javascript_include_tag 'home.js', 'data-turbolinks-track': 'reload' %>
+
+
 
 

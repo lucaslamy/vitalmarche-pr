@@ -77,6 +77,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    auto-session-timeout (0.9.6)
     auto_format_attributes (0.1.1)
       activerecord (>= 4.0)
     auto_strip_attributes (2.5.0)
@@ -149,6 +150,8 @@ GEM
     ffi (1.11.1-java)
     ffi (1.11.1-x64-mingw32)
     ffi (1.11.1-x86-mingw32)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     fullcalendar (3.9.0)
       momentjs-rails (~> 2.20.1)
     globalid (0.4.2)
@@ -352,6 +355,7 @@ DEPENDENCIES
   administrate-field-active_storage (~> 0.1.8)
   administrate-field-carrierwave
   administrate-field-ckeditor (~> 0.0.9)
+  auto-session-timeout
   auto_format_attributes
   auto_strip_attributes
   bootsnap (>= 1.1.0)
@@ -367,11 +371,11 @@ DEPENDENCIES
   devise-bootstrap-views (~> 1.0)
   devise-i18n
   devise_invitable (~> 2.0.0)
+  font-awesome-rails
   fullcalendar
   jbuilder (~> 2.5)
   jquery-rails
   jquery-slick-rails
-  kaminari
   listen (>= 3.0.5, < 3.2)
   momentjs-rails
   pdfjs_viewer-rails

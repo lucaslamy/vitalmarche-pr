@@ -29,26 +29,23 @@ gem 'jbuilder', '~> 2.5'
 # User management and authentification
 gem 'devise'
 gem 'devise_invitable', '~> 2.0.0'
+gem 'devise-bootstrap-views', '~> 1.0'
+
 # Administrate data
 gem 'administrate'
-gem 'administrate-field-active_storage',  '~> 0.1.8'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'administrate-field-active_storage', '~> 0.1.8'
 
 # input data gems
 gem 'auto_strip_attributes'
 gem 'auto_format_attributes'
 
-
+# Bootstrap
+gem 'bootstrap', '~> 4.1.1'
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
+    branch: "master"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
-
-gem 'bootstrap', '~> 4.1.1'
 
 
 gem "jquery-slick-rails"
@@ -86,29 +83,25 @@ gem 'devise-i18n'
 gem 'rename'
 
 # CKEditor : Field Style Editor
-gem 'ckeditor',"~> 4.1"
-
+gem 'ckeditor', "~> 4.1"
 gem "administrate-field-ckeditor", "~> 0.0.9"
 
 # Picture upload
 gem 'carrierwave', '~> 2.0'
-gem 'administrate-field-carrierwave'##, '~> 0.5.0'
+gem 'administrate-field-carrierwave' ##, '~> 0.5.0'
 gem 'rmagick'
 
 # Pdf
 gem 'pdfjs_viewer-rails'
-
-gem "bootstrap_form",
-    git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
-    branch: "master"
-
-gem 'devise-bootstrap-views', '~> 1.0'
-
-#Paginate
-gem 'kaminari'
 
 #Planning
 gem "simple_calendar", "~> 2.0"
 gem 'jquery-rails'
 gem 'momentjs-rails'
 gem 'fullcalendar'
+
+#Session time out
+gem 'auto-session-timeout'
+
+# Font-Awesome
+gem "font-awesome-rails"

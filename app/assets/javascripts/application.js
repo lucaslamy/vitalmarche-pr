@@ -19,3 +19,4 @@
 //= require jquery_ujs
 //= require jquery2
 
+
