@@ -1,8 +1,8 @@
 fr:
   devise:
     invitations:
-      send_instructions: "Un e-mail d'invitation a été envoyé à %{email}."
-      invitation_token_invalid: "Le jeton d'invitation fourni n'est pas valide!"
+      send_instructions: "Un email d'invitation a été envoyé à %{email}."
+      invitation_token_invalid: "Le jeton d'invitation fourni n'est pas valide !"
       updated: 'Votre mot de passe a été défini avec succès. Vous êtes maintenant connecté.'
       no_invitations_remaining: "Il n'y a plus d'invitations restantes"
       invitation_removed: 'Votre invitation a été supprimée.'
