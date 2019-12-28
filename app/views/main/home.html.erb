@@ -1,39 +1,4 @@
 <body data-spy="scroll" data-target=".navbar-collapse">
-<% if @pop_up != nil && session[:pop_up] != 1 %>
-  <% session[:pop_up] = 1 %>
-  <div class="modal" tabindex="-1" id="myModal" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Évenement à venir !</h5>
-        </div>
-        <div class="modal-body">
-          <p>Le <%= @pop_up.date.day %>-<%= @pop_up.date.mon %>-<%= @pop_up.date.year %> à <%= @pop_up.date.hour %>
-            :<%= @pop_up.date.min %>, à <%= @pop_up.position %>, aura lieu <%= @pop_up.title %>.</p>
-          <hr>
-          <div class="modal-body row">
-            <% if @pop_up.picture.to_s.length > 1 %>
-              <div class="col-md-4">
-                <img class="event-picture" <%= image_tag @pop_up.picture.to_s %>
-              </div>
-              <div class="col-md-8">
-                <%= raw(@pop_up.content) %>
-              </div>
-            <% else %>
-              <div class="col-md-12">
-                <%= raw(@pop_up.content) %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-modal-primary">OK</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
-
 <div class="scrollup">
   <a href="#"><i class="fa fa-chevron-up"></i></a>
 </div>
@@ -421,12 +386,6 @@
 <script async="false" src="https://maps.google.com/maps/api/js?key=AIzaSyDolVqGuEVOe4nRU3x1J_nzSU3L3XJ5sRs&callback=initMap" async defer></script>
 <%= javascript_include_tag 'home.js', 'data-turbolinks-track': 'reload' %>
 <script>
-    <% if @pop_up != nil %>
-    $(window).on('load', function () {
-        $('#myModal').modal('show');
-    });
-    <% end %>
-
     document.querySelector('#gallery').appendChild(JGallery.create([
         <% @albums.each do |album| %>
         {

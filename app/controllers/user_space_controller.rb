@@ -7,6 +7,7 @@ class UserSpaceController < ApplicationController
     @next_next_month = Date.today + 2.month
     @pdfs = Pdf.all
     @form = Link.find_by(title: "Questionnaire")
+    @pop_up = Event.where(pop_up: true).where("date > ?", DateTime.now).order(:date).first
   end
 
   def admin_space
