@@ -36,7 +36,6 @@
     width: 600px;
     height:  600px;
     padding: 50px 120px;
-    position: absolute;
     left: 50%;
     top:38%;
     transform: translate(-50%,-50%);
@@ -48,7 +47,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
 }
-.new_user form-group {
+.new_user {
     display: table;
     margin: 10px 0;
 }

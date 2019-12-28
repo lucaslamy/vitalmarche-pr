@@ -22,7 +22,7 @@
     background-image: url('background/header.jpg');
 }
 
-user_space-background {
+.user_space-background {
     height: 100vh;
 @extend . user_space-background-cover;
     background-image: image-url('background/header.jpg');
@@ -39,7 +39,7 @@ user_space-background {
     border-color: #94B5BD !important;
 }
 
-.calendar_prev{
+.calendar_prev {
     display: block;
     text-align: right;
     margin-left: auto;
@@ -52,7 +52,7 @@ user_space-background {
     position: relative;
 }
 
-.calendar_next{
+.calendar_next {
     display: block;
     text-align: left;
     margin-left: 0;
@@ -61,13 +61,13 @@ user_space-background {
     transform: translateY(90%);
 }
 
-.eventModal{
+.eventModal {
     position: absolute !important;
     bottom: auto;
-    top : 25%;
+    top: 25%;
 }
 
 /*Override opacity*/
 .modal-backdrop.in {
-    opacity : 0;
+    opacity: 0;
 }

@@ -1,6 +1,7 @@
 <head>
   <%= stylesheet_link_tag 'user_space', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <title>Espace adhérent du site Vital'Marche</title>
 </head>
 <% if @pop_up != nil && session[:pop_up] != 1 %>
   <% session[:pop_up] = 1 %>
@@ -17,7 +18,7 @@
           <div class="modal-body row">
             <% if @pop_up.picture.to_s.length > 1 %>
               <div class="col-md-4">
-                <img class="event-picture" <%= image_tag @pop_up.picture.to_s %>
+                <img class="event-picture" alt="Photo pop-up" <%= image_tag @pop_up.picture.to_s %>
               </div>
               <div class="col-md-8">
                 <%= raw(@pop_up.content) %>

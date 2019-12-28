@@ -11,9 +11,11 @@ class UserSpaceController < ApplicationController
   end
 
   def admin_space
+    #Nothing special to do here, just render the view
   end
 
   def simple_user_space
+    #Nothing special to do here, just render the view
   end
 
   def set_current_user

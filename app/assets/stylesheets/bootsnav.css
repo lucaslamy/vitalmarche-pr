@@ -494,13 +494,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         padding: 30px 15px;
         font-weight: 600;
     }
-    
-    nav.navbar.bootsnav ul.nav > li.dropdown > a.dropdown-toggle:after{
-        font-family: 'FontAwesome';
-        content: "\f0d7";
-        margin-left: 5px;
-        margin-top: 2px;
-    }
+
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu{
         -moz-box-shadow: 0px 0px 0px;
@@ -536,20 +530,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     nav.navbar.bootsnav ul.navbar-right li.dropdown ul.dropdown-menu li a{
         text-align: right;
     }
-    
-    nav.navbar.bootsnav li.dropdown ul.dropdown-menu li.dropdown > a.dropdown-toggle:before{
-        font-family: 'FontAwesome';
-        float: right;
-        content: "\f105";
-        margin-top: 0;
-    }
-    
-    nav.navbar.bootsnav ul.navbar-right li.dropdown ul.dropdown-menu li.dropdown > a.dropdown-toggle:before{
-        font-family: 'FontAwesome';
-        float: left;
-        content: "\f104";
-        margin-top: 0;
-    }
+
     
     nav.navbar.bootsnav li.dropdown ul.dropdown-menu ul.dropdown-menu{
         top: -3px;
@@ -859,7 +840,6 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     }
     
     nav.bootsnav.navbar-sidebar ul.nav li.dropdown ul.dropdown-menu{
-        left: 100%;
         top: 0;
         position: relative !important;
         left: 0 !important;
@@ -899,12 +879,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         margin-top: 0;
     }
     
-    nav.bootsnav.navbar-sidebar ul.nav li.dropdown ul.dropdown-menu li.dropdown > a:before{
-        font-family: 'FontAwesome';
-        content: "\f105";
-        float: right;
-    }
-    
+
     nav.bootsnav.navbar-sidebar ul.nav li.dropdown.on ul.dropdown-menu li.dropdown.on > a:before{
         content: "\f107";
     }
@@ -930,13 +905,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         cursor: pointer;
         color: #6f6f6f;
     }
-    
-    nav.bootsnav.navbar-sidebar .dropdown .megamenu-content .col-menu .title:before{
-        font-family: 'FontAwesome';
-        content: "\f105";
-        float: right;
-    }
-    
+
     nav.bootsnav.navbar-sidebar .dropdown .megamenu-content .col-menu.on .title:before{
         content: "\f107";
     }
@@ -1006,14 +975,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     nav.navbar.bootsnav .navbar-nav > li {
         float: none;
     }
-    
-    nav.navbar.bootsnav li.dropdown a.dropdown-toggle:before{
-        font-family: 'FontAwesome';
-        content: "\f105";
-        float: right;
-        font-size: 16px;
-        margin-left: 10px;
-    }
+
     
     nav.navbar.bootsnav li.dropdown.on > a.dropdown-toggle:before{
         content: "\f107";
@@ -1110,17 +1072,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         border-bottom: solid 1px #e0e0e0;
         padding: 8px 0;
     }
-    
-   nav.navbar.bootsnav .dropdown .megamenu-content .col-menu .title:before{
-        font-family: 'FontAwesome';
-        content: "\f105";
-        float: right;
-        font-size: 16px;
-        margin-left: 10px;
-       position: relative;
-       right: -15px;
-    }
-    
+
     nav.navbar.bootsnav .dropdown .megamenu-content .col-menu:last-child .title{
         border-bottom: none;
     }

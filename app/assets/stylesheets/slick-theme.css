@@ -65,9 +65,9 @@
 
 .slick-prev:before,
 .slick-next:before {
-    font-family: 'slick';
-    font-size: 20px;
-    line-height: 1;
+    /*font-family: 'slick';*/
+    /*font-size: 20px;*/
+    /*line-height: 1;*/
 
     opacity: .75;
     color: white;
@@ -172,9 +172,9 @@
 }
 
 .slick-dots li button:before {
-    font-family: 'slick';
-    font-size: 6px;
-    line-height: 20px;
+    /*font-family: 'slick';*/
+    /*font-size: 6px;*/
+    /*line-height: 20px;*/
 
     position: absolute;
     top: 0;

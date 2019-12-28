@@ -7,7 +7,6 @@ body {
   margin-left: 0;
   margin-right: 0;
   font-weight: 400;
-  width: 100%;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -56,30 +55,18 @@ $light-blue: #c2eaf6 !default;
   padding-bottom: 100px;
 }
 
-//noinspection ALL
-
-
 /*text color*/
 
-.text-muted {
-}
-
 .text-primary {
-  color: $blue !important;;
+  color: $blue !important;
 }
 
 .text-white {
-  color: #fff !important;;
+  color: #fff !important;
 }
 
 .text-black {
   color: #000 !important;
-}
-
-.text-warning {
-}
-
-.text-danger {
 }
 
 .disabled {
@@ -105,6 +92,7 @@ $light-blue: #c2eaf6 !default;
 }
 
 img {
+  max-width: 100%;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -146,16 +134,8 @@ a {
   /*    direction: rtl;*/
 }
 
-p {
-  margin: 0 0 15px;
-}
-
 .clear {
   clear: both;
-}
-
-img {
-  max-width: 100%;
 }
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
@@ -232,6 +212,7 @@ p span {
 
 p {
   line-height: 1.5rem;
+  margin: 0 0 15px;
 }
 
 p:last-child {
@@ -422,10 +403,6 @@ Extra height css
   margin-bottom: 120px;
 }
 
-p-0 {
-  padding: 0 !important;
-}
-
 .p-l-15 {
   padding-left: 15px;
 }
@@ -540,16 +517,6 @@ input::placeholder {
   font-style: italic;
 }
 
-input::-webkit-input-placeholder {
-  color: #cdcdcd;
-  font-style: italic;
-}
-
-input::-moz-placeholder {
-  color: #cdcdcd;
-  font-style: italic;
-}
-
 input::-ms-input-placeholder {
   color: #cdcdcd;
   font-style: italic;
@@ -631,10 +598,18 @@ Nav Menu style
 Home Section style
 ==================*/
 .home {
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  height: 100%;
+  width: 100%;
 }
 
 .main_home {
@@ -658,12 +633,6 @@ About section style
 .main_about {
   display: table;
   width: 100%;
-}
-
-.about_bottom_content {
-}
-
-.about_bottom_content .about_bottom_item {
 }
 
 .ab_head {
@@ -861,9 +830,10 @@ Maps Section style
 =====================*/
 
 .main_maps {
+  width: 100%;
+  height: 100%;
   background-image: image-url('maps.jpg') no-repeat center center;
   position: relative;
-  width: 100%;
   overflow: hidden;
 }
 
@@ -895,9 +865,6 @@ Maps Section style
   background-color: $green !important;
 }
 
-.calendar {
-
-}
 /*
 Contact Section style
 =====================*/
@@ -978,11 +945,6 @@ Footer Section style
 
 
 /*maps*/
-.main_maps {
-  width: 100%;
-  height: 100%;
-}
-
 .main_maps i {
   font-size: 2.5rem;
   color: $light-blue;
@@ -1057,24 +1019,6 @@ nav.navbar.bootsnav ul.nav > li > a {
 .logo-scrolled {
   max-height: 150%;
   max-width: 100%;
-}
-
-/*
-Slideshow
- */
-
-.home {
-  -webkit-transition: all 0.5s ease-in;
-  -moz-transition: all 0.5s ease-in;
-  -ms-transition: all 0.5s ease-in;
-  -o-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: white;
-  height: 100%;
-  width: 100%;
 }
 
 /* Gallery */
