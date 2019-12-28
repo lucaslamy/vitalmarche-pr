@@ -10,9 +10,9 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-/*------------------------------------------------------------------*/
-/*   Colors
-/*-----------------------------------------------------------------*/
+/*
+Colors
+=====================*/
 
 $green: #98C169 !default;
 $blue: #94B5BD !default;
@@ -22,9 +22,9 @@ $light-blue: #c2eaf6 !default;
   color: $blue !important;
 }
 
-/*------------------------------------------------------------------*/
-/*   IE10 in Windows 8 and Windows Phone 8 Bug fix
-/*-----------------------------------------------------------------*/
+/*
+IE10 in Windows 8 and Windows Phone 8 Bug fix
+=====================*/
 
 @-webkit-viewport {
   width: device-width;
@@ -47,15 +47,13 @@ $light-blue: #c2eaf6 !default;
 }
 
 /*
-    Spacing & Alignment 
-------------------------------------------*/
+Spacing & Alignment
+=====================*/
 
 .roomy-100 {
   padding-top: 100px;
   padding-bottom: 100px;
 }
-
-/*text color*/
 
 .text-primary {
   color: $blue !important;
@@ -72,8 +70,6 @@ $light-blue: #c2eaf6 !default;
 .disabled {
   cursor: not-allowed;
 }
-
-/*bacground color*/
 
 .bg-primary {
   background-color: #1E8BC3;
@@ -219,16 +215,9 @@ p:last-child {
   margin-bottom: 0px;
 }
 
-/*colors*/
-
 .w300 {
   font-weight: 300;
 }
-
-
-/*
-Section
-*/
 
 ul {
   margin: 0;
@@ -236,7 +225,6 @@ ul {
   list-style: none;
 }
 
-/*all overlay*/
 .overlay {
   background-color: rgba(51, 51, 51, 0.30);
   position: absolute;
@@ -263,7 +251,8 @@ ul {
 
 /*
 Separator
-*/
+=====================*/
+
 .separator_left {
   width: 85px;
   height: 2px;
@@ -279,8 +268,9 @@ Separator
 }
 
 /*
-Extra height css
-*/
+Height
+=====================*/
+
 .m-0 {
   margin: 0 !important;
 }
@@ -483,14 +473,10 @@ Extra height css
   padding-bottom: 0;
 }
 
-/*padding*/
-
-/*border*/
 .no-border-top {
   border-top: 0px solid transparent !important;
 }
 
-/*for placeholder changes*/
 
 input[type="email"].form-control::-webkit-input-placeholder {
   color: #fff;
@@ -550,7 +536,6 @@ textarea::-ms-input-placeholder {
   overflow: hidden;
 }
 
-/*heading title all area*/
 .head_title {
   padding-bottom: 7.143rem;
   overflow: hidden;
@@ -570,7 +555,6 @@ textarea::-ms-input-placeholder {
   color: #4a4a4a;
 }
 
-/*End off pridifain css*/
 
 /*
 Nav Menu style
@@ -593,10 +577,10 @@ Nav Menu style
   background-color: #ff7854 !important;
 }
 
-
 /*
 Home Section style
 ==================*/
+
 .home {
   background-repeat: no-repeat;
   position: relative;
@@ -630,6 +614,7 @@ Home Section style
 /*
 About section style
 ====================*/
+
 .main_about {
   display: table;
   width: 100%;
@@ -657,7 +642,6 @@ About section style
   text-align: center;
   border-radius: 50%;
   box-shadow: 0px 0px 0px 6px $light-blue;
-
 }
 
 .slick-slide {
@@ -669,12 +653,11 @@ About section style
   max-width: 10% !important;
   max-height: 20% !important;
   opacity: 1;
-
-
 }
 
-
-/* Slick */
+/*
+Slick Section style
+=====================*/
 
 .background-cover {
   background-position: center center;
@@ -738,7 +721,7 @@ About section style
 
 
 /*
-new Section style
+News Section style
 =======================*/
 
 .article_text {
@@ -865,9 +848,25 @@ Maps Section style
   background-color: $green !important;
 }
 
+.main_maps i {
+  font-size: 2.5rem;
+  color: $light-blue;
+
+}
+
+.main_maps h2 {
+  color: $light-blue;
+}
+
+.mapheight {
+  height: 100px;
+  width: 100%;
+}
+
 /*
 Contact Section style
 =====================*/
+
 .center-div {
   margin: auto;
   width: 50rem;
@@ -922,7 +921,6 @@ Contact Section style
   height: 10rem !important;
 }
 
-
 .contact {
   position: center;
   margin-top: 5rem;
@@ -930,6 +928,10 @@ Contact Section style
   background-color: #fff;
 }
 
+.center-block-contact {
+  margin-bottom: 10rem;
+  margin-top: 2rem;
+}
 /*
 Footer Section style
 =====================*/
@@ -943,65 +945,9 @@ Footer Section style
   color: #ff0000;
 }
 
-
-/*maps*/
-.main_maps i {
-  font-size: 2.5rem;
-  color: $light-blue;
-
-}
-
-.main_maps h2 {
-  color: $light-blue;
-}
-
-.mapheight {
-  height: 100px;
-  width: 100%;
-}
-
-
-/* scrollup */
-
-.scrollup {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  opacity: .3;
-  position: fixed;
-  bottom: 20px;
-  right: 25px;
-  color: #fff;
-  cursor: pointer;
-  background-color: #000;
-  z-index: 1000;
-  transition: opacity .5s, background-color .5s;
-  -moz-transition: opacity .5s, background-color .5s;
-  -webkit-transition: opacity .5s, background-color .5s;
-}
-
-.scrollup:hover {
-  background: $blue;
-  opacity: 1;
-}
-
-.scrollup i {
-  font-size: 13px;
-  position: absolute;
-  opacity: 1;
-  color: #fff;
-  left: 50%;
-  top: 50%;
-  margin-top: -7px;
-  margin-left: -6px;
-  text-decoration: none;
-
-}
-
 /*
 Override Bootsnav
 =====================*/
-
 
 nav.navbar.bootsnav {
   background-color: $green;
@@ -1021,15 +967,17 @@ nav.navbar.bootsnav ul.nav > li > a {
   max-width: 100%;
 }
 
-/* Gallery */
+/* Gallery Section Style
+=====================*/
 .j-gallery{
+  height: 90vh !important;
   background-color: rgb(112, 255, 7);
 }
 .j-gallery-preview-content{
-  background-size: auto !important;
+  background-size: contain !important;
   margin: auto !important;
   width: auto !important;
-  height: 80% !important;
+  height: 100% !important;
 }
 
 .btn-modal-primary {
@@ -1038,7 +986,9 @@ nav.navbar.bootsnav ul.nav > li > a {
   border-color: #007bff;
 }
 
-/* Pdf */
+/* Pdf Section Style
+=====================*/
+
 .pdf-img {
   width: 20%;
   text-align: center;

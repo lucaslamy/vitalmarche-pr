@@ -98,7 +98,6 @@ gem 'pdfjs_viewer-rails'
 gem "simple_calendar", "~> 2.0"
 gem 'jquery-rails'
 gem 'momentjs-rails'
-gem 'fullcalendar'
 
 #Session time out
 gem 'auto-session-timeout'

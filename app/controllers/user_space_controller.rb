@@ -1,4 +1,5 @@
 class UserSpaceController < ApplicationController
+  auto_session_timeout 15.minutes
   before_action :set_current_user
 
   def main

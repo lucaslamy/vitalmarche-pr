@@ -30,5 +30,10 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     $('.mapheight').css('height', '350');
     $('.maps_text h3').hide();
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'VitalMarche'
+    });
 
 }

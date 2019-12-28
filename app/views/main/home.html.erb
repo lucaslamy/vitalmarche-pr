@@ -166,7 +166,7 @@
                 <h6 class="m-top-20 text-blue">SORTIES</h6>
               </div>
               <p class="m-top-20"> Des sorties sont également organisées sur une journée, ou un weekend. Rendez-vous sur
-                l’espace <a href="#photo-gallery">galerie</a>. </p>
+                l’espace <a href="#photo-galler">galerie</a>. </p>
             </div>
           </div>
         </div>
@@ -262,19 +262,15 @@
     </div>
   </section>
 
-  <section id="photo-gallery" class="photo-gallery">
-    <div id="gallery" class="gallery">
-    </div>
+  <section id="photo-gallery" class="photo-gallery gallery">
   </section>
 
   <section id="contact" class="contact bg-mega fix">
-    <br>
     <div class="row center-div">
       <div class="main_contact">
         <div class="col-md-12">
           <div class="rage_widget">
             <div class="widget_head">
-              <br>
               <h3 class="text-center text-blue">NOUS CONTACTER</h3>
               <div class="separator_auto"></div>
             </div>
@@ -287,14 +283,17 @@
               <li>Présidente :</li>
               <li>Secrétaire :</li>
               <li>Trésorière :</li>
-              <li>Animateur Christophe : 06.33.35.54.25</li>
+              <li>Animateur : Christophe, 06.33.35.54.25</li>
+               <br>
+               <br>
+               <br>
+               <br>
               </p>
-              <br>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-12 center-block">
+      <div class="col-md-12 center-block center-block-contact">
         <%= form_tag('/contact_us') do %>
           <div class="row">
 
@@ -382,10 +381,11 @@
 <script async="false" src="https://maps.google.com/maps/api/js?key=AIzaSyDolVqGuEVOe4nRU3x1J_nzSU3L3XJ5sRs&callback=initMap" async defer></script>
 <%= javascript_include_tag 'home.js', 'data-turbolinks-track': 'reload' %>
 <script>
-    document.querySelector('#gallery').appendChild(JGallery.create([
+    document.querySelector('#photo-gallery').appendChild(JGallery.create([
         <% @albums.each do |album| %>
         {
             title: '<%= album.title %>',
+
             items: [
                 <% album.picture.each do |picture| %>
                 {

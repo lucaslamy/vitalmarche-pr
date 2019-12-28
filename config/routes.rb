@@ -18,11 +18,14 @@ Rails.application.routes.draw do
   end
   # Devise gem route configuration
   devise_for :users, controllers: {registrations: 'users/registrations'}
+  devise_scope :users do
+    get 'active'  => 'sessions#active'
+    get 'timeout' => 'sessions#timeout'
+  end
   get '/adherents', to: "user_space#main", as: :user_space
   get '/adherents/user', to: "user_space#simple_user_space", as: :simple_user_space
   get '/adherents/admin', to: "user_space#admin_space", as: :admin_space
   post '/contact_us(/:name)(/:email)(/:message)', to: "main#contact_us", as: :contact_us
   # Auto-session timeout gem route configuration
-  get 'active'  => 'sessions#active'
-  get 'timeout' => 'sessions#timeout'
+
 end
