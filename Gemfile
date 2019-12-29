@@ -99,8 +99,5 @@ gem "simple_calendar", "~> 2.0"
 gem 'jquery-rails'
 gem 'momentjs-rails'
 
-#Session time out
-gem 'auto-session-timeout'
-
 # Font-Awesome
 gem "font-awesome-rails"

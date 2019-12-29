@@ -19,6 +19,8 @@ jQuery(document).ready(function ($) {
     });
 
 });
+
+
 function initMap() {
     var myLatLng = {lat: 49.347289, lng: 2.977947};
     var mapOptions = {

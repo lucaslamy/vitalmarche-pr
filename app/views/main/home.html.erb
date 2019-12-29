@@ -16,13 +16,13 @@
 
       <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right blue" data-in="fadeInDown" data-out="fadeOutUp">
-          <li><a href="#hello">ACCUEIL</a></li>
+<!--          <li><a href="#hello">ACCUEIL</a></li>-->
           <li><a href="#about">QUI SOMMES NOUS</a></li>
           <li><a href="#news">ACTUALITES</a></li>
           <li><a href="#join">REJOIGNEZ-NOUS</a></li>
           <li><a href="#photo-gallery">GALERIE</a></li>
           <li><a href="#contact">NOUS CONTACTER</a></li>
-          <li> <%= link_to "ESPACE ADHERENTS", user_space_path %>
+          <li> <%= link_to "ESPACE ADHERENTS", user_space_path,data: { turbolinks: false } %>
             <% if user_signed_in? %>
             <li class="nav-item hvr-grow">
               <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
