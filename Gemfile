@@ -101,3 +101,6 @@ gem 'momentjs-rails'
 
 # Font-Awesome
 gem "font-awesome-rails"
+
+# Let's Encrypt SSL Certificate Management
+gem 'rails-letsencrypt'
