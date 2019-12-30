@@ -15,7 +15,6 @@ jQuery(document).ready(function ($) {
 
     $(".new_slid").not('.slick-initialized').slick({
         dots: true,
-        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
