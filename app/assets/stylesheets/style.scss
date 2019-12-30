@@ -1011,3 +1011,9 @@ nav.navbar.bootsnav ul.nav > li > a {
   margin-left: 10rem !important;
   margin-bottom: 0 !important;
 }
+
+.messages-container-alert{
+  position:absolute;
+  z-index:1000;
+  background: transparent;
+}

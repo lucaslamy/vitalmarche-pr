@@ -3,7 +3,14 @@ jQuery(document).ready(function ($) {
         autoplay: true,
         autoplaySpeed: 2000,
         fade: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnHover: false,
+        autoplayHoverPause: false,
+        pauseOnFocus: false,
         arrows: false
+
     });
 
     $(".new_slid").not('.slick-initialized').slick({
@@ -12,10 +19,10 @@ jQuery(document).ready(function ($) {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
+        infinite: true,
         prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
         nextArrow: "<i class='fa fa-angle-right nextprevright'></i>",
-        autoplay: true,
-        autoplaySpeed: 20000
+        autoplay: false
     });
 
 });
