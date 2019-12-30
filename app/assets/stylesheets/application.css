@@ -15,7 +15,8 @@
  *= require rails_bootstrap_forms
  *= require simple_calendar
  *= require font-awesome
- */
+ *= require cookies_eu
+*/
 
 @import "animate.css";
 @import "application.css";

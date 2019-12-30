@@ -23,4 +23,15 @@ class UserSpaceController < ApplicationController
       session[:user] = User.find(current_user.id)
     end
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    if @user.destroy
+      flash[:danger] = 'Compte supprimé'
+      redirect_to root_url
+    end
+  end
+
 end

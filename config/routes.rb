@@ -18,9 +18,11 @@ Rails.application.routes.draw do
   end
   # Devise gem route configuration
   devise_for :users, controllers: {registrations: 'users/registrations'}
+  match 'users/:id' => 'user_space#destroy', :via => :delete, :as => :admin_destroy_user
   get '/adherents', to: "user_space#main", as: :user_space
   get '/adherents/user', to: "user_space#simple_user_space", as: :simple_user_space
   get '/adherents/admin', to: "user_space#admin_space", as: :admin_space
+  get '/privacy', to: "privacy#privacy", as: :privacy
   post '/contact_us(/:name)(/:email)(/:message)', to: "main#contact_us", as: :contact_us
 
 end

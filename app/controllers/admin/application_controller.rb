@@ -6,7 +6,6 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    auto_session_timeout 15.minutes
     before_action :authenticate_admin
 
     def authenticate_admin

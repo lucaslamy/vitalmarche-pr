@@ -19,5 +19,4 @@ class MainController < ApplicationController
     ApplicationMailer.contact_email(email,name,message).deliver
     redirect_to root_path
   end
-
 end

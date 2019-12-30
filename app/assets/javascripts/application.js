@@ -19,3 +19,4 @@
 //= require jquery2
 
 
+//= require cookies_eu

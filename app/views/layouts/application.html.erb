@@ -8,36 +8,36 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
 <html>
-  <head>
-    <title>Vital'Marche</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= favicon_link_tag 'logo.png' %>
-    <meta charset="utf-8">
-    <meta name="description" content="Site de Vital'Marche, l'association de marche nordique de Pierrefonds">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font link-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/8671f6e6df.js" crossorigin="anonymous"></script>
-    <!-- end -->
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'vendor/jquery-1.11.2.min.js', 'data-turbolinks-track': 'reload' %>
-    <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
-    <%= javascript_include_tag Ckeditor.cdn_url %>
-    <%= javascript_include_tag 'gmaps.min.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'vendor/modernizr-2.8.3-respond-1.4.2.min.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'vendor/bootstrap.min.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'slick.min.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'bootsnav.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'plugins.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'main.js', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'jgallery.js', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Vital'Marche</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= favicon_link_tag 'logo.png' %>
+  <meta charset="utf-8">
+  <meta name="description" content="Site de Vital'Marche, l'association de marche nordique de Pierrefonds">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font link-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8671f6e6df.js" crossorigin="anonymous"></script>
+  <!-- end -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'vendor/jquery-1.11.2.min.js', 'data-turbolinks-track': 'reload' %>
+  <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
+  <%= javascript_include_tag Ckeditor.cdn_url %>
+  <%= javascript_include_tag 'gmaps.min.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'vendor/modernizr-2.8.3-respond-1.4.2.min.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'vendor/bootstrap.min.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'slick.min.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'bootsnav.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'plugins.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'main.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jgallery.js', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<%= yield %>
+</body>
 </html>

@@ -104,3 +104,6 @@ gem "font-awesome-rails"
 
 # Let's Encrypt SSL Certificate Management
 gem 'rails-letsencrypt'
+
+# Ask cookie consent
+gem 'cookies_eu'
