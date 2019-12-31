@@ -5644,8 +5644,10 @@ button.close {
   margin-right: auto;
   margin-left: auto;
 
-  background-color: rgba(0, 0, 0, 0.16);
-  border-style: outset;
+  background-color: rgba(152, 193, 105, 0.2);
+    border: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
 }
 .center-block .row{
    margin-top: 6%;
