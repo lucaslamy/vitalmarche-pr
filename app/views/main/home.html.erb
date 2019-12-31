@@ -1,30 +1,5 @@
 <body data-spy="scroll" data-target=".navbar-collapse">
-<% if @pop_up != nil && session[:pop_up] != 1 %>
-  <% session[:pop_up] = 1 %>
-  <div class="modal" tabindex="-1" id="myModal" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Évenement à venir !</h5>
-        </div>
-        <div class="modal-body">
-          <p>Le <%= @pop_up.date.day %>-<%= @pop_up.date.mon %>-<%= @pop_up.date.year %> à <%= @pop_up.date.hour %>
-            :<%= @pop_up.date.min %>, à <%= @pop_up.position %>, aura lieu <%= @pop_up.title %>.</p>
-          <hr>
-          <%= raw(@pop_up.content) %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-modal-primary">OK</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-  <div class="scrollup">
-    <a href="#"><i class="fa fa-chevron-up"></i></a>
-  </div>
-
+<%= render 'cookies_eu/consent_banner', link: '/privacy', target: '_blank' %>
 <div class="culmn">
 
   <nav class="navbar navbar-default navbar-fixed green no-background bootsnav">
@@ -32,23 +7,23 @@
 
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-          <i class="fa fa-bars"></i>
+          <em class="fa fa-bars"></em>
         </button>
         <a class="navbar-brand" href="#brand">
-          <img class="logo logo-display m-top-10" <%= image_tag "logo.png" %>
-          <img class="logo logo-scrolled"  <%= image_tag "logo.png" %>
+          <img class="logo logo-display m-top-10" alt="Logo Vital'Marche" <%= image_tag "logo.png" %>
+          <img class="logo logo-scrolled" alt="Logo Vital'Marche" <%= image_tag "logo.png" %>
         </a>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right blue" data-in="fadeInDown" data-out="fadeOutUp">
-          <li><a href="#hello">ACCUEIL</a></li>
+          <!--          <li><a href="#hello">ACCUEIL</a></li>-->
           <li><a href="#about">QUI SOMMES NOUS</a></li>
           <li><a href="#news">ACTUALITES</a></li>
           <li><a href="#join">REJOIGNEZ-NOUS</a></li>
           <li><a href="#photo-gallery">GALERIE</a></li>
           <li><a href="#contact">NOUS CONTACTER</a></li>
-          <li> <%= link_to "ESPACE ADHERENTS", user_space_path %>
+          <li> <%= link_to "ESPACE ADHERENTS", user_space_path, data: {turbolinks: false} %>
             <% if user_signed_in? %>
             <li class="nav-item hvr-grow">
               <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
@@ -59,6 +34,25 @@
     </div>
   </nav>
 
+  <div class="messages-container-alert col-md-12">
+    <% flash.each do |level, value| %>
+      <% if value != "true" %>
+        <% if level == "danger" %>
+          <div class="alert alert-danger" role="alert">
+            <a href="#" data-dismiss="alert" class="close">×</a>
+            <%= value %>
+          </div>
+        <% else %>
+          <div class="alert alert-info" role="alert">
+            <a href="#" data-dismiss="alert" class="close">×</a>
+            <%= value %>
+          </div>
+        <% end %>
+
+      <% end %>
+    <% end %>
+  </div>
+
   <section class="hello background-cover slick">
     <div class="container slide slide--1">
       <div class="row bck_layer">
@@ -68,11 +62,11 @@
           </div>
         </div>
         <div class="main_home col-md-6">
-          <h3 class="slide_text text-justify"> Qu’est ce que la marche nordique </h3>
+          <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
           <h6 class="slide_text text-justify"> Plus dynamique que la randonnée, la marche nordique a pour principe
             d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
             propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
-            La dépense d’énergie est accrue et le plaisir de la pratique arrive des les premières foulées car la
+            La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
             technique est simple. <br><br>
             Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
             physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.
@@ -88,11 +82,11 @@
           </div>
         </div>
         <div class="main_home col-md-6">
-          <h3 class="slide_text text-justify"> Qu’est ce que la marche nordique </h3>
+          <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
           <h6 class="slide_text text-justify"> Plus dynamique que la randonnée, la marche nordique a pour principe
             d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
             propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
-            La dépense d’énergie est accrue et le plaisir de la pratique arrive des les premières foulées car la
+            La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
             technique est simple. <br><br>
             Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
             physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.
@@ -102,24 +96,24 @@
     </div>
     <div class="container slide slide--4">
       <div class="row bck_layer">
-        <div class="main_home col-md-6">
-          <div>
-            <h1 class="home_text">Bienvenue <br/> sur notre site</h1>
+          <div class="main_home col-md-6">
+            <div>
+              <h1 class="home_text">Bienvenue <br/> sur notre site</h1>
+            </div>
+          </div>
+          <div class="main_home col-md-6">
+            <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
+            <h6 class="slide_text text-justify"> Plus dynamique que la randonnée, la marche nordique a pour principe
+              d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
+              propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
+              La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
+              technique est simple. <br><br>
+              Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
+              physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.
+            </h6>
           </div>
         </div>
-        <div class="main_home col-md-6">
-          <h3 class="slide_text text-justify"> Qu’est ce que la marche nordique </h3>
-          <h6 class="slide_text text-justify"> Plus dynamique que la randonnée, la marche nordique a pour principe
-            d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
-            propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
-            La dépense d’énergie est accrue et le plaisir de la pratique arrive des les premières foulées car la
-            technique est simple. <br><br>
-            Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
-            physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.
-          </h6>
-        </div>
       </div>
-    </div>
 
   </section>
 
@@ -129,7 +123,7 @@
         <div class="main_about">
           <div class="col-md-6">
             <div class="about_content">
-              <h2>QUI SOMMES NOUS</h2>
+              <h2 class="text-blue">QUI SOMMES NOUS</h2>
               <div class="separator_left"></div>
 
               <p>VITAL'MARCHE est une association, créée au cours de l’été 2018, domiciliée à Pierrefonds et affiliée à
@@ -161,7 +155,7 @@
                 <div class="ab_head_icon">
                   <i class="icofont"><i class="fas fa-walking"></i></i>
                 </div>
-                <h6 class="m-top-20"> ENTRAÎNEMENTS</h6>
+                <h6 class="m-top-20 text-blue"> ENTRAÎNEMENTS</h6>
               </div>
               <p class="m-top-20"> Nous proposons 3 entraînements hebdomadaires (mardi matin, jeudi soir, samedi ou
                 dimanche matin par alternance) encadrés par des animateurs diplômés.
@@ -174,7 +168,7 @@
                 <div class="ab_head_icon">
                   <i class="icofont"><i class="fas fa-tree"></i></i>
                 </div>
-                <h6 class="m-top-20">CADRE</h6>
+                <h6 class="m-top-20 text-blue">CADRE</h6>
               </div>
               <p class="m-top-20">Les marches se déroulent principalement au cœur des massifs forestiers du Compiégnois
                 (Forêts domaniales de Laigue et de Compiègne).
@@ -189,7 +183,7 @@
                 <div class="ab_head_icon">
                   <i class="icofont"><i class="fas fa-hiking"></i></i>
                 </div>
-                <h6 class="m-top-20">SORTIES</h6>
+                <h6 class="m-top-20 text-blue">SORTIES</h6>
               </div>
               <p class="m-top-20"> Des sorties sont également organisées sur une journée, ou un weekend. Rendez-vous sur
                 l’espace <a href="#photo-gallery">galerie</a>. </p>
@@ -211,23 +205,25 @@
             <h2 class="text-white">ACTUALITÉS</h2>
           </div>
           <div class="new_slid text-center">
-            <% @articles.each do |article| %>
-              <div class="new_item">
-                <div class="col-sm-10 col-sm-offset-1 row">
-                  <div class="test_authour article_text">
-                    <h2 class="text-white m-bottom-20"><%= article.title %></h2>
-                  </div>
-                  <div class="col-sm-4">
-                    <img class="articles" <%= image_tag article.picture.to_s %>
-                  </div>
-                  <div class="col-sm-8 text-white">
-                    <%= raw(article.content) %>
-                    <div class="test_authour m-top-30">
-                      <h6 class="text-white m-bottom-20"><%= article.date.day %>-<%= article.date.mon %>-<%= article.date.year %> <%= article.date.hour %>:<%= article.date.min %></h6>
+            <% if (@articles.empty? != true) && (@articles.nil? != true) %>
+              <% @articles.each do |article| %>
+                <div class="new_item">
+                  <div class="col-sm-10 col-sm-offset-1 row">
+                    <div class="test_authour article_text">
+                      <h2 class="text-white m-bottom-20"><%= article.title %></h2>
+                    </div>
+                    <div class="col-sm-4">
+                      <img class="articles" <%= image_tag article.picture.to_s %>
+                    </div>
+                    <div class="col-sm-8 text-white">
+                      <%= raw(article.content) %>
+                      <div class="test_authour m-top-30">
+                        <h6 class="text-white m-bottom-20"><%= article.date.day %>-<%= article.date.mon %>-<%= article.date.year %> <%= article.date.hour %>:<%= article.date.min %></h6>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
           </div>
         </div>
@@ -244,7 +240,8 @@
             <div class="about_content">
               <br>
               <br>
-              <h2>REJOIGNEZ-NOUS</h2>
+              <br>
+              <h2 class="text-blue">REJOIGNEZ-NOUS</h2>
               <div class="separator_left"></div>
             </div>
           </div>
@@ -264,7 +261,7 @@
               <br>
               <br>
               <br>
-              A prévoir :
+              À prévoir :
             <li>De bonne chaussures adaptée à la marche nordique</li>
             <li>Un sac à dos avec boissons et encas</li>
             <li>Une paire de bâtons</li>
@@ -284,9 +281,7 @@
     </div>
   </section>
 
-  <section id="photo-gallery" class="photo-gallery">
-    <div id="gallery" class="gallery">
-    </div>
+  <section id="photo-gallery" class="photo-gallery gallery">
   </section>
 
   <section id="contact" class="contact bg-mega fix">
@@ -295,45 +290,58 @@
         <div class="col-md-12">
           <div class="rage_widget">
             <div class="widget_head">
-              <br>
-              <h3 class="text-black text-center">NOUS CONTACTER</h3>
+              <h3 class="text-center text-blue">NOUS CONTACTER</h3>
               <div class="separator_auto"></div>
             </div>
             <div class="text-center col-md-12">
               <p class="text-black">
+<<<<<<< Updated upstream
               <li>Adresse postale : Place de la Mairie 60350 PIERREFONDS</li>
-              <li>Adresse email : vitalmarche@gmail.com</li>
+              <li>Adresse mail : vitalmarche@gmail.com</li>
                <br>
               Bureau :
               <li>Présidente :</li>
               <li>Secrétaire :</li>
               <li>Trésorière :</li>
-              <li>Animateur Christophe :  06.33.35.54.25</li>
+              <li>Animateur : Christophe, 06.33.35.54.25</li>
+               <br>
+               <br>
+               <br>
+               <br>
+=======
+                <li><b>Adresse postale</b> : Place de la Mairie 60350 PIERREFONDS</li>
+              <li><b>Adresse email</b> : vitalmarche@gmail.com</li>
+               
+              <li>Bureau</li>
+             <li><b>Présidente</b> :</li>
+             <li> <b>Secrétaire</b>:</li> 
+              <li><b>Trésorière</b> :</li>
+              <li><b>Animateur Christophe</b> :  06.33.35.54.25</li>
+>>>>>>> Stashed changes
               </p>
-              <br>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-12 center-block">
+      <div class="col-md-12 center-block center-block-contact">
         <%= form_tag('/contact_us') do %>
           <div class="row">
 
             <div class="col-sm-6">
-              <div class="form-group">
-                <%= text_field_tag :name, nil, placeholder: 'Nom', class: 'form-control' %>
+              <div class="contact-group">
+                <%= text_field_tag :name, nil, placeholder: 'Nom', class: 'contact-control' %>
               </div>
             </div>
 
             <div class="col-sm-6">
-              <div class="form-group">
-                <%= text_field_tag :email, nil, placeholder: 'Adresse mail', class: 'form-control' %>
+              <div class="contact-group">
+                <%= text_field_tag :email, nil, placeholder: 'Adresse mail', class: 'contact-control' %>
               </div>
             </div>
 
             <div class="col-sm-12">
-              <div class="form-group">
-                <%= text_area_tag :message, nil, placeholder: 'Message', class: 'form-control form-contact' %>
+              <div class="contact-group">
+                <%= text_area_tag :message, nil, placeholder: 'Message', class: 'contact-control form-contact' %>
               </div>
               <div class="form-group text-center">
                 <%= submit_tag "ENVOYER", class: 'btn btn-primary' %>
@@ -346,15 +354,18 @@
       </div>
     </div>
   </section>
+
+<!--
   <section id="maps">
     <div class="main_maps text-center fix">
       <div class="overlay overlay-maps"></div>
       <div class="maps_text">
-        <h3 class="text-white" onclick="showmap()">Nous trouver <i class="fa fa-angle-down"></i></h3>
+        <h3 class="text-white" onclick="initMap()">Nous trouver <i class="fa fa-angle-down"></i></h3>
         <div id="map_canvas" class="mapheight"></div>
       </div>
     </div>
   </section>
+-->
 
   <section id="sponsor" class="contact bg-mega fix">
     <div class="container">
@@ -387,11 +398,12 @@
       <div class="row">
         <div class="main_footer text-center text-white p-top-40 p-bottom-30">
           <p class="wow fadeInRight" data-wow-duration="1s">
-            Made with
+            <%= link_to "Vie privée", privacy_path, target: "_blank", data: {turbolinks: false} %> .
+            Conçu avec
             <i class="fa fa-heart"></i>
-            by
+            par
             <a target="_blank" href="https://github.com/lucaslamy">Lucas LAMY</a>
-            2019. All Rights Reserved
+            2019.
           </p>
         </div>
       </div>
@@ -400,18 +412,15 @@
 
 
 </div>
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyDolVqGuEVOe4nRU3x1J_nzSU3L3XJ5sRs&callback=initMap" async defer></script>
+<!-- TODO: Insert API Key here -->
+<!--<script async="false" src="https://maps.google.com/maps/api/js?key= ?? &callback=initMap" async defer></script>-->
+<%= javascript_include_tag 'home.js', 'data-turbolinks-track': 'reload' %>
 <script>
-    <% if @pop_up != nil %>
-    $(window).on('load', function () {
-        $('#myModal').modal('show');
-    });
-    <% end %>
-
-    document.querySelector('#gallery').appendChild(JGallery.create([
+    document.querySelector('#photo-gallery').appendChild(JGallery.create([
         <% @albums.each do |album| %>
         {
             title: '<%= album.title %>',
+
             items: [
                 <% album.picture.each do |picture| %>
                 {
@@ -421,33 +430,6 @@
             ]
         }<% if album != @albums.last %>, <%end%><%end%>]).getElement());
 
-    $('.slick').slick({
-        autoplay: true,
-        autoplaySpeed: 2000,
-        fade: true,
-        arrows: false
-    });
-
-    function showmap() {
-        var myLatLng = {lat: 49.347289, lng: 2.977947};
-        var mapOptions = {
-            zoom: 18,
-            scrollwheel: false,
-            center: myLatLng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-        $('.mapheight').css('height', '350');
-        $('.maps_text h3').hide();
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'VitalMarche'
-        });
-    }
-
 </script>
-
-
 </body>
 </html>
