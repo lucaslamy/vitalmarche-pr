@@ -35,3 +35,6 @@
 
 # Ignore all idea files
 .idea
+
+# SonarQube Scanner
+.scannerwork

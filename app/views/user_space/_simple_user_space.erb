@@ -1,7 +1,43 @@
 <head>
   <%= stylesheet_link_tag 'user_space', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <title>Espace adhérent du site Vital'Marche</title>
 </head>
+<% if @pop_up != nil && session[:pop_up] != 1 %>
+  <% session[:pop_up] = 1 %>
+  <div class="modal" tabindex="-1" id="myModal" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Évenement à venir !</h5>
+        </div>
+        <div class="modal-body">
+          <p>Le <%= @pop_up.date.day %>-<%= @pop_up.date.mon %>-<%= @pop_up.date.year %> à <%= @pop_up.date.hour %>
+            :<%= @pop_up.date.min %>, à <%= @pop_up.position %>, aura lieu <%= @pop_up.title %>.</p>
+          <hr>
+          <div class="modal-body row">
+            <% if @pop_up.picture.to_s.length > 1 %>
+              <div class="col-md-4">
+                <img class="event-picture" alt="Photo pop-up" <%= image_tag @pop_up.picture.to_s %>
+              </div>
+              <div class="col-md-8">
+                <%= raw(@pop_up.content) %>
+              </div>
+            <% else %>
+              <div class="col-md-12">
+                <%= raw(@pop_up.content) %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-modal-primary">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <nav class="navbar navbar-default navbar-fixed green no-background bootsnav">
   <div class="container">
     <div class="navbar-header">
@@ -23,8 +59,8 @@
         <li><a href="#planning">PLANNING</a></li>
         <li><a href="#pdf">GAZETTES</a></li>
         <li><a href="#form">QUESTIONNAIRE</a></li>
-        <li> <%= link_to "RETOUR ACCUEIL", root_path %>
-          <% if user_signed_in? %>
+        <li> <%= link_to "RETOUR ACCUEIL", root_path, data: {turbolinks: false} %> </li>
+        <% if user_signed_in? %>
           <li class="nav-item hvr-grow">
             <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
           </li>
@@ -34,10 +70,6 @@
     </div>
   </div>
 </nav>
-
-<div class="scrollup">
-  <a href="#"><i class="fa fa-chevron-up"></i></a>
-</div>
 
 <section class="user_space-slide">
   <div class="container ">
@@ -60,7 +92,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="about_content">
-          <h2>PLANNING</h2>
+          <h2 class="text-blue">PLANNING</h2>
           <div class="separator_left"></div>
         </div>
       </div>
@@ -115,7 +147,7 @@
               <% meetings.each do |meeting| %>
                 <div>
                   <br>
-                  <%= meeting.title %>
+                  <p class="text-blue"><%= meeting.title %></p>
                 </div>
               <% end %>
             <% end %>
@@ -163,29 +195,31 @@
       <div class="main_new">
         <div class="head_title text-center row">
           <div class="col-md-5">
-            <i class='fas fa-chevron-left slid_prev'></i>
+            <i class='fas fa-chevron-left slid_prev text-white'></i>
           </div>
           <h2 class="col-md-2 text-white">GAZETTE</h2>
           <div class="col-md-5">
-            <i class='fa fas fa-chevron-right slid_next'></i>
+            <i class='fa fas fa-chevron-right slid_next text-white'></i>
           </div>
 
         </div>
         <div class="row">
           <div class="pdf_slid text-center">
-            <% @pdfs.each do |pdf| %>
-              <div class="pdf_item pdf-container row ">
-                <div class="pdf-content">
-                  <img class="pdf-img" <%= image_tag pdf.file.to_s %>
+            <% if (@pdfs.empty? != true) && (@pdfs.nil? != true) %>
+              <% @pdfs.each do |pdf| %>
+                <div class="pdf_item pdf-container row ">
+                  <div class="pdf-content">
+                    <img class="pdf-img" <%= image_tag pdf.file.to_s %>
+                  </div>
+                  <br>
+                  <div class="test_authour article_text">
+                    <h4 class="text-white"><%= pdf.title %></h4>
+                  </div>
+                  <div class="m-bottom-20">
+                    <%= link_to "Consulter", pdfjs.full_path(file: pdf.file), class: "btn btn-primary", target: :_blank %>
+                  </div>
                 </div>
-                <br>
-                <div class="test_authour article_text">
-                  <h4 class="text-white"><%= pdf.title %></h4>
-                </div>
-                <div class="m-bottom-20">
-                  <%= link_to "Consulter", pdfjs.full_path(file: pdf.file), class: "btn btn-primary", target: :_blank %>
-                </div>
-              </div>
+              <% end %>
             <% end %>
           </div>
         </div>
@@ -197,7 +231,7 @@
   </div>
 </section>
 
-<section id="form" class="about roomy-100">
+<section id="form" class="about m-bottom-90 m-top-90">
   <div class="container">
     <div class="main_about">
       <div class="row">
@@ -218,7 +252,7 @@
           <br>
           <br>
           <br>
-          <%= link_to "Google Form", @form.url, class: "btn btn-primary", target: :_blank %>
+          <%= link_to "Google Form", @form.url, class: "btn btn-primary text-white", target: :_blank %>
           <br>
           <br>
         </div>
@@ -226,20 +260,30 @@
           <img class="join" <%= image_tag "image.jpg" %>
         </div>
       </div>
+      <% if current_user %>
+      <div class="row">
+        <div class="col-md-12 text-center m-top-40">
+          <%= link_to "Supprimer mon compte", admin_destroy_user_path(current_user), class:"btn btn-danger",method: :delete, data: { confirm: "Êtes-vous sûrs de vouloir supprimer votre compte ?" } %>
+
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 </section>
+<%= javascript_include_tag 'simple_user.js', 'data-turbolinks-track': 'reload' %>
 <script>
-    $(".new_slid_calendar").slick({
-        dots: true,
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        prevArrow: $('.calendar_prev'),
-        nextArrow: $('.calendar_next'),
-        autoplay: false,
+    <% if @pop_up != nil %>
+    $(window).on('load', function () {
+        $('#myModal').modal('show');
+    });
+    <% end %>
+    $(document).ready(function () {
+        $("#quitButton").click(function () {
+            $("#quitModal").modal();
+        });
     });
 </script>
+
 
 

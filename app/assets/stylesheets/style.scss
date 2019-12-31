@@ -823,15 +823,23 @@ Nav Menu style
   background-color: #ff7854 !important;
 }
 
-
 /*
 Home Section style
 ==================*/
+
 .home {
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  height: 100%;
+  width: 100%;
 }
 
 .main_home {
@@ -852,6 +860,7 @@ Home Section style
 /*
 About section style
 ====================*/
+
 .main_about {
   display: table;
   width: 100%;
@@ -949,141 +958,6 @@ font-size: larger;
   text-align: center;
   border-radius: 50%;
   box-shadow: 0px 0px 0px 6px $light-blue;
-
-}
-
-
-/*
-FAQ Page
---------*/
-
-.faq_main_content h6 {
-  margin-bottom: 0rem;
-  border: 1px solid;
-  border-color: #eee;
-  position: relative;
-}
-
-.faq_main_content h6 + div {
-  height: 0px;
-  padding: 0px;
-  overflow: hidden;
-  display: block !important;
-  -webkit-transform: translateZ(0);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  margin-bottom: 10px;
-  border: 0px solid #cdcdcd;
-}
-
-.faq_main_content h6 + div.open {
-  height: 133px;
-  border: 1px solid;
-  border-top: 0;
-  border-color: #eee;
-}
-
-.faq_main_content h6 a {
-  display: block;
-  color: #6a6a6a;
-  text-decoration: none;
-  font-weight: normal;
-  overflow: hidden;
-}
-
-.faq_main_content h6 span {
-  font-weight: 600;
-}
-
-.faq_main_content h6 a i {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  background-color: #eeeeee;
-  text-align: center;
-  color: #444444;
-  margin-right: 15px;
-  font-size: 1.5rem;
-}
-
-.faq_main_content h6.open a {
-  color: #444;
-}
-
-.faq_main_content h6.open a i {
-  color: #fff;
-  background-color: #444444;
-}
-
-
-.faq_main_content h6.open a i {
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-.faq_main_content .content {
-  padding: 25px;
-  color: #4a4a4a;
-}
-
-/*
-Featured section style
-========================*/
-.main_featured .head_title {
-  width: 70%;
-  margin: 0 auto;
-}
-
-.slick-center .featured_img {
-  position: relative;
-}
-
-.slick-center .featured_img:before {
-  content: "+";
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  position: absolute;
-  left: 43.5%;
-  right: 43.5%;
-  top: 35%;
-  color: #000;
-  background-color: #fff;
-  border-radius: 50%;
-  font-size: 3rem;
-  z-index: 2;
-  cursor: pointer;
-}
-
-.slick-center .featured_img a {
-  position: absolute;
-  left: 43.5%;
-  right: 43.5%;
-  top: 35%;
-  display: block;
-  width: 50px;
-  height: 50px;
-  z-index: 3;
-}
-
-.featured_img a {
-  display: none;
-}
-
-.featured_slider {
-  width: 100%;
-  height: 250px;
-  margin: 20px auto;
-  text-align: center;
-}
-
-.featured_img img {
-  width: 100%;
-  height: 100%;
-}
-
-.featured_slider div {
-  margin-right: 5px;
 }
 
 .slick-slide {
@@ -1097,16 +971,9 @@ Featured section style
   opacity: 1;
 }
 
-
 /*
-service section style
-========================*/
-.main_featured,
-.main_service {
-  display: table;
-  overflow: hidden;
-  width: 100%;
-}
+Slick Section style
+=====================*/
 
 
 .service_item {
