@@ -4,7 +4,6 @@ class MainController < ApplicationController
   def home
     @albums = Album.all
     @articles = Article.all
-    @pop_up = Event.where(pop_up: true).where("date > ?", DateTime.now).order(:date).first
   end
 
   def set_current_user
@@ -20,5 +19,4 @@ class MainController < ApplicationController
     ApplicationMailer.contact_email(email,name,message).deliver
     redirect_to root_path
   end
-
 end

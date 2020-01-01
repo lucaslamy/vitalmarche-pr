@@ -12,7 +12,7 @@ Ckeditor.setup do |config|
   # Set to nil or [] (empty array) for all file types
   # By default: %w(jpg jpeg png gif tiff)
   # config.image_file_types = %w(jpg jpeg png gif tiff)
-  config.cdn_url = "//cdn.ckeditor.com/4.6.1/basic/ckeditor.js"
+  config.cdn_url = "//cdn.ckeditor.com/4.13.1/full/ckeditor.js"
 
   # Allowed flash file types for upload.
   # Set to nil or [] (empty array) for all file types

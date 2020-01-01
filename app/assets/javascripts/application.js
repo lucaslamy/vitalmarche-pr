@@ -13,9 +13,10 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require calendar
 //= require_tree .
 //= require jquery.slick
 //= require jquery_ujs
 //= require jquery2
 
+
+//= require cookies_eu

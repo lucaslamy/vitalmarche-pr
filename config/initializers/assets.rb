@@ -13,21 +13,17 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-
-Rails.application.config.assets.precompile += %w( jquery.easing.1.3.js )
 Rails.application.config.assets.precompile += %w( slick.min.js )
-Rails.application.config.assets.precompile += %w( jquery.collapse.js )
 Rails.application.config.assets.precompile += %w( bootsnav.js )
 Rails.application.config.assets.precompile += %w( gmaps.min.js )
 Rails.application.config.assets.precompile += %w( plugins.js )
 Rails.application.config.assets.precompile += %w( main.js )
-Rails.application.config.assets.precompile += %w( easy_background.js )
 Rails.application.config.assets.precompile += %w( vendor/jquery-1.11.2.min.js )
 Rails.application.config.assets.precompile += %w( vendor/bootstrap.min.js )
 Rails.application.config.assets.precompile += %w( vendor/modernizr-2.8.3-respond-1.4.2.min.js )
-#Rails.application.config.assets.precompile += %w( jquery.collapse.js )
 Rails.application.config.assets.precompile += %w[ckeditor/config.js]
 Rails.application.config.assets.precompile += %w( devise.css )
-Rails.application.config.assets.precompile += %w( jquery.magnific-popup.js )
 Rails.application.config.assets.precompile += %w( jgallery.js )
 Rails.application.config.assets.precompile += %w( user_space.css )
+Rails.application.config.assets.precompile += %w( simple_user.js )
+Rails.application.config.assets.precompile += %w( home.js )

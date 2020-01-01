@@ -6,9 +6,8 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-   before_action :authenticate_admin
+    before_action :authenticate_admin
 
-=begin
     def authenticate_admin
       if current_user
         if current_user.email != 'admin@admin.fr'
@@ -18,6 +17,5 @@ module Admin
         redirect_to root_url
       end
     end
-=end
   end
 end

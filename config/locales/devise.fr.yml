@@ -29,7 +29,7 @@ fr:
       send_instructions: "Vous allez recevoir un courriel avec des instructions pour confirmer votre compte."
       confirmed: "Votre compte a été confirmé. Vous êtes maintenant connecté."
     registrations:
-      signed_up: "Votre inscription est enregistrée. Si elle est activé, un courriel de confirmation vous a été envoyé."
+      signed_up: "Votre inscription est enregistrée. Si elle est activée, un courriel de confirmation vous a été envoyé."
       updated: "Votre mise à jour a été prise en compte."
       destroyed: "Au revoir ! Votre compte est annulé. Nous souhaitons vous revoir bientôt."
     unlocks:
@@ -50,14 +50,14 @@ fr:
     #                           locally.
     ##########################################################################################################
     common:
-      forgot_your_password?: "Mot de passe oublié?"
+      forgot_your_password?: "Mot de passe oublié ?"
       hello: "Bonjour"
       sign_in: "Se connecter"
       sign_up: "Se déconnecter"
     shared:
       links:
-        didnt_receive_confirmation_instructions?: "Vous n'avez pas reçu de courriel de confirmation?"
-        didnt_receive_unlock_instructions?: "Vous n'avez pas reçu de courriel de déverrouillage de votre compte?"
+        didnt_receive_confirmation_instructions?: "Vous n'avez pas reçu de courriel de confirmation ?"
+        didnt_receive_unlock_instructions?: "Vous n'avez pas reçu de courriel de déverrouillage de votre compte ?"
     confirmations:
       new:
         resend_confirmation_instructions: "Renvoyer le courriel de confirmation"

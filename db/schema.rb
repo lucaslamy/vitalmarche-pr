@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_173241) do
+ActiveRecord::Schema.define(version: 2019_12_29_153139) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,21 @@ ActiveRecord::Schema.define(version: 2019_12_25_173241) do
     t.datetime "date", null: false
     t.string "position", null: false
     t.string "picture"
+  end
+
+  create_table "letsencrypt_certificates", force: :cascade do |t|
+    t.string "domain"
+    t.text "certificate", limit: 65535
+    t.text "intermediaries", limit: 65535
+    t.text "key", limit: 65535
+    t.datetime "expires_at"
+    t.datetime "renew_after"
+    t.string "verification_path"
+    t.string "verification_string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["domain"], name: "index_letsencrypt_certificates_on_domain"
+    t.index ["renew_after"], name: "index_letsencrypt_certificates_on_renew_after"
   end
 
   create_table "links", force: :cascade do |t|
