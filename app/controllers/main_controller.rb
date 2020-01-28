@@ -4,6 +4,15 @@ class MainController < ApplicationController
   def home
     @albums = Album.all
     @articles = Article.all
+    @slideshow = Slideshow.all
+    @text_join_us = Text.find_by(title:"rejoignez-nous")
+    @picture_join_us = Picture.find_by(title:"rejoignez-nous")
+    @text_contact_us = Text.find_by(title:"contactez-nous")
+    @text_event = Text.find_by(title:"sorties")
+    @text_where = Text.find_by(title:"cadre")
+    @text_training = Text.find_by(title:"entraînements")
+    @text_who_are_we = Text.find_by(title:"qui sommes nous")
+    @text_home = Text.find_by(title:"qu'est-ce que la marche nordique")
   end
 
   def set_current_user

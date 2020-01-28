@@ -9,8 +9,8 @@ fr:
         create: "Créer un nouvel événement"
         update: "Modifier cet événement"
       article:
-        create: "Créer un nouvel article"
-        update: "Modifier cet article"
+        create: "Créer une nouvelle actualité"
+        update: "Modifier cette actualité"
       album:
         create: "Créer un nouvel album"
         update: "Modifier cet album"
@@ -20,7 +20,25 @@ fr:
       link:
         create: "Ajouter un nouveau lien"
         update: "Modifier ce lien"
+      text:
+        create: "Créer un nouveau texte"
+        update: "Modifier ce texte"
+      picture:
+        create: "Importer une nouvelle photo"
+        update: "Modifier cette photo"
+      slideshow:
+        create: "Importer une nouvelle photo"
+        update: "Modifier cette photo"
     label:
+      slideshow:
+        title: Titre
+        content: Contenu
+      picture:
+        picture: Photo
+        title: Titre
+      text:
+        title: Titre
+        content: Contenu
       article:
         title: Titre
         id: Id
@@ -57,7 +75,7 @@ fr:
       edit: Modifier
       edit_resource: Modifier %{name}
       show_resource: Détails de %{name}
-      new_resource: Création d'un nouvel %{name}
+      new_resource: Ajouter %{name}
       back: Précédent
     controller:
       create:
@@ -81,14 +99,20 @@ fr:
       users: Utilisateurs
       event: Événement
       events: Événements
-      article: Article
-      articles: Articles
+      article: Actualité
+      articles: Actualités
       album: Album
       albums: Albums
       pdf: Gazette
       pdfs: Gazettes
       link: Lien
       links: Liens
+      text: Texte
+      texts: Textes
+      slideshow: Photo du diaporama
+      slideshows: Photos du diaporama
+      picture: Photo
+      pictures: Photos
     helpers:
       label:
         album_remove_picture: Supprimer une image

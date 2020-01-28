@@ -62,7 +62,7 @@
         <li> <%= link_to "RETOUR ACCUEIL", root_path, data: {turbolinks: false} %> </li>
         <% if user_signed_in? %>
           <li class="nav-item hvr-grow">
-            <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
+            <%= link_to raw('<i class="fas fa-power-off"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
           </li>
         <% end %>
         </li>
@@ -97,85 +97,9 @@
         </div>
       </div>
     </div>
-    <div class="row calendar-container">
-      <div class="new_slid_calendar col-md-12">
-        <div class="new_item">
-          <div class="col-sm-10 col-sm-offset-1 row">
-            <%= month_calendar start_date: Date.today, events: @events do |date, meetings| %>
-              <%= date.day %>
-              <% meetings.each do |meeting| %>
-                <div>
-                  <br>
-                  <a href="#eventModal<%= meeting.id %>" data-toggle="modal" data-target="#eventModal<%= meeting.id %>"><%= meeting.title %></a>
-                </div>
-
-                <div class="modal eventModal fade" id="eventModal<%= meeting.id %>" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="eventModalLabel"><%= meeting.title %> - <%= meeting.position %>
-                          - <%= meeting.date.day %>/<%= meeting.date.mon %>/<%= meeting.date.year %></h5>
-                      </div>
-                      <div class="modal-body row">
-                        <% if meeting.picture.to_s.length > 1 %>
-                          <div class="col-md-4">
-                            <img class="event-picture" <%= image_tag meeting.picture.to_s %>
-                          </div>
-                          <div class="col-md-8">
-                            <%= raw(meeting.content) %>
-                          </div>
-                        <% else %>
-                          <div class="col-md-12">
-                            <%= raw(meeting.content) %>
-                          </div>
-                        <% end %>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-        <div class="new_item">
-          <div class="col-sm-10 col-sm-offset-1 row">
-            <%= month_calendar start_date: @next_month, events: @events do |date, meetings| %>
-              <%= date.day %>
-              <% meetings.each do |meeting| %>
-                <div>
-                  <br>
-                  <p class="text-blue"><%= meeting.title %></p>
-                </div>
-              <% end %>
-            <% end %>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-          </div>
-        </div>
-        <div class="new_item">
-          <div class="col-sm-10 col-sm-offset-1 row">
-            <%= month_calendar start_date: @next_next_month.to_date, events: @events do |date, meetings| %>
-              <%= date.day %>
-              <% meetings.each do |meeting| %>
-                <div>
-                  <br>
-                  <%= meeting.title %>
-                </div>
-              <% end %>
-            <% end %>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-          </div>
-        </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-8 google-calendar">
+        <iframe src="https://calendar.google.com/calendar/b/3/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FParis&amp;src=Y29udGFjdHZpdGFsbWFyY2hlQGdtYWlsLmNvbQ&amp;color=%2322AA99&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       </div>
     </div>
 
@@ -247,7 +171,11 @@
       <div class="row">
         <div class="col-md-6">
           <p>
-            Veuillez remplir le questionnaire suivant s'il vous plaît.
+            <% if @text_form != nil %>
+              <%= raw(@text_form.content) %>
+            <% else %>
+              Veuillez remplir le questionnaire disponible en cliquant sur le bouton ci-dessous s'il vous plaît.
+            <% end %>
           </p>
           <br>
           <br>
@@ -257,16 +185,20 @@
           <br>
         </div>
         <div class="col-md-6">
-          <img class="join" <%= image_tag "image.jpg" %>
+          <% if @picture_form != nil %>
+            <img class="join" <%= image_tag @picture_form.picture.to_s %>
+          <% else %>
+            <img class="join" <%= image_tag "image.jpg" %>
+          <% end %>
         </div>
       </div>
       <% if current_user %>
-      <div class="row">
-        <div class="col-md-12 text-center m-top-40">
-          <%= link_to "Supprimer mon compte", admin_destroy_user_path(current_user), class:"btn btn-danger",method: :delete, data: { confirm: "Êtes-vous sûrs de vouloir supprimer votre compte ?" } %>
+        <div class="row">
+          <div class="col-md-12 text-center m-top-40">
+            <%= link_to "Supprimer mon compte", admin_destroy_user_path(current_user), class: "btn btn-danger", method: :delete, data: {confirm: "Êtes-vous sûrs de vouloir supprimer votre compte ?"} %>
 
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>

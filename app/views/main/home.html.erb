@@ -26,7 +26,7 @@
           <li> <%= link_to "ESPACE ADHERENTS", user_space_path, data: {turbolinks: false} %>
             <% if user_signed_in? %>
             <li class="nav-item hvr-grow">
-              <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
+              <%= link_to raw('<i class="fas fa-power-off"></i><span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
             </li>
           <% end %>
         </ul>
@@ -36,7 +36,7 @@
 
   <div class="messages-container-alert col-md-12">
     <% flash.each do |level, value| %>
-      <% if value != "true" %>
+      <% if value != true %>
         <% if level == "danger" %>
           <div class="alert alert-danger" role="alert">
             <a href="#" data-dismiss="alert" class="close">×</a>
@@ -54,7 +54,8 @@
   </div>
 
   <section class="hello background-cover slick">
-    <div class="container slide slide--1">
+    <% for i in @slideshow %>
+    <div class="container slide slide--<%=i.id%>">
       <div class="row bck_layer">
         <div class="main_home col-md-6">
           <div>
@@ -63,17 +64,22 @@
         </div>
         <div class="main_home col-md-6">
           <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
-          <h6 class="slide_text text-justify"> Plus dynamique que la randonnée, la marche nordique a pour principe
+          <h6 class="slide_text text-justify">
+            <%if @text_home != nil %>
+              <%=  raw(@text_home.content) %>
+            <%else %>Plus dynamique que la randonnée, la marche nordique a pour principe
             d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
             propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
             La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
             technique est simple. <br><br>
             Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
-            physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.
+            physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.<%end %>
           </h6>
         </div>
       </div>
     </div>
+<%end %>
+<!--
     <div class="container slide slide--2">
       <div class="row bck_layer">
         <div class="main_home col-md-6">
@@ -83,13 +89,16 @@
         </div>
         <div class="main_home col-md-6">
           <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
-          <h6 class="slide_text text-justify"> Plus dynamique que la randonnée, la marche nordique a pour principe
-            d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
-            propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
-            La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
-            technique est simple. <br><br>
-            Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
-            physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.
+          <h6 class="slide_text text-justify">
+            <%#if @text_home != nil %>
+              <%#=  raw(@text_home.content) %>
+            <%#else %>Plus dynamique que la randonnée, la marche nordique a pour principe
+              d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
+              propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
+              La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
+              technique est simple. <br><br>
+              Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
+              physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.<%#end %>
           </h6>
         </div>
       </div>
@@ -103,17 +112,21 @@
           </div>
           <div class="main_home col-md-6">
             <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
-            <h6 class="slide_text text-justify"> Plus dynamique que la randonnée, la marche nordique a pour principe
-              d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
-              propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
-              La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
-              technique est simple. <br><br>
-              Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
-              physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.
+            <h6 class="slide_text text-justify">
+              <%#if @text_home != nil %>
+                <%#=  raw(@text_home.content) %>
+              <%#else %>Plus dynamique que la randonnée, la marche nordique a pour principe
+                d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
+                propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
+                La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
+                technique est simple. <br><br>
+                Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
+                physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.<%#end %>
             </h6>
           </div>
         </div>
       </div>
+-->
 
   </section>
 
@@ -125,7 +138,9 @@
             <div class="about_content">
               <h2 class="text-blue">QUI SOMMES NOUS</h2>
               <div class="separator_left"></div>
-
+                <%if @text_who_are_we != nil %>
+                  <%=  raw(@text_who_are_we.content) %>
+                <%else %>
               <p>VITAL'MARCHE est une association, créée au cours de l’été 2018, domiciliée à Pierrefonds et affiliée à
                 la Fédération Française de Randonnée.
                 Elle est née de la volonté d’un groupe de marcheurs qui avait envie de partager un sport de plein air
@@ -133,6 +148,7 @@
                  
                 Chaque semaine, nous nous retrouvons pour marcher et plus dès que l’occasion se présente.
               </p>
+                <%end %>
 
             </div>
           </div>
@@ -157,8 +173,11 @@
                 </div>
                 <h6 class="m-top-20 text-blue"> ENTRAÎNEMENTS</h6>
               </div>
-              <p class="m-top-20"> Nous proposons 3 entraînements hebdomadaires (mardi matin, jeudi soir, samedi ou
-                dimanche matin par alternance) encadrés par des animateurs diplômés.
+              <p class="m-top-20">
+                <%if @text_training != nil %>
+                  <%= raw(@text_training.content) %>
+                <%else %>Nous proposons 3 entraînements hebdomadaires (mardi matin, jeudi soir, samedi ou
+                dimanche matin par alternance) encadrés par des animateurs diplômés.<%end %>
               </p>
             </div>
           </div>
@@ -170,11 +189,15 @@
                 </div>
                 <h6 class="m-top-20 text-blue">CADRE</h6>
               </div>
-              <p class="m-top-20">Les marches se déroulent principalement au cœur des massifs forestiers du Compiégnois
+              <p class="m-top-20">
+                <%if @text_where != nil %>
+                  <%=  raw(@text_where.content) %>
+                <%else %>
+                Les marches se déroulent principalement au cœur des massifs forestiers du Compiégnois
                 (Forêts domaniales de Laigue et de Compiègne).
                  
                 Ce périmètre offre une multitude de parcours variés (plats ou avec dénivelés, en plaine ou en sous-bois,
-                sur de grandes allées ou sur des chemins moins fréquentés) qui évoluent au fil des saisons. </p>
+                sur de grandes allées ou sur des chemins moins fréquentés) qui évoluent au fil des saisons. <%end%></p>
             </div>
           </div>
           <div class="col-md-4">
@@ -185,8 +208,12 @@
                 </div>
                 <h6 class="m-top-20 text-blue">SORTIES</h6>
               </div>
-              <p class="m-top-20"> Des sorties sont également organisées sur une journée, ou un weekend. Rendez-vous sur
-                l’espace <a href="#photo-gallery">galerie</a>. </p>
+              <p class="m-top-20">
+                <%if @text_event != nil %>
+                  <%=  raw(@text_event.content) %>
+                <%else %>
+                Des sorties sont également organisées sur une journée, ou un weekend. <%end%>Rendez-vous sur
+                l’espace galerie. </p>
             </div>
           </div>
         </div>
@@ -213,12 +240,13 @@
                       <h2 class="text-white m-bottom-20"><%= article.title %></h2>
                     </div>
                     <div class="col-sm-4">
-                      <img class="articles" <%= image_tag article.picture.to_s %>
+                      <img class="articles thumbnail" <%= image_tag article.picture.to_s %>
                     </div>
                     <div class="col-sm-8 text-white">
-                      <%= raw(article.content) %>
+                      <h4 class="text-white">
+                      <%= raw(article.content) %></h4>
                       <div class="test_authour m-top-30">
-                        <h6 class="text-white m-bottom-20"><%= article.date.day %>-<%= article.date.mon %>-<%= article.date.year %> <%= article.date.hour %>:<%= article.date.min %></h6>
+                        <h4 class="text-white m-bottom-20"><%= article.date.day %>-<%= article.date.mon %>-<%= article.date.year %> <%= article.date.hour %>:<%= article.date.min %></h4>
                       </div>
                     </div>
                   </div>
@@ -248,6 +276,9 @@
         </div>
         <div class="row">
           <div class="col-md-6">
+            <%if @text_join_us != nil %>
+              <%=  raw(@text_join_us.content) %>
+              <%else %>
             <p>
               Vous avez décidé de vous mettre (ou vous remettre) au sport et vous cherchez une activité complète,
               accessible, économique, tonique, dynamique, de plein air et conviviale.
@@ -272,9 +303,14 @@
             <br>
             <br>
             <br>
+            <%end %>
           </div>
           <div class="col-md-6">
+            <%if @picture_join_us != nil %>
+              <img class="join" <%= image_tag @picture_join_us.picture.to_s %>
+            <%else %>
             <img class="join" <%= image_tag "image.jpg" %>
+              <%end %>
           </div>
         </div>
       </div>
@@ -295,18 +331,22 @@
             </div>
             <div class="text-center col-md-12">
               <p class="text-black">
+                <%if @text_contact_us != nil %>
+                  <%=  raw(@text_contact_us.content) %>
+                <%else %>
               <li>Adresse postale : Place de la Mairie 60350 PIERREFONDS</li>
               <li>Adresse mail : vitalmarche@gmail.com</li>
                <br>
               Bureau :
-              <li>Présidente :</li>
-              <li>Secrétaire :</li>
-              <li>Trésorière :</li>
+              <li>Présidente : Christine, 0642720516</li>
+              <li>Secrétaire : Fabienne, 0624215423</li>
+              <li>Trésorière : Chantale, 0661714854</li>
               <li>Animateur : Christophe, 06.33.35.54.25</li>
                <br>
                <br>
                <br>
                <br>
+                <%end %>
               </p>
             </div>
           </div>

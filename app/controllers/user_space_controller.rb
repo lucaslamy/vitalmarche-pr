@@ -8,6 +8,8 @@ class UserSpaceController < ApplicationController
     @pdfs = Pdf.all
     @form = Link.find_by(title: "Questionnaire")
     @pop_up = Event.where(pop_up: true).where("date > ?", DateTime.now).order(:date).first
+    @picture_form = Picture.find_by(title:"questionnaire")
+    @text_form = Text.find_by(title:"questionnaire")
   end
 
   def admin_space

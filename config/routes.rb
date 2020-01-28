@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       resources :albums
       resources :pdfs
       resources :links
+      resources :texts
+      resources :pictures
+      resources :slideshows
       root to: "users#index"
       post '/users/send_invitation(/:name)(/:email)', to: "users#send_invitation", as: :invitation
   end

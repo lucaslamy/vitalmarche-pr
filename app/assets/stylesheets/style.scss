@@ -14,7 +14,7 @@ body {
 Colors
 =====================*/
 
-$green: #98C169 !default;
+$green: rgba(177, 232, 133, 1) !default;
 $blue: #94B5BD !default;
 $light-blue: #c2eaf6 !default;
 
@@ -958,12 +958,12 @@ nav.navbar.bootsnav ul.nav > li > a {
 }
 
 .logo {
-  max-height: 250%;
+  max-height: 300%;
   max-width: 100%;
 }
 
 .logo-scrolled {
-  max-height: 150%;
+  max-height: 200%;
   max-width: 100%;
 }
 
@@ -1016,4 +1016,29 @@ nav.navbar.bootsnav ul.nav > li > a {
   position:absolute;
   z-index:1000;
   background: transparent;
+}
+
+/* Google Calendar */
+
+.google-calendar {
+  float:none;
+  margin:0 auto
+
+}
+
+/* Session */
+
+.logo-session {
+  max-width: 50%;
+}
+
+.thumbnail:hover {
+  position:relative;
+  top:-25px;
+  left:-60px;
+  max-width: 200% !important;
+  width:1000px !important;
+  height:auto;
+  display:block;
+  z-index:999;
 }

@@ -24,7 +24,7 @@
       <li> <%= link_to "RETOUR ACCUEIL", root_path %>
         <% if user_signed_in? %>
         <li class="nav-item hvr-grow">
-          <%= link_to raw('<i class="fa fa-sign-out-alt"></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
+          <%= link_to raw('<i class="fas fa-power-off"></i></i> <span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
         </li>
       <% end %>
       </li>
