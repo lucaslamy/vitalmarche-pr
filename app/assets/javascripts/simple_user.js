@@ -21,13 +21,4 @@ jQuery(document).ready(function ($) {
         autoplay: false
     });
 
-    function changeTitle() {
-        var title = 'Vital\'Marche - Espace adhérent';
-        var current_title = $(document).prop('title');
-        if (current_title.indexOf('>>>') == -1) {
-            setTimeout(changeTitle, 3000);
-            $(document).prop('title', title);
-        }
-    }
-    changeTitle();
 });

@@ -98,3 +98,8 @@ input[type="submit"]{
     cursor: pointer;
     transition: .5s;
 }
+
+.logo-invitation{
+    height: calc(40vh - 1rem);
+    width: auto;
+}

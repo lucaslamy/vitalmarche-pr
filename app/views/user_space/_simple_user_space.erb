@@ -7,10 +7,10 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
           <em class="fas fa-ellipsis-v"></em>
         </button>
-        <a class="navbar-brand" href="#brand">
+        <div class="navbar-brand">
           <img class="logo logo-display m-top-10" alt="Logo Vital'Marche" <%= image_tag "logo.png" %>
           <img class="logo logo-scrolled" alt="Logo Vital'Marche" <%= image_tag "logo.png" %>
-        </a>
+        </div>
       </div>
 
       <div class="collapse navbar-collapse" id="navbar-menu">
@@ -35,7 +35,7 @@
         <div class="user_space_buttons">
           <div class="main_home user_space_text_div col-md-12">
             <div>
-              <h1 class="user_space_text">Bienvenue sur votre espace adherents</h1>
+              <h1 class="user_space_text">Bienvenue <b><%= session[:user].name %></b></h1>
             </div>
             <div>
               <% if session[:user] %>
@@ -195,6 +195,15 @@
             $("#quitModal").modal();
         });
     });
+    function changeTitle() {
+        var title = 'Vital\'Marche - Espace adhérent';
+        var current_title = $(document).prop('title');
+        if (current_title.indexOf('>>>') == -1) {
+            setTimeout(changeTitle, 3000);
+            $(document).prop('title', title);
+        }
+    }
+    changeTitle();
 </script>
 
 
