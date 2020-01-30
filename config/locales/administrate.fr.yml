@@ -63,6 +63,7 @@ fr:
       pdf:
         title: Titre
         path: Fichier
+        latest: Afficher en vedette ?
       link:
         title: Titre
         url: Url
@@ -129,4 +130,5 @@ fr:
         description: Description
         path: Fichier
         url: Url
+        latest: Afficher en vedette ?
 

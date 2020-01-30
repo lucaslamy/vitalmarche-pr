@@ -7,6 +7,11 @@ class UserSpaceController < ApplicationController
     @next_next_month = Date.today + 2.month
     @pdfs = Pdf.all
     @form = Link.find_by(title: "Questionnaire")
+    if Pdf.where(latest: true).empty?
+      @on_top_pdf = Pdf.all.order(:id).last
+    else
+      @on_top_pdf = Pdf.where(latest: true).order(:id).last
+    end
     @pop_up = Event.where(pop_up: true).where("date > ?", DateTime.now).order(:date).first
     @picture_form = Picture.find_by(title:"questionnaire")
     @text_form = Text.find_by(title:"questionnaire")

@@ -10,7 +10,7 @@ module Admin
 
     def authenticate_admin
       if current_user
-        if current_user.email != 'admin@admin.fr'
+        if current_user.email != 'contactvitalmarche@gmail.com'
           redirect_to root_url, alert: "Vous devez être un administrateur."
         end
       else

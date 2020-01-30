@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     $('.slick').not('.slick-initialized').slick({
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 5000,
         fade: true,
         infinite: true,
         slidesToShow: 1,
@@ -19,29 +19,12 @@ jQuery(document).ready(function ($) {
         slidesToScroll: 1,
         arrows: true,
         infinite: true,
-        prevArrow: "<i class='fa fa-angle-left nextprevleft'></i>",
-        nextArrow: "<i class='fa fa-angle-right nextprevright'></i>",
+        prevArrow: ".slid_prev",
+        nextArrow: ".slid_next",
         autoplay: false
     });
-
+    $(".navbar").click(function(){
+        $("#navbar-menu").toggle();
+    });
 });
 
-
-/*function initMap() {
-    var myLatLng = {lat: 49.347289, lng: 2.977947};
-    var mapOptions = {
-        zoom: 18,
-        scrollwheel: false,
-        center: myLatLng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-    $('.mapheight').css('height', '350');
-    $('.maps_text h3').hide();
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'VitalMarche'
-    });
-
-}*/

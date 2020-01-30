@@ -8,7 +8,6 @@ Rails.application.routes.draw do
       # CKEditor gem route configuration
       mount Ckeditor::Engine => '/ckeditor'
       resources :users
-      resources :events
       resources :articles
       resources :albums
       resources :pdfs
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
       resources :texts
       resources :pictures
       resources :slideshows
-      root to: "users#index"
+      root to: "users#index", as: :root
       post '/users/send_invitation(/:name)(/:email)', to: "users#send_invitation", as: :invitation
   end
   # Devise gem route configuration

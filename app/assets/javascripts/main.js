@@ -5,6 +5,7 @@ jQuery(document).ready(function ($) {
     /*---------------------------------------------*
      * Mobile menu
      ---------------------------------------------*/
+
     $('#navbar-menu').find('a[href*="#"]:not([href="#"])').click(function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
@@ -22,15 +23,14 @@ jQuery(document).ready(function ($) {
     });
 
 
-    /*---------------------------------------------*
-     * WOW
-     ---------------------------------------------*/
+       /*---------------------------------------------*
+        * WOW
+        ---------------------------------------------*/
 
     var wow = new WOW({
         mobile: false // trigger animations on mobile devices (default is true)
     });
     wow.init();
-
 
 });
 

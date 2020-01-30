@@ -7,7 +7,7 @@
 
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-          <em class="fa fa-bars"></em>
+          <em class="fas fa-ellipsis-v"></em>
         </button>
         <a class="navbar-brand" href="#brand">
           <img class="logo logo-display m-top-10" alt="Logo Vital'Marche" <%= image_tag "logo.png" %>
@@ -17,14 +17,13 @@
 
       <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav navbar-right blue" data-in="fadeInDown" data-out="fadeOutUp">
-          <!--          <li><a href="#hello">ACCUEIL</a></li>-->
           <li><a href="#about">QUI SOMMES NOUS</a></li>
           <li><a href="#news">ACTUALITES</a></li>
           <li><a href="#join">REJOIGNEZ-NOUS</a></li>
           <li><a href="#photo-gallery">GALERIE</a></li>
           <li><a href="#contact">NOUS CONTACTER</a></li>
           <li> <%= link_to "ESPACE ADHERENTS", user_space_path, data: {turbolinks: false} %>
-            <% if user_signed_in? %>
+          <% if user_signed_in? %>
             <li class="nav-item hvr-grow">
               <%= link_to raw('<i class="fas fa-power-off"></i><span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
             </li>
@@ -55,117 +54,61 @@
 
   <section class="hello background-cover slick">
     <% for i in @slideshow %>
-    <div class="container slide slide--<%=i.id%>">
-      <div class="row bck_layer">
-        <div class="main_home col-md-6">
-          <div>
-            <h1 class="home_text">Bienvenue <br/> sur notre site</h1>
-          </div>
-        </div>
-        <div class="main_home col-md-6">
-          <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
-          <h6 class="slide_text text-justify">
-            <%if @text_home != nil %>
-              <%=  raw(@text_home.content) %>
-            <%else %>Plus dynamique que la randonnée, la marche nordique a pour principe
-            d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
-            propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
-            La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
-            technique est simple. <br><br>
-            Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
-            physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.<%end %>
-          </h6>
-        </div>
-      </div>
-    </div>
-<%end %>
-<!--
-    <div class="container slide slide--2">
-      <div class="row bck_layer">
-        <div class="main_home col-md-6">
-          <div>
-            <h1 class="home_text">Bienvenue <br/> sur notre site</h1>
-          </div>
-        </div>
-        <div class="main_home col-md-6">
-          <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
-          <h6 class="slide_text text-justify">
-            <%#if @text_home != nil %>
-              <%#=  raw(@text_home.content) %>
-            <%#else %>Plus dynamique que la randonnée, la marche nordique a pour principe
-              d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
-              propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
-              La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
-              technique est simple. <br><br>
-              Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
-              physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.<%#end %>
-          </h6>
-        </div>
-      </div>
-    </div>
-    <div class="container slide slide--4">
-      <div class="row bck_layer">
-          <div class="main_home col-md-6">
-            <div>
-              <h1 class="home_text">Bienvenue <br/> sur notre site</h1>
+      <div class="container slide slide--<%= i.id %>" style="background-image: url(<%=i.picture.to_s%>);">
+        <div class="row bck_layer">
+          <div class="main_home col-xs-12 col-sm-6">
+            <div id="to_fill_text">
+              <span><h1 class="home_text">Bienvenue sur notre site</h1></span>
             </div>
           </div>
-          <div class="main_home col-md-6">
+          <div id="to_fill_text" class="main_home col-xs-12 col-sm-6 ">
             <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
-            <h6 class="slide_text text-justify">
-              <%#if @text_home != nil %>
-                <%#=  raw(@text_home.content) %>
-              <%#else %>Plus dynamique que la randonnée, la marche nordique a pour principe
-                d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. <br><br>Le corps est ainsi
-                propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue. <br><br>
-                La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
-                technique est simple. <br><br>
-                Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
-                physique. <br><br>C’est aussi un sport familial et convivial qui regroupe un large public.<%#end %>
-            </h6>
+
+            <h6 id="to_fill_text" class="slide_text text-justify">
+           <span><% if @text_home != nil %>
+              <%= raw(@text_home.content) %>
+            <% else %>Plus dynamique que la randonnée, la marche nordique a pour principe
+            d’accentuer le mouvement de balancier naturel des bras à l’aide de deux bâtons. Le corps est ainsi
+            propulsé vers l’avant. On va plus vite, plus loin avec moins de fatigue.
+            La dépense d’énergie est accrue et le plaisir de la pratique arrive dès les premières foulées car la
+            technique est simple.
+            Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
+            physique.C’est aussi un sport familial et convivial qui regroupe un large public.<% end %>
+          </span></h6>
           </div>
         </div>
       </div>
--->
+    <% end %>
 
   </section>
 
-  <section id="about" class="about roomy-100">
+  <section id="about" class="about m-top-20 page">
     <div class="container">
       <div class="row">
         <div class="main_about">
-          <div class="col-md-6">
+          <div class="col-xs-12">
             <div class="about_content">
               <h2 class="text-blue">QUI SOMMES NOUS</h2>
               <div class="separator_left"></div>
-                <%if @text_who_are_we != nil %>
-                  <%=  raw(@text_who_are_we.content) %>
-                <%else %>
-              <p>VITAL'MARCHE est une association, créée au cours de l’été 2018, domiciliée à Pierrefonds et affiliée à
-                la Fédération Française de Randonnée.
-                Elle est née de la volonté d’un groupe de marcheurs qui avait envie de partager un sport de plein air
-                dans la bonne humeur.
-                 
-                Chaque semaine, nous nous retrouvons pour marcher et plus dès que l’occasion se présente.
-              </p>
-                <%end %>
-
+              <% if @text_who_are_we != nil %>
+                <%= raw(@text_who_are_we.content) %>
+              <% else %>
+                <p>VITAL'MARCHE est une association, créée au cours de l’été 2018, domiciliée à Pierrefonds et
+                  affiliée à la Fédération Française de Randonnée.
+                  Elle est née de la volonté d’un groupe de marcheurs qui avait envie de partager un sport de
+                  plein air dans la bonne humeur.
+                  Chaque semaine, nous nous retrouvons pour marcher et plus dès que l’occasion se présente.
+                </p>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <hr/>
-    <br/>
-    <br/>
     <div class="container">
       <div class="row">
         <div class="about_bottom_content">
-          <div class="col-md-4">
+          <div class="col-xs-12 col-md-4">
             <div class="about_bottom_item m-top-20">
               <div class="ab_head">
                 <div class="ab_head_icon">
@@ -174,10 +117,11 @@
                 <h6 class="m-top-20 text-blue"> ENTRAÎNEMENTS</h6>
               </div>
               <p class="m-top-20">
-                <%if @text_training != nil %>
+                <% if @text_training != nil %>
                   <%= raw(@text_training.content) %>
-                <%else %>Nous proposons 3 entraînements hebdomadaires (mardi matin, jeudi soir, samedi ou
-                dimanche matin par alternance) encadrés par des animateurs diplômés.<%end %>
+                <% else %>Nous proposons 3 entraînements hebdomadaires (mardi matin, jeudi soir, samedi ou
+                  dimanche matin par alternance) encadrés par des animateurs diplômés.
+                <% end %>
               </p>
             </div>
           </div>
@@ -190,14 +134,15 @@
                 <h6 class="m-top-20 text-blue">CADRE</h6>
               </div>
               <p class="m-top-20">
-                <%if @text_where != nil %>
-                  <%=  raw(@text_where.content) %>
-                <%else %>
-                Les marches se déroulent principalement au cœur des massifs forestiers du Compiégnois
-                (Forêts domaniales de Laigue et de Compiègne).
-                 
-                Ce périmètre offre une multitude de parcours variés (plats ou avec dénivelés, en plaine ou en sous-bois,
-                sur de grandes allées ou sur des chemins moins fréquentés) qui évoluent au fil des saisons. <%end%></p>
+                <% if @text_where != nil %>
+                  <%= raw(@text_where.content) %>
+                <% else %>
+                  Les marches se déroulent principalement au cœur des massifs forestiers du Compiégnois
+                  (Forêts domaniales de Laigue et de Compiègne).
+                  Ce périmètre offre une multitude de parcours variés (plats ou avec dénivelés, en plaine ou
+                  en sous-bois,
+                  sur de grandes allées ou sur des chemins moins fréquentés) qui évoluent au fil des saisons.
+                <% end %></p>
             </div>
           </div>
           <div class="col-md-4">
@@ -209,11 +154,11 @@
                 <h6 class="m-top-20 text-blue">SORTIES</h6>
               </div>
               <p class="m-top-20">
-                <%if @text_event != nil %>
-                  <%=  raw(@text_event.content) %>
-                <%else %>
-                Des sorties sont également organisées sur une journée, ou un weekend. <%end%>Rendez-vous sur
-                l’espace galerie. </p>
+                <% if @text_event != nil %>
+                  <%= raw(@text_event.content) %>
+                <% else %>
+                  Des sorties sont également organisées sur une journée, ou un weekend.
+                <% end %></p>
             </div>
           </div>
         </div>
@@ -221,15 +166,19 @@
     </div>
   </section>
 
-  <section id="news" class="new fix">
+  <section id="news " class="new fix page">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="main_new roomy-100">
+        <div class="main_new m-top-10">
           <div class="head_title text-center">
-            <br>
-            <br>
-            <h2 class="text-white">ACTUALITÉS</h2>
+            <div class="col-xs-3">
+              <i class='fas fa-chevron-left slid_prev text-white'></i>
+            </div>
+            <h2 class="text-white col-xs-6">ACTUALITÉS</h2>
+            <div class="col-xs-3">
+              <i class='fa fas fa-chevron-right slid_next text-white'></i>
+            </div>
           </div>
           <div class="new_slid text-center">
             <% if (@articles.empty? != true) && (@articles.nil? != true) %>
@@ -244,9 +193,10 @@
                     </div>
                     <div class="col-sm-8 text-white">
                       <h4 class="text-white">
-                      <%= raw(article.content) %></h4>
+                        <%= raw(article.content) %></h4>
                       <div class="test_authour m-top-30">
-                        <h4 class="text-white m-bottom-20"><%= article.date.day %>-<%= article.date.mon %>-<%= article.date.year %> <%= article.date.hour %>:<%= article.date.min %></h4>
+                        <h4 class="text-white m-bottom-20"><%= article.date.day %>-<%= article.date.mon %>
+                          -<%= article.date.year %> <%= article.date.hour %>:<%= article.date.min %></h4>
                       </div>
                     </div>
                   </div>
@@ -260,15 +210,12 @@
     <br>
   </section>
 
-  <section id="join" class="about roomy-100">
+  <section id="join" class="about m-top-20 page">
     <div class="container">
       <div class="main_about">
         <div class="row">
           <div class="col-md-6">
             <div class="about_content">
-              <br>
-              <br>
-              <br>
               <h2 class="text-blue">REJOIGNEZ-NOUS</h2>
               <div class="separator_left"></div>
             </div>
@@ -276,51 +223,47 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <%if @text_join_us != nil %>
-              <%=  raw(@text_join_us.content) %>
-              <%else %>
-            <p>
-              Vous avez décidé de vous mettre (ou vous remettre) au sport et vous cherchez une activité complète,
-              accessible, économique, tonique, dynamique, de plein air et conviviale.
-              <br>
-              Vous voulez essayer, 2 séances d’essais vous sont proposées avec prêt de bâtons.
-              <br>
-              Pour votre équipement, ne pas avoir trop chaud ni trop froid, c’est utiliser la méthode des
-              multicouches.
-              <br>
-              Pour bien marcher il faut prendre soins de ses pieds
-              <br>
-              <br>
-              <br>
-              À prévoir :
-            <li>De bonne chaussures adaptée à la marche nordique</li>
-            <li>Un sac à dos avec boissons et encas</li>
-            <li>Une paire de bâtons</li>
-            <li>Une lampe frontale pour les entraînements nocturne</li>
-            </p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <%end %>
+            <% if @text_join_us != nil %>
+              <%= raw(@text_join_us.content) %>
+            <% else %>
+              <p>
+                Vous avez décidé de vous mettre (ou vous remettre) au sport et vous cherchez une activité
+                complète,
+                accessible, économique, tonique, dynamique, de plein air et conviviale.
+                <br>
+                Vous voulez essayer, 2 séances d’essais vous sont proposées avec prêt de bâtons.
+                <br>
+                Pour votre équipement, ne pas avoir trop chaud ni trop froid, c’est utiliser la méthode des
+                multicouches.
+                <br>
+                Pour bien marcher il faut prendre soins de ses pieds
+                <br>
+                <br>
+                <br>
+                À prévoir :
+              <li>De bonne chaussures adaptée à la marche nordique</li>
+              <li>Un sac à dos avec boissons et encas</li>
+              <li>Une paire de bâtons</li>
+              <li>Une lampe frontale pour les entraînements nocturne</li>
+              </p>
+            <% end %>
           </div>
           <div class="col-md-6">
-            <%if @picture_join_us != nil %>
-              <img class="join" <%= image_tag @picture_join_us.picture.to_s %>
-            <%else %>
-            <img class="join" <%= image_tag "image.jpg" %>
-              <%end %>
+            <% if @picture_join_us != nil %>
+              <img class="join join-picture" <%= image_tag @picture_join_us.picture.to_s %>
+            <% else %>
+              <img class="join join-picture" <%= image_tag "image.jpg" %>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="photo-gallery" class="photo-gallery gallery">
+  <section id="photo-gallery" class="photo-gallery gallery page">
   </section>
 
-  <section id="contact" class="contact bg-mega fix">
+  <section id="contact" class="contact bg-mega fix page">
     <div class="row center-div">
       <div class="main_contact">
         <div class="col-md-12">
@@ -331,22 +274,22 @@
             </div>
             <div class="text-center col-md-12">
               <p class="text-black">
-                <%if @text_contact_us != nil %>
-                  <%=  raw(@text_contact_us.content) %>
-                <%else %>
-              <li>Adresse postale : Place de la Mairie 60350 PIERREFONDS</li>
-              <li>Adresse mail : vitalmarche@gmail.com</li>
-               <br>
-              Bureau :
-              <li>Présidente : Christine, 0642720516</li>
-              <li>Secrétaire : Fabienne, 0624215423</li>
-              <li>Trésorière : Chantale, 0661714854</li>
-              <li>Animateur : Christophe, 06.33.35.54.25</li>
-               <br>
-               <br>
-               <br>
-               <br>
-                <%end %>
+                <% if @text_contact_us != nil %>
+                  <%= raw(@text_contact_us.content) %>
+                <% else %>
+                <li>Adresse postale : Place de la Mairie 60350 PIERREFONDS</li>
+                <li>Adresse mail : vitalmarche@gmail.com</li>
+                 <br>
+                Bureau :
+                <li>Présidente : Christine, 0642720516</li>
+                <li>Secrétaire : Fabienne, 0624215423</li>
+                <li>Trésorière : Chantale, 0661714854</li>
+                <li>Animateur : Christophe, 06.33.35.54.25</li>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+              <% end %>
               </p>
             </div>
           </div>
@@ -383,18 +326,6 @@
       </div>
     </div>
   </section>
-
-<!--
-  <section id="maps">
-    <div class="main_maps text-center fix">
-      <div class="overlay overlay-maps"></div>
-      <div class="maps_text">
-        <h3 class="text-white" onclick="initMap()">Nous trouver <i class="fa fa-angle-down"></i></h3>
-        <div id="map_canvas" class="mapheight"></div>
-      </div>
-    </div>
-  </section>
--->
 
   <section id="sponsor" class="contact bg-mega fix">
     <div class="container">
@@ -441,8 +372,6 @@
 
 
 </div>
-<!-- TODO: Insert API Key here -->
-<!--<script async="false" src="https://maps.google.com/maps/api/js?key= ?? &callback=initMap" async defer></script>-->
 <%= javascript_include_tag 'home.js', 'data-turbolinks-track': 'reload' %>
 <script>
     document.querySelector('#photo-gallery').appendChild(JGallery.create([

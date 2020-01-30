@@ -10,7 +10,8 @@ class PdfDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
       id: Field::Number,
       title: Field::String,
-      file: Field::Carrierwave
+      file: Field::Carrierwave,
+      latest: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,6 +23,7 @@ class PdfDashboard < Administrate::BaseDashboard
   id
   title
   file
+  latest
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -30,6 +32,7 @@ class PdfDashboard < Administrate::BaseDashboard
   id
   title
   file
+  latest
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -38,6 +41,7 @@ class PdfDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   title
   file
+  latest
   ].freeze
 
   # COLLECTION_FILTERS
