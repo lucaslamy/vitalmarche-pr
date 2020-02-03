@@ -21,9 +21,9 @@
           <li><a href="#news">ACTUALITES</a></li>
           <li><a href="#join">REJOIGNEZ-NOUS</a></li>
           <li><a href="#photo-gallery">GALERIE</a></li>
-          <li><a href="#contact">NOUS CONTACTER</a></li>
+          <li><a href="#contact">CONTACT</a></li>
           <li> <%= link_to "ESPACE ADHERENTS", user_space_path, data: {turbolinks: false} %>
-          <% if user_signed_in? %>
+            <% if user_signed_in? %>
             <li class="nav-item hvr-grow">
               <%= link_to raw('<i class="fas fa-power-off"></i><span class="d-md-none"></span>'), destroy_user_session_path, class: "nav-link-danger", title: "Déconnexion", method: :delete %>
             </li>
@@ -56,15 +56,15 @@
     <% for i in @slideshow %>
       <div class="container slide slide--<%= i.id %>" style="background-image: url(<%=i.picture.to_s%>);">
         <div class="row bck_layer">
-          <div class="main_home col-xs-12 col-sm-6">
-            <div id="to_fill_text">
-              <span><h1 class="home_text">Bienvenue sur notre site</h1></span>
+          <div class="vertical-center col-xs-12">
+            <div class="main_home">
+              <div id="to_fill_text">
+                <span><h1 class="home_text text-center">Bienvenue sur notre site</h1></span>
+              </div>
             </div>
-          </div>
-          <div id="to_fill_text" class="main_home col-xs-12 col-sm-6 ">
-            <h3 class="slide_text text-justify"> Qu’est-ce que la marche nordique </h3>
-
-            <h6 id="to_fill_text" class="slide_text text-justify">
+            <div id="to_fill_text" class="row main_home to_fill_text">
+              <h3 class="slide_text text-center"> Qu’est-ce que la marche nordique </h3>
+              <h6 id="to_fill_text" class="slide_text text-center to_fill_text slide_content">
            <span><% if @text_home != nil %>
               <%= raw(@text_home.content) %>
             <% else %>Plus dynamique que la randonnée, la marche nordique a pour principe
@@ -75,6 +75,7 @@
             Accessible à tous, cette pratique ravira les jeunes, les moins jeunes, quelle que soit leur condition
             physique.C’est aussi un sport familial et convivial qui regroupe un large public.<% end %>
           </span></h6>
+            </div>
           </div>
         </div>
       </div>
@@ -88,18 +89,22 @@
         <div class="main_about">
           <div class="col-xs-12">
             <div class="about_content">
-              <h2 class="text-blue">QUI SOMMES NOUS</h2>
+              <h3 class="text-blue">QUI SOMMES NOUS</h3>
               <div class="separator_left"></div>
-              <% if @text_who_are_we != nil %>
-                <%= raw(@text_who_are_we.content) %>
-              <% else %>
-                <p>VITAL'MARCHE est une association, créée au cours de l’été 2018, domiciliée à Pierrefonds et
-                  affiliée à la Fédération Française de Randonnée.
-                  Elle est née de la volonté d’un groupe de marcheurs qui avait envie de partager un sport de
-                  plein air dans la bonne humeur.
-                  Chaque semaine, nous nous retrouvons pour marcher et plus dès que l’occasion se présente.
-                </p>
-              <% end %>
+              <div class="about_top">
+                <div class="to_fill_text m-bottom-10">
+                <% if @text_who_are_we != nil %>
+                  <%= raw(@text_who_are_we.content) %>
+                <% else %>
+                    <p>VITAL'MARCHE est une association, créée au cours de l’été 2018, domiciliée à Pierrefonds et
+                      affiliée à la Fédération Française de Randonnée.
+                      Elle est née de la volonté d’un groupe de marcheurs qui avait envie de partager un sport de
+                      plein air dans la bonne humeur.
+                      Chaque semaine, nous nous retrouvons pour marcher et plus dès que l’occasion se présente.
+                    </p>
+                <% end %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -108,57 +113,60 @@
     <div class="container">
       <div class="row">
         <div class="about_bottom_content">
-          <div class="col-xs-12 col-md-4">
-            <div class="about_bottom_item m-top-20">
+          <div class="col-md-4">
+            <div class="about_bottom_item">
               <div class="ab_head">
                 <div class="ab_head_icon">
                   <i class="icofont"><i class="fas fa-walking"></i></i>
                 </div>
-                <h6 class="m-top-20 text-blue"> ENTRAÎNEMENTS</h6>
+                <p class="text-blue to_fill_text_title"> ENTRAÎNEMENTS</p>
               </div>
-              <p class="m-top-20">
-                <% if @text_training != nil %>
-                  <%= raw(@text_training.content) %>
-                <% else %>Nous proposons 3 entraînements hebdomadaires (mardi matin, jeudi soir, samedi ou
-                  dimanche matin par alternance) encadrés par des animateurs diplômés.
-                <% end %>
-              </p>
+              <div class="to_fill_text">
+                <p>
+                  <% if @text_training != nil %>
+                    <%= raw(@text_training.content) %>
+                  <% else %>Nous proposons 3 entraînements hebdomadaires (mardi matin, jeudi soir, samedi ou
+                    dimanche matin par alternance) encadrés par des animateurs diplômés.
+                  <% end %>
+                </p></div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="about_bottom_item m-top-20">
+            <div class="about_bottom_item">
               <div class="ab_head">
                 <div class="ab_head_icon">
                   <i class="icofont"><i class="fas fa-tree"></i></i>
                 </div>
-                <h6 class="m-top-20 text-blue">CADRE</h6>
+                <p class="text-blue to_fill_text_title">CADRE</p>
               </div>
-              <p class="m-top-20">
-                <% if @text_where != nil %>
-                  <%= raw(@text_where.content) %>
-                <% else %>
-                  Les marches se déroulent principalement au cœur des massifs forestiers du Compiégnois
-                  (Forêts domaniales de Laigue et de Compiègne).
-                  Ce périmètre offre une multitude de parcours variés (plats ou avec dénivelés, en plaine ou
-                  en sous-bois,
-                  sur de grandes allées ou sur des chemins moins fréquentés) qui évoluent au fil des saisons.
-                <% end %></p>
+              <div class="to_fill_text">
+                <p>
+                  <% if @text_where != nil %>
+                    <%= raw(@text_where.content) %>
+                  <% else %>
+                    Les marches se déroulent principalement au cœur des massifs forestiers du Compiégnois
+                    (Forêts domaniales de Laigue et de Compiègne).
+                    Ce périmètre offre une multitude de parcours variés (plats ou avec dénivelés, en plaine ou
+                    en sous-bois,
+                    sur de grandes allées ou sur des chemins moins fréquentés) qui évoluent au fil des saisons.
+                  <% end %></p></div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="about_bottom_item m-top-20">
+            <div class="about_bottom_item">
               <div class="ab_head">
                 <div class="ab_head_icon">
                   <i class="icofont"><i class="fas fa-hiking"></i></i>
                 </div>
-                <h6 class="m-top-20 text-blue">SORTIES</h6>
+                <p class="text-blue to_fill_text_title">SORTIES</p>
               </div>
-              <p class="m-top-20">
-                <% if @text_event != nil %>
-                  <%= raw(@text_event.content) %>
-                <% else %>
-                  Des sorties sont également organisées sur une journée, ou un weekend.
-                <% end %></p>
+              <div class="to_fill_text">
+                <p>
+                  <% if @text_event != nil %>
+                    <%= raw(@text_event.content) %>
+                  <% else %>
+                    Des sorties sont également organisées sur une journée, ou un weekend.
+                  <% end %></p></div>
             </div>
           </div>
         </div>
@@ -175,7 +183,7 @@
             <div class="col-xs-3">
               <i class='fas fa-chevron-left slid_prev text-white'></i>
             </div>
-            <h2 class="text-white col-xs-6">ACTUALITÉS</h2>
+            <h3 class="text-white col-xs-6">ACTUALITÉS</h3>
             <div class="col-xs-3">
               <i class='fa fas fa-chevron-right slid_next text-white'></i>
             </div>
@@ -216,13 +224,13 @@
         <div class="row">
           <div class="col-md-6">
             <div class="about_content">
-              <h2 class="text-blue">REJOIGNEZ-NOUS</h2>
+              <h3 class="text-blue">REJOIGNEZ-NOUS</h3>
               <div class="separator_left"></div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 to_fill_text">
             <% if @text_join_us != nil %>
               <%= raw(@text_join_us.content) %>
             <% else %>
@@ -272,7 +280,7 @@
               <h3 class="text-center text-blue">NOUS CONTACTER</h3>
               <div class="separator_auto"></div>
             </div>
-            <div class="text-center col-md-12">
+            <div class="text-center col-md-12 to_fill_text">
               <p class="text-black">
                 <% if @text_contact_us != nil %>
                   <%= raw(@text_contact_us.content) %>
