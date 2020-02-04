@@ -11,9 +11,8 @@ class EventDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     content: Field::Ckeditor,
-    pop_up: Field::Boolean,
-    date: Field::DateTime,
-    position: Field::String,
+    start_date: Field::DateTime,
+    end_date: Field::DateTime,
     picture: Field::Carrierwave.with_options(
         image: :standard,
         multiple: false,
@@ -31,9 +30,8 @@ class EventDashboard < Administrate::BaseDashboard
   id
   title
   content
-  pop_up
-  date
-  position
+  start_date
+  end_date
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -42,9 +40,8 @@ class EventDashboard < Administrate::BaseDashboard
   id
   title
   content
-  pop_up
-  date
-  position
+  start_date
+  end_date
   picture
   ].freeze
 
@@ -54,9 +51,8 @@ class EventDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   title
   content
-  pop_up
-  date
-  position
+  start_date
+  end_date
   picture
   ].freeze
 

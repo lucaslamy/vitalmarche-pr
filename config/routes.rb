@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :articles
       resources :albums
       resources :pdfs
+      resources :events
       resources :links
       resources :texts
       resources :pictures

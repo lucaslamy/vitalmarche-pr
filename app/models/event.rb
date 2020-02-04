@@ -6,13 +6,10 @@ class Event < ApplicationRecord
   validates :content,
             presence: true
 
-  validates :pop_up,
-            presence: false
-
-  validates :date,
+  validates :start_date,
             presence: true
 
-  validates :position,
+  validates :end_date,
             presence: true
 
   validates :picture,

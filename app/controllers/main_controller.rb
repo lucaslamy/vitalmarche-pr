@@ -13,6 +13,11 @@ class MainController < ApplicationController
     @text_training = Text.find_by(title:"entraînements")
     @text_who_are_we = Text.find_by(title:"qui sommes nous")
     @text_home = Text.find_by(title:"qu'est-ce que la marche nordique")
+    if Event.where("start_date <= ?", DateTime.now).where("end_date >= ?", DateTime.now).empty?
+      @top_event = nil
+    else
+      @top_event = Event.where("start_date <= ?", DateTime.now).where("end_date >= ?", DateTime.now).order(:end_date).first
+    end
   end
 
   def set_current_user

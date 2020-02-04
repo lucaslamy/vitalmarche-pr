@@ -6,8 +6,8 @@ fr:
         create: "Créer un nouvel utilisateur"
         update: "Modifier cet utilisateur"
       event:
-        create: "Créer un nouvel événement"
-        update: "Modifier cet événement"
+        create: "Créer un nouvel À la une"
+        update: "Modifier cet À la une"
       article:
         create: "Créer une nouvelle actualité"
         update: "Modifier cette actualité"
@@ -48,9 +48,8 @@ fr:
       event:
         title: Titre
         content: Contenu
-        pop_up: Pop Up ?
-        date: Date
-        event_position: Lieu
+        start_date: Date de début d'affichage
+        end_date: Date de fin d'affichage
         picture: Image
       album:
         title: Titre
@@ -98,8 +97,8 @@ fr:
     resource:
       user: Utilisateur
       users: Utilisateurs
-      event: Événement
-      events: Événements
+      event: À la une
+      events: À la une
       article: Actualité
       articles: Actualités
       album: Album

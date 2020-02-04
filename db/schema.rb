@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_165708) do
+ActiveRecord::Schema.define(version: 2020_02_03_135444) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -48,10 +48,9 @@ ActiveRecord::Schema.define(version: 2020_01_28_165708) do
   create_table "events", force: :cascade do |t|
     t.string "title", null: false
     t.string "content", null: false
-    t.boolean "pop_up", null: false
-    t.datetime "date", null: false
-    t.string "position", null: false
     t.string "picture"
+    t.datetime "start_date"
+    t.datetime "end_date"
   end
 
   create_table "letsencrypt_certificates", force: :cascade do |t|
