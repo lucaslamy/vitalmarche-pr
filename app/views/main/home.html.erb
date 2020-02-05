@@ -51,7 +51,7 @@
       <% end %>
     <% end %>
   </div>
-
+  <% if @top_event != nil %>
   <div class="pop-gallery">
     <figure class="figure-pop-up">
       <img <%= image_tag @top_event.picture.to_s %>
@@ -67,6 +67,7 @@
 			s0.292,0.773,0,1.068l-2.505,2.528L12.491,11.491z"/>
     </symbol>
   </svg>
+    <%end %>
 
 
   <section class="hello background-cover slick">
