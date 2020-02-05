@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, except: [:home,:privacy,:contact_us]
+  #before_action :authenticate_user!, except: [:home,:privacy,:contact_us]
 
 end
