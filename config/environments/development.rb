@@ -67,7 +67,7 @@ Rails.application.configure do
       :openssl_verify_mode => 'none'
   }
   config.action_mailer.asset_host = 'http://localhost:3000'
-=end
+
   config.action_mailer.delivery_method = :smtp
   host = 'localhost'
   config.action_mailer.default_url_options = { host: host}
@@ -82,5 +82,22 @@ Rails.application.configure do
       :enable_starttls_auto => ENV['SMTP_STARTTLS'] || false,
       :ssl => ENV['SMTP_SSL'] || false
   }
+=end
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: "smtp.gmail.com",
+      port: 587,
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: ENV['SMTP_USERNAME'],
+      password: ENV['SMTP_PASSWORD'],
+      domain: "smtp.gmail.com",
+      openssl_verify_mode: "none",
+  }
+
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
