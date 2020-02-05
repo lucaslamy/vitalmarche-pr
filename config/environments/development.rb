@@ -62,6 +62,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   #
   # Smtp
+=begin
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :address => 'maildev',
@@ -69,5 +70,16 @@ Rails.application.configure do
       :openssl_verify_mode => 'none'
   }
   config.action_mailer.asset_host = 'http://localhost:3000'
+=end
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => ENV['SMTP_HOST'],
+      :port => ENV['SMTP_PORT'],
+      :user_name => ENV['SMTP_USERNAME'],
+      :password => ENV['SMTP_PASSWORD'],
+      :authentication => ENV['SMTP_AUTH'] || "plain",
+      :enable_starttls_auto => ENV['SMTP_STARTTLS'] || false,
+      :ssl => ENV['SMTP_SSL'] || false
+  }
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end

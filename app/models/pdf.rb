@@ -3,5 +3,5 @@ class Pdf < ApplicationRecord
   validates :title,
             presence: true
   validates :latest,
-            presence: true
+            presence: false
 end

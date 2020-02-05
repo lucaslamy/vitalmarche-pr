@@ -38,3 +38,6 @@
 
 # SonarQube Scanner
 .scannerwork
+
+# Private data
+.env
