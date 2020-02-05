@@ -20,7 +20,7 @@ module Admin
     def send_invitation
       email = params[:email]
       name = params[:name]
-      User.invite(:email => email,:name => name)
+      User.invite!(:email => email,:name => name)
       redirect_to admin_users_path
     end
     # Override this if you have certain roles that require a subset
