@@ -9,9 +9,6 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.asset_host
-
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -72,6 +69,10 @@ Rails.application.configure do
   config.action_mailer.asset_host = 'http://localhost:3000'
 =end
   config.action_mailer.delivery_method = :smtp
+  host = 'localhost'
+  config.action_mailer.default_url_options = { host: host}
+  config.action_mailer.asset_host
+
   config.action_mailer.smtp_settings = {
       :address => ENV['SMTP_HOST'],
       :port => ENV['SMTP_PORT'],

@@ -97,6 +97,9 @@ Rails.application.configure do
   end
 
   config.action_mailer.delivery_method = :smtp
+  host = 'localhost'
+  config.action_mailer.default_url_options = { host: host}
+  
   config.action_mailer.smtp_settings = {
       :address => ENV['SMTP_HOST'],
       :port => ENV['SMTP_PORT'],
