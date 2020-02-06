@@ -104,7 +104,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host}
   config.action_mailer.smtp_settings = {
       address:              'smtp.mail.yahoo.com',
-      port:                 465,
+      port:                 587,
       domain:               'vitalmarche.cf',
       user_name:            'contactvitalmarche@yahoo.com',
       password:             ENV['SMTP_PASSWORD'],
