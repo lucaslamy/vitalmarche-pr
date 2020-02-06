@@ -19,3 +19,8 @@ module VitalMarche
     # the framework and any gems in your application.
   end
 end
+require 'net/http'
+
+require 'openssl'
+
+require 'resolv-replace'
