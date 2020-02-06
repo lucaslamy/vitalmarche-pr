@@ -97,9 +97,10 @@ Rails.application.configure do
   end
 
   config.action_mailer.delivery_method = :smtp
-  host = 'localhost'
+  host = 'vitalmarche.cf'
   config.action_mailer.default_url_options = { host: host}
   config.action_mailer.raise_delivery_errors = true
+=begin
   config.action_mailer.smtp_settings = {
       :address => ENV['SMTP_HOST'],
       :port => ENV['SMTP_PORT'],
@@ -108,6 +109,16 @@ Rails.application.configure do
       :authentication => ENV['SMTP_AUTH'] || "plain",
       :enable_starttls_auto => ENV['SMTP_STARTTLS'] || false,
       :ssl => ENV['SMTP_SSL'] || false
+  }
+=end
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'vitalmarche.cf',
+      user_name:            ENV['SMTP_USERNAME'],
+      password:             ENV['SMTP_PASSWORD'],
+      authentication:       'plain',
+      enable_starttls_auto: true
   }
 
   # Do not dump schema after migrations.
