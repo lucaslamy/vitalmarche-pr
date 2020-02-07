@@ -7,4 +7,6 @@ class Album < ApplicationRecord
   validates :picture,
             presence: false
 
+  validates :private,
+            presence: false
 end

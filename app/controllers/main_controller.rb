@@ -2,7 +2,7 @@ class MainController < ApplicationController
   before_action :set_current_user
 
   def home
-    @albums = Album.all
+    @public_albums = Album.where(private: false)
     @articles = Article.all
     @slideshow = Slideshow.all
     @text_join_us = Text.find_by(title:"rejoignez-nous")

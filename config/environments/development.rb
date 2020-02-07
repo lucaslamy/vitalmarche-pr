@@ -59,6 +59,21 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   #
   # Smtp
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host:'vitalmarche.cf'}
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => 'vitalmarche.cf',
+      :user_name => "contactvitalmarche@gmail.com",
+      :password => ENV['SMTP_PASSWORD'],
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
+
 =begin
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -98,7 +113,7 @@ Rails.application.configure do
       domain: "smtp.gmail.com",
       openssl_verify_mode: "none",
   }
-=end
+
   config.action_mailer.delivery_method = :smtp
   host = 'vitalmarche.cf'
   config.action_mailer.default_url_options = { host: host}
@@ -114,6 +129,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'contactvitalmarche@yahoo.com'}
+=end
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end

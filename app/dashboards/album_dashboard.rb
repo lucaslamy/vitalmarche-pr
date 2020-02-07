@@ -10,6 +10,7 @@ class AlbumDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
+    private: Field::Boolean,
     picture: Field::Carrierwave.with_options(
         image: :standard,
         multiple: true,
@@ -27,6 +28,7 @@ class AlbumDashboard < Administrate::BaseDashboard
   id
   title
   picture
+  private
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -35,6 +37,7 @@ class AlbumDashboard < Administrate::BaseDashboard
   id
   title
   picture
+  private
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -43,6 +46,7 @@ class AlbumDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   title
   picture
+  private
   ].freeze
 
   # COLLECTION_FILTERS

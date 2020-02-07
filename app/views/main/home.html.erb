@@ -1,5 +1,25 @@
+<% if @top_event != nil %>
+  <div class="pop-gallery">
+    <div class="pop-gallery-content">
+      <figure>
+        <img class="pop-up-img" <%= image_tag @top_event.picture.to_s %>
+        <figcaption><%= raw(@top_event.title) %><small><%= raw(@top_event.content) %></small></figcaption>
+      </figure>
+    </div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;">
+    <symbol id="close" viewBox="0 0 18 18">
+      <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M9,0.493C4.302,0.493,0.493,4.302,0.493,9S4.302,17.507,9,17.507
+			S17.507,13.698,17.507,9S13.698,0.493,9,0.493z M12.491,11.491c0.292,0.296,0.292,0.773,0,1.068c-0.293,0.295-0.767,0.295-1.059,0
+			l-2.435-2.457L6.564,12.56c-0.292,0.295-0.766,0.295-1.058,0c-0.292-0.295-0.292-0.772,0-1.068L7.94,9.035L5.435,6.507
+			c-0.292-0.295-0.292-0.773,0-1.068c0.293-0.295,0.766-0.295,1.059,0l2.504,2.528l2.505-2.528c0.292-0.295,0.767-0.295,1.059,0
+			s0.292,0.773,0,1.068l-2.505,2.528L12.491,11.491z"/>
+    </symbol>
+  </svg>
+<% end %>
 <body data-spy="scroll" data-target=".navbar-collapse">
 <%= render 'cookies_eu/consent_banner', link: '/privacy', target: '_blank' %>
+
 <div class="culmn">
 
   <nav class="navbar navbar-default navbar-fixed green no-background bootsnav">
@@ -51,25 +71,6 @@
       <% end %>
     <% end %>
   </div>
-  <% if @top_event != nil %>
-  <div class="pop-gallery">
-    <figure class="figure-pop-up">
-      <img <%= image_tag @top_event.picture.to_s %>
-      <figcaption><%= raw(@top_event.title) %><small class="small-pop-up to_fill_text"><%= raw(@top_event.content) %></small></figcaption>
-    </figure>
-  </div>
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;">
-    <symbol id="close" viewBox="0 0 18 18">
-      <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M9,0.493C4.302,0.493,0.493,4.302,0.493,9S4.302,17.507,9,17.507
-			S17.507,13.698,17.507,9S13.698,0.493,9,0.493z M12.491,11.491c0.292,0.296,0.292,0.773,0,1.068c-0.293,0.295-0.767,0.295-1.059,0
-			l-2.435-2.457L6.564,12.56c-0.292,0.295-0.766,0.295-1.058,0c-0.292-0.295-0.292-0.772,0-1.068L7.94,9.035L5.435,6.507
-			c-0.292-0.295-0.292-0.773,0-1.068c0.293-0.295,0.766-0.295,1.059,0l2.504,2.528l2.505-2.528c0.292-0.295,0.767-0.295,1.059,0
-			s0.292,0.773,0,1.068l-2.505,2.528L12.491,11.491z"/>
-    </symbol>
-  </svg>
-    <%end %>
-
-
   <section class="hello background-cover slick">
     <% for i in @slideshow %>
       <div class="container slide slide--<%= i.id %>" style="background-image: url(<%=i.picture.to_s%>);">
@@ -402,7 +403,7 @@
 <%= javascript_include_tag 'home.js', 'data-turbolinks-track': 'reload' %>
 <script>
     document.querySelector('#photo-gallery').appendChild(JGallery.create([
-        <% @albums.each do |album| %>
+        <% @public_albums.each do |album| %>
         {
             title: '<%= album.title %>',
 
@@ -413,11 +414,11 @@
                     thumbUrl: '<%=picture.to_s %>'
                 }<% if picture != album.picture.last %>, <%end%><%end%>
             ]
-        }<% if album != @albums.last %>, <%end%><%end%>]).getElement());
+        }<% if album != @public_albums.last %>, <%end%><%end%>]).getElement());
     <% if @top_event != nil %>
     popup = {
         init: function () {
-            $(window).on('load', function(){
+            $(window).on('load', function () {
                 popup.open($('figure'));
             });
 
@@ -452,7 +453,6 @@
     popup.init();
 
     <%end%>
-
 
 </script>
 </body>

@@ -110,6 +110,7 @@ Rails.application.configure do
       :ssl => ENV['SMTP_SSL'] || false
   }
 =end
+=begin
   config.action_mailer.smtp_settings = {
       address:              'smtp.mail.yahoo.com',
       port:                 465,
@@ -122,7 +123,23 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'contactvitalmarche@yahoo.com'}
+=end
 
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host:'vitalmarche.cf'}
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => 'vitalmarche.cf',
+      :user_name => "contactvitalmarche@gmail.com",
+      :password => ENV['SMTP_PASSWORD'],
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end

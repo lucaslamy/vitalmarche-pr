@@ -55,6 +55,7 @@ fr:
         title: Titre
         description: Description
         picture: Image
+        private: Privé
       user:
         name: Nom/Prénom
         email: Email

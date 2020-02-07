@@ -18,6 +18,7 @@
           <li><a href="#planning">PLANNING</a></li>
           <li><a href="#pdf">GAZETTES</a></li>
           <li><a href="#form">QUESTIONNAIRE</a></li>
+          <li><a href="#photo-gallery">GALERIE</a></li>
           <li> <%= link_to "RETOUR ACCUEIL", root_path, data: {turbolinks: false} %> </li>
           <% if user_signed_in? %>
             <li class="nav-item hvr-grow">
@@ -183,10 +184,25 @@
       </div>
     </div>
   </section>
+  <section id="photo-gallery" class="photo-gallery gallery page">
+  </section>
 </div>
 </body>
 <%= javascript_include_tag 'simple_user.js', 'data-turbolinks-track': 'reload' %>
 <script>
+    document.querySelector('#photo-gallery').appendChild(JGallery.create([
+        <% @public_albums.each do |album| %>
+        {
+            title: '<%= album.title %>',
+
+            items: [
+                <% album.picture.each do |picture| %>
+                {
+                    url: '<%=picture.to_s %>',
+                    thumbUrl: '<%=picture.to_s %>'
+                }<% if picture != album.picture.last %>, <%end%><%end%>
+            ]
+        }<% if album != @public_albums.last %>, <%end%><%end%>]).getElement());
     <% if @pop_up != nil %>
     $(window).on('load', function () {
         $('#myModal').modal('show');

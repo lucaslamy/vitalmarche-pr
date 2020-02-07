@@ -2,6 +2,7 @@ class UserSpaceController < ApplicationController
   before_action :set_current_user
 
   def main
+    @private_albums = Album.where(private: true)
     @pdfs = Pdf.all
     @form = Link.find_by(title: "Questionnaire")
     if Pdf.where(latest: true).empty?
