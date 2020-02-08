@@ -60,14 +60,14 @@ Rails.application.configure do
   #
   # Smtp
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host:'vitalmarche.cf',port: 3000}
+  config.action_mailer.default_url_options = { host:'vitalmarche.cf',port: 80}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
       :address => "smtp.gmail.com",
       :port => 587,
-      :domain => 'vitalmarche.cf',
+      :domain => 'gmail.com',
       :user_name => "contactvitalmarche@gmail.com",
       :password => ENV['SMTP_PASSWORD'],
       :authentication => :plain,
