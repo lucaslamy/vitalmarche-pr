@@ -62,6 +62,23 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host:'vitalmarche.cf'}
   config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 465,
+      :domain => 'gmail.com',
+      :user_name => "contactvitalmarche@gmail.com",
+      :password => ENV['SMTP_PASSWORD'],
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
+
+
+=begin
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host:'vitalmarche.cf'}
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
@@ -74,8 +91,6 @@ Rails.application.configure do
       :enable_starttls_auto => true,
   }
 
-
-=begin
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :address => 'maildev',

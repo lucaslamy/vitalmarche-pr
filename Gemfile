@@ -107,3 +107,6 @@ gem "font-awesome-rails"
 
 # Ask cookie consent
 gem 'cookies_eu'
+
+# Dump datas
+gem 'seed_dump'
