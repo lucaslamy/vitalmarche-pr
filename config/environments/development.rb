@@ -71,7 +71,8 @@ Rails.application.configure do
       :user_name => "apikey",
       :password => ENV['SENDGRID_KEY'],
       :authentication => :login,
-      :enable_starttls_auto => true
+      :enable_starttls_auto => true,
+      :ssl => ENV['SMTP_SSL'] || false
   }
 
 =begin
