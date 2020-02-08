@@ -1,5 +1,7 @@
 module Admin
   class UsersController < Admin::ApplicationController
+    skip_before_action :verify_authenticity_token
+    protect_from_forgery prepend: true
     # Overwrite any of the RESTful controller actions to implement custom behavior
     # For example, you may want to send an email after a foo is updated.
     #
