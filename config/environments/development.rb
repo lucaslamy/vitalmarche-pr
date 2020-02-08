@@ -60,17 +60,17 @@ Rails.application.configure do
   #
   # Smtp
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host:'vitalmarche.cf',port: 80}
+  config.action_mailer.default_url_options = { host:'vitalmarche.cf'}
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
-      :address => "smtp.gmail.com",
-      :port => 587,
-      :domain => 'gmail.com',
-      :user_name => "contactvitalmarche@gmail.com",
-      :password => ENV['SMTP_PASSWORD'],
-      :authentication => :plain,
+      :address => "smtp.sendgrid.net",
+      :port => 465,
+      :domain => 'vitalmarche.cf',
+      :user_name => "apikey",
+      :password => ENV['SENDGRID_KEY'],
+      :authentication => :login,
       :enable_starttls_auto => true
   }
 
