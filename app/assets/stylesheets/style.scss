@@ -93,6 +93,7 @@ Spacing & Alignment
 
 img {
   max-width: 100%;
+  width: 100% !important;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -1256,4 +1257,8 @@ img {
 
 .small-pop-up{
   color: #FFFFFF;
+}
+
+.shadow {
+  display: none;
 }
