@@ -65,15 +65,15 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
-      :address => "smtp.sendgrid.net",
+      :address => 'smtp.sendgrid.net',
       :port => 465,
       :domain => 'vitalmarche.cf',
-      :user_name => "apikey",
+      :user_name => 'apikey',
       :password => ENV['SENDGRID_KEY'],
-      :authentication => :login,
+      :authentication => :plain,
       :enable_starttls_auto => true,
-      :ssl => ENV['SMTP_SSL'] || false
   }
+
 
 =begin
   config.action_mailer.delivery_method = :smtp
