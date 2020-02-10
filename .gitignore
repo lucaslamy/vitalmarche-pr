@@ -41,3 +41,4 @@
 
 # Private data
 .env
+/db/seeds.rb
