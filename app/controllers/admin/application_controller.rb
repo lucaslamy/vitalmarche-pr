@@ -7,8 +7,8 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
     skip_before_action :verify_authenticity_token
+    #protect_from_forgery prepend: true,with: :exception
     before_action :authenticate_admin
-    protect_from_forgery prepend: true,with: :exception
 
     def authenticate_admin
       if current_user
