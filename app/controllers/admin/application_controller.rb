@@ -7,13 +7,15 @@
 module Admin
   class ApplicationController < Administrate::ApplicationController
     skip_before_action :verify_authenticity_token
-    protect_from_forgery prepend: true
     before_action :authenticate_admin
+    protect_from_forgery prepend: true,with: :exception
 
     def authenticate_admin
       if current_user
         if current_user.email != 'contactvitalmarche@gmail.com'
           redirect_to root_url, alert: "Vous devez être un administrateur."
+        else
+          @authenticate_admin = "success"
         end
       else
         redirect_to root_url
