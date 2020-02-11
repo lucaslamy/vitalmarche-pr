@@ -6,8 +6,8 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    #skip_before_action :verify_authenticity_token
-    protect_from_forgery prepend: true,with: :exception
+    skip_before_action :verify_authenticity_token
+    protect_from_forgery prepend: true
     before_action :authenticate_admin
 
     def authenticate_admin
