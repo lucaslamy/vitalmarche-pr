@@ -19,8 +19,9 @@ module VitalMarche
     # the framework and any gems in your application.
     config.middleware.use ActionDispatch::Flash
     config.middleware.use Rack::MethodOverride
+    config.session_store :cookie_store
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
   end
 end
 require 'net/http'
